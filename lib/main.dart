@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'widgets/alphablock.dart';
+import 'package:learn/widgets/alphablock.dart';
+import 'package:learn/widgets/alphachart.dart';
+import 'widgets/alphachart.dart';
+
 void main(List<String> args) {
   runApp(const MyApp());
 }
@@ -46,19 +49,11 @@ class _LearnAppState extends State<LearnApp> {
           ),
         ],
       ),
-      body: Container(
-        color: Colors.blueGrey,
-        child: SingleChildScrollView(
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4),
-            itemBuilder: (BuildContext context, int index) {
-              return AplhabetBlock();
-            },
-          ),
-        ),
-      ),
+      body: const Chart(),
+      // body: Container(
+      //   color: Colors.blueGrey,
+      //   child:const  Center(child:  Text("data")),
+      // ),
     );
   }
-  
 }
