@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:learn/widgets/alphablock.dart';
 
-class AlphaChart extends StatelessWidget {
-  const AlphaChart({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Chart();
-  }
-}
-
-class Chart extends StatefulWidget {
+class Chart extends StatelessWidget {
   const Chart({Key? key}) : super(key: key);
 
   @override
-  State<Chart> createState() => _ChartState();
+  Widget build(BuildContext context) {
+    return const AlphaChart();
+  }
 }
 
-class _ChartState extends State<Chart> {
+class AlphaChart extends StatefulWidget {
+  const AlphaChart({Key? key}) : super(key: key);
+
+  @override
+  State<AlphaChart> createState() => _ChartState();
+}
+
+class _ChartState extends State<AlphaChart> {
+  final listSize = 26;
   List<Map<String, dynamic>> data = [
     {
       "img":
@@ -161,11 +162,23 @@ class _ChartState extends State<Chart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Alphabet_Chart"),
-        centerTitle: true,
-      ),
-      body: GridView.builder(
+        backgroundColor: const Color.fromARGB(0, 60, 60, 64),
+        appBar: AppBar(
+          title: const Text("Alphabet_Chart"),
+          centerTitle: true,
+        ),
+        body: Wrap(
+          spacing: 3,
+          runSpacing: 4,
+          alignment: WrapAlignment.center,
+          children: List.generate(listSize, (index) {
+            return AlphaBlock(
+                img: data[index]["img"],
+                cap: data[index]["cap"],
+                small: data[index]["small"]);
+          }),
+        )
+        /* GridView.builder(
           padding: const EdgeInsets.all(10),
           shrinkWrap: true,
           itemCount: data.length,
@@ -176,7 +189,7 @@ class _ChartState extends State<Chart> {
                 img: data[index]["img"],
                 cap: data[index]["cap"],
                 small: data[index]["small"]);
-          }),
-    );
+          }), */
+        );
   }
 }
