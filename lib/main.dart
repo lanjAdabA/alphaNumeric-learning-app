@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:learn/widgets/alphachart.dart';
 import 'package:learn/widgets/colorspage.dart';
+import 'package:learn/widgets/letterpage.dart';
 import 'package:learn/widgets/numpage.dart';
-import 'widgets/alphachart.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -38,6 +40,7 @@ class _LearnAppState extends State<LearnApp> {
   }
 
   final List _chartPage = [
+    //const LetterPage(),
     const AlphaChart(),
     const NumPage(),
     const ColourPage()

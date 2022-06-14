@@ -1,5 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
-
 import 'package:flutter/material.dart';
 
 class PageColor extends StatelessWidget {
@@ -61,7 +59,12 @@ class _ColorPageState extends State<ColourPage> {
         appBar: AppBar(
           title: Text(
             _colorname[_index % _colorname.length],
-            style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Monoton",
+              color: _colors[_index % _colors.length],
+            ),
           ),
           centerTitle: true,
         ),
@@ -113,6 +116,20 @@ class _ColorPageState extends State<ColourPage> {
                         },
                       ),
                     ),
+                    Opacity(
+                      opacity: .2,
+                      child: InkWell(
+                        child: const Icon(
+                          Icons.circle,
+                          size: 130,
+                        ),
+                        onTap: () {
+                          setState(() {
+                            _index++;
+                          });
+                        },
+                      ),
+                    )
                   ],
                 )
 

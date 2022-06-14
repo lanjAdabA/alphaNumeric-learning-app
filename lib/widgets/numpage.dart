@@ -20,106 +20,163 @@ class _NumblockState extends State<NumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text("Number_Chart"),
-          centerTitle: true,
-        ),
-        body: ListView(
-          itemExtent: 86,
-          padding: const EdgeInsets.all(30),
-          children: [
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-1_1.jpg",
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text("Number_Chart"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        scrollDirection: Axis.vertical,
+        children: [
+          Row(
+            children: const [
+              Text(
+                "1",
+                style: TextStyle(
+                    fontFamily: "CarterOne", fontSize: 60, color: Colors.red),
               ),
-              title: const Text(
-                " -   ONE",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   ONE",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-2_1.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "2",
+                style: TextStyle(
+                    fontFamily: "CarterOne", fontSize: 60, color: Colors.pink),
               ),
-              title: const Text(
-                " -   TWO",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   TWO",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-3_4.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "3",
+                style: TextStyle(
+                    fontFamily: "CarterOne",
+                    fontSize: 60,
+                    color: Colors.purple),
               ),
-              title: const Text(
-                " -   THREE",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   THREE",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-4_1.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "4",
+                style: TextStyle(
+                    fontFamily: "CarterOne",
+                    fontSize: 60,
+                    color: Colors.indigo),
               ),
-              title: const Text(
-                " -   FOUR",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   FOUR",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-5_2.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "5",
+                style: TextStyle(
+                    fontFamily: "CarterOne", fontSize: 60, color: Colors.blue),
               ),
-              title: const Text(
-                " -   FIVE",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   FIVE",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-6_1.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "6",
+                style: TextStyle(
+                    fontFamily: "CarterOne", fontSize: 60, color: Colors.cyan),
               ),
-              title: const Text(
-                " -   SIX",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   SIX",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-7_0.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "7",
+                style: TextStyle(
+                    fontFamily: "CarterOne", fontSize: 60, color: Colors.teal),
               ),
-              title: const Text(
-                " -   SEVEN",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   SEVEN",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-8_1.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "8",
+                style: TextStyle(
+                    fontFamily: "CarterOne", fontSize: 60, color: Colors.green),
               ),
-              title: const Text(
-                " -   EIGHT",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   EIGHT",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-9_3.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "9",
+                style: TextStyle(
+                    fontFamily: "CarterOne", fontSize: 60, color: Colors.lime),
               ),
-              title: const Text(
-                " -   NINE",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   NINE",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-            ListTile(
-              leading: Image.network(
-                "https://gamedata.britishcouncil.org/sites/default/files/attachment/number-10_0.jpg",
+            ],
+          ),
+          Row(
+            children: const [
+              Text(
+                "10",
+                style: TextStyle(
+                    fontFamily: "CarterOne",
+                    fontSize: 60,
+                    color: Colors.yellow),
               ),
-              title: const Text(
-                " -   TEN",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              Text(
+                "   -   TEN",
+                style: TextStyle(
+                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
               ),
-            ),
-          ],
-        ));
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
