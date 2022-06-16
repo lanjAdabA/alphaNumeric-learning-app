@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:learn/widgets/minilettercard.dart';
 
-class PageLetter extends StatelessWidget {
-  const PageLetter({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const LetterPage();
-  }
-}
-
 class LetterPage extends StatefulWidget {
-  const LetterPage({Key? key}) : super(key: key);
+  final String cap;
+  final String small;
+  final String description;
+  final String imgLetter;
+  const LetterPage(
+      {Key? key,
+      required this.cap,
+      required this.small,
+      required this.description,
+      required this.imgLetter})
+      : super(key: key);
 
   @override
   State<LetterPage> createState() => _LetterPageState();
 }
 
 class _LetterPageState extends State<LetterPage> {
+  final List data = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +29,7 @@ class _LetterPageState extends State<LetterPage> {
         centerTitle: true,
       ),
       body: Container(
+        color: Colors.white,
         margin: const EdgeInsets.all(14),
         child: Column(
           children: [
@@ -33,18 +37,18 @@ class _LetterPageState extends State<LetterPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  children: const [
+                  children: [
                     Text(
-                      "A",
-                      style: TextStyle(
+                      widget.cap,
+                      style: const TextStyle(
                         fontSize: 80,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      "a",
-                      style: TextStyle(
+                      widget.small,
+                      style: const TextStyle(
                           fontSize: 80,
                           color: Colors.blueGrey,
                           fontWeight: FontWeight.bold),
@@ -52,10 +56,10 @@ class _LetterPageState extends State<LetterPage> {
                   ],
                 ),
                 Row(
-                  children: const [
+                  children: [
                     Text(
-                      "A",
-                      style: TextStyle(
+                      widget.cap,
+                      style: const TextStyle(
                         fontSize: 80,
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
@@ -63,8 +67,8 @@ class _LetterPageState extends State<LetterPage> {
                       ),
                     ),
                     Text(
-                      "a",
-                      style: TextStyle(
+                      widget.small,
+                      style: const TextStyle(
                         fontSize: 80,
                         color: Colors.lightBlue,
                         fontWeight: FontWeight.bold,
@@ -96,21 +100,21 @@ class _LetterPageState extends State<LetterPage> {
                         height: 500,
                         width: 500,
                         child: Image.network(
-                          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/A1-1.png",
+                          widget.imgLetter,
                         ),
                       ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text(
-                      "description",
-                      style: TextStyle(fontSize: 40),
+                    Text(
+                      widget.description,
+                      style: const TextStyle(fontSize: 40),
                     )
                   ],
                 ),
                 Opacity(
-                  opacity: .2,
+                  opacity: .1,
                   child: Column(
                     children: [
                       const SizedBox(
@@ -120,11 +124,11 @@ class _LetterPageState extends State<LetterPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           Icon(
-                            Icons.arrow_left,
+                            Icons.arrow_back_ios_new_outlined,
                             size: 100,
                           ),
                           Icon(
-                            Icons.arrow_right,
+                            Icons.arrow_forward_ios_sharp,
                             size: 100,
                           )
                         ],
@@ -139,19 +143,36 @@ class _LetterPageState extends State<LetterPage> {
             //     // scrollDirection: Axis.horizontal,
             //     itemBuilder: ((context, index) => const MiniLetterCard()))
 
-            ListView(
-              padding: const EdgeInsets.all(20),
-              shrinkWrap: true,
-              //scrollDirection: Axis.horizontal,
-              children: [
-                Row(
-                  children: const [
-                    MiniLetterCard(),
-                    MiniLetterCard(),
-                    MiniLetterCard(),
-                  ],
-                ),
-              ],
+            Expanded(
+              child: ListView.builder(
+                padding: const EdgeInsets.all(20),
+                shrinkWrap: true,
+                itemCount: 4,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return MiniLetterCard(
+                      miniimage: data[index]["miniimage"],
+                      minidescription: data[index]["minidescription"]);
+                },
+                // children: const [
+                // MiniLetterCard(
+                //   miniimage: "",
+                //   minidescription: '',
+                // ),
+                // MiniLetterCard(
+                //   miniimage: '',
+                //   minidescription: '',
+                // ),
+                // MiniLetterCard(
+                //   miniimage: '',
+                //   minidescription: '',
+                // ),
+                // MiniLetterCard(
+                //   miniimage: '',
+                //   minidescription: '',
+                // ),
+                //],
+              ),
             )
           ],
         ),

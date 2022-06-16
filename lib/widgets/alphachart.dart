@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn/widgets/alphablock.dart';
+import 'package:learn/widgets/letterpage.dart';
 
 class Chart extends StatelessWidget {
   const Chart({Key? key}) : super(key: key);
@@ -18,170 +19,256 @@ class AlphaChart extends StatefulWidget {
 }
 
 class _ChartState extends State<AlphaChart> {
+  // List<Map<String, dynamic>> minidata = [
+  //   {},
+  //   {
+  //     "miniimage":
+  //         "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
+  //     "minidescription": "axe",
+  //   },
+  //   {
+  //     "miniimage":
+  //         "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
+  //     "minidescription": "aaa",
+  //   },
+  //   {
+  //     "miniimage":
+  //         "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
+  //     "minidescription": "ape",
+  //   },
+  // ];
+
   final listSize = 26;
   List<Map<String, dynamic>> data = [
     {
-      "letterkey": 1,
+      "letterkey": "a",
       "img":
           "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/A1-1.png",
       "cap": "A",
-      "small": "a"
+      "small": "a",
+      "description": "apple",
+      "imgmain":
+          "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
     },
     {
-      "letterkey": 2,
+      "letterkey": "b",
       "img":
           "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/B1.png",
       "cap": "B",
-      "small": "b"
+      "small": "b",
+      "description": "ball",
+      "imgmain": "https://m.media-amazon.com/images/I/51IM+jkaEbL._SY355_.jpg",
     },
     {
-      "letterkey": 3,
+      "letterkey": "c",
       "img":
           "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/C2.png",
       "cap": "C",
-      "small": "c"
+      "small": "c",
+      "description": "cat",
+      "imgmain":
+          "https://thumbs.dreamstime.com/b/portrait-gray-tabby-cat-white-background-lovely-pet-portrait-gray-tabby-cat-white-background-126243718.jpg",
     },
     {
-      "letterkey": 4,
+      "letterkey": "d",
       "img":
           "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/D1.png",
       "cap": "D",
-      "small": "d"
+      "small": "d",
+      "description": "dog",
+      "imgmain":
+          "https://media.istockphoto.com/photos/australian-shepherd-sitting-against-white-background-picture-id1154953522?k=20&m=1154953522&s=612x612&w=0&h=YLYsSZkUCWvHZcZtVkSBbC8x3blUHwNVFEwtIpUEejM=",
     },
     {
-      "letterkey": 5,
+      "letterkey": "e",
       "img":
           "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/E1.png",
       "cap": "E",
-      "small": "e"
+      "small": "e",
+      "description": "egg",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 6,
+      "letterkey": "f",
       "img":
           "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/F1.png",
       "cap": "F",
-      "small": "f"
+      "small": "f",
+      "description": "fish",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 7,
+      "letterkey": "g",
       "img":
           "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/G1.png",
       "cap": "G",
-      "small": "g"
+      "small": "g",
+      "description": "grapes",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 8,
+      "letterkey": "h",
       "img": "https://alphabetimals.com/wp-content/uploads/H1.png",
       "cap": "H",
-      "small": "h"
+      "small": "h",
+      "description": "horse",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 9,
+      "letterkey": "i",
       "img": "https://alphabetimals.com/wp-content/uploads/I1.png",
       "cap": "I",
-      "small": "i"
+      "small": "i",
+      "description": "iron",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 10,
+      "letterkey": "j",
       "img": "https://alphabetimals.com/wp-content/uploads/J4.png",
       "cap": "J",
-      "small": "j"
+      "small": "j",
+      "description": "joker",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 11,
+      "letterkey": "k",
       "img": "https://alphabetimals.com/wp-content/uploads/K4.png",
       "cap": "K",
-      "small": "k"
+      "small": "k",
+      "description": "kite",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 12,
+      "letterkey": "l",
       "img": "https://alphabetimals.com/wp-content/uploads/L1.png",
       "cap": "L",
-      "small": "l"
+      "small": "l",
+      "description": "lemon",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 13,
+      "letterkey": "m",
       "img": "https://alphabetimals.com/wp-content/uploads/M1.png",
       "cap": "M",
-      "small": "m"
+      "small": "m",
+      "description": "monkey",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 14,
+      "letterkey": "n",
       "img": "https://alphabetimals.com/wp-content/uploads/N3.png",
       "cap": "N",
-      "small": "n"
+      "small": "n",
+      "description": "nest",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 15,
+      "letterkey": "o",
       "img": "https://alphabetimals.com/wp-content/uploads/O6.png",
       "cap": "O",
-      "small": "o"
+      "small": "o",
+      "description": "owl",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 16,
+      "letterkey": "p",
       "img": "https://alphabetimals.com/wp-content/uploads/P8.png",
       "cap": "P",
-      "small": "p"
+      "small": "p",
+      "description": "pen",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 17,
+      "letterkey": "q",
       "img": "https://alphabetimals.com/wp-content/uploads/Q1.png",
       "cap": "Q",
-      "small": "q"
+      "small": "q",
+      "description": "queen",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 18,
+      "letterkey": "r",
       "img": "https://alphabetimals.com/wp-content/uploads/R3.png",
       "cap": "R",
-      "small": "r"
+      "small": "r",
+      "description": "rose",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 19,
+      "letterkey": "s",
       "img": "https://alphabetimals.com/wp-content/uploads/S1.png",
       "cap": "S",
-      "small": "s"
+      "small": "s",
+      "description": "ship",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 20,
+      "letterkey": "t",
       "img": "https://alphabetimals.com/wp-content/uploads/T2.png",
       "cap": "T",
-      "small": "t"
+      "small": "t",
+      "description": "tiger",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 21,
+      "letterkey": "u",
       "img": "https://alphabetimals.com/wp-content/uploads/U4.png",
       "cap": "U",
-      "small": "u"
+      "small": "u",
+      "description": "urn",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 22,
+      "letterkey": "v",
       "img": "https://alphabetimals.com/wp-content/uploads/V1.png",
       "cap": "V",
-      "small": "v"
+      "small": "v",
+      "description": "van",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 23,
+      "letterkey": "w",
       "img": "https://alphabetimals.com/wp-content/uploads/W7.png",
       "cap": "W",
-      "small": "w"
+      "small": "w",
+      "description": "watch",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 24,
+      "letterkey": "x",
       "img": "https://alphabetimals.com/wp-content/uploads/X4.png",
       "cap": "X",
-      "small": "x"
+      "small": "x",
+      "description": "xmass",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 25,
+      "letterkey": "y",
       "img": "https://alphabetimals.com/wp-content/uploads/Y1.png",
       "cap": "Y",
-      "small": "y"
+      "small": "y",
+      "description": "yak",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
     },
     {
-      "letterkey": 26,
+      "letterkey": "z",
       "img": "https://alphabetimals.com/wp-content/uploads/Z1.png",
       "cap": "Z",
-      "small": "z"
+      "small": "z",
+      "description": "zebra",
+      "imgmain": "https://alphabetimals.com/wp-content/uploads/V1.png",
+      "minidata": [
+        {
+          "miniimage":
+              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
+          "minidescription": "zebra",
+        },
+        {
+          "miniimage":
+              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
+          "minidescription": "zoo",
+        }
+      ]
     },
   ];
 
@@ -200,11 +287,20 @@ class _ChartState extends State<AlphaChart> {
           children: List.generate(listSize, (index) {
             return InkWell(
               child: AlphaBlock(
-                  key: data[index]["letterkey"],
+                  // key: data[index]["letterkey"] ?? '',
                   img: data[index]["img"],
                   cap: data[index]["cap"],
                   small: data[index]["small"]),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return LetterPage(
+                    cap: data[index]["cap"],
+                    small: data[index]["small"],
+                    description: data[index]["description"],
+                    imgLetter: data[index]["imgmain"],
+                  );
+                }));
+              },
             );
           }),
         )

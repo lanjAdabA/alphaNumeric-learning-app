@@ -59,11 +59,11 @@ class _ColorPageState extends State<ColourPage> {
         appBar: AppBar(
           title: Text(
             _colorname[_index % _colorname.length],
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
               fontFamily: "Monoton",
-              color: _colors[_index % _colors.length],
+              //color: _colors[_index % _colors.length],
             ),
           ),
           centerTitle: true,

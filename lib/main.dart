@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+// import 'package:learn/widgets/letterpage.dart';
+// import 'package:provider/provider.dart';
 
 import 'package:learn/widgets/alphachart.dart';
 import 'package:learn/widgets/colorspage.dart';
-import 'package:learn/widgets/letterpage.dart';
 import 'package:learn/widgets/numpage.dart';
 
 void main(List<String> args) {
@@ -20,6 +20,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blueGrey),
       debugShowCheckedModeBanner: false,
       home: const LearnApp(),
+      // initialRoute: "/",
+      // routes: {
+      //   "/": (context) => const LearnApp(),
+      //   "/second": (context) => const LetterPage(
+      //         bigLetter:'bigLetter',
+      //         descriptionLetter: 'descriptionLetter',
+      //         imgLetter: 'imgLetter',
+      //         smallLetter: 'smallLetter',
+      //       ),
+      // },
     );
   }
 }
