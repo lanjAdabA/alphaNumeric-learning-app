@@ -1,3 +1,7 @@
+// import 'dart:developer';
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:learn/widgets/minilettercard.dart';
 
@@ -6,26 +10,34 @@ class LetterPage extends StatefulWidget {
   final String small;
   final String description;
   final String imgLetter;
-  const LetterPage(
-      {Key? key,
-      required this.cap,
-      required this.small,
-      required this.description,
-      required this.imgLetter})
-      : super(key: key);
+  //place to check
+  final List<Map<String, dynamic>> minipage;
+
+  // List minipage = [];
+  const LetterPage({
+    Key? key,
+    required this.cap,
+    required this.small,
+    required this.description,
+    required this.imgLetter,
+    required this.minipage,
+  }) : super(key: key);
 
   @override
   State<LetterPage> createState() => _LetterPageState();
 }
 
 class _LetterPageState extends State<LetterPage> {
-  final List data = [];
+  //place to check
 
   @override
   Widget build(BuildContext context) {
+    log(widget.minipage.toString());
+    // String a = widget.minipage[0]["minidescription"];
+    // print("object$a");
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Letter_Page"),
+        title: const Text("Letter-Page"),
         centerTitle: true,
       ),
       body: Container(
@@ -139,39 +151,23 @@ class _LetterPageState extends State<LetterPage> {
               ],
             ),
             // ListView.builder(
-            //     itemCount: 3,
+            //     itemCount: 4,
             //     // scrollDirection: Axis.horizontal,
-            //     itemBuilder: ((context, index) => const MiniLetterCard()))
+            //     itemBuilder: ((context, index) => const MiniLetterCard(minidescription: '', miniimage: '',))),
 
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.all(20),
                 shrinkWrap: true,
-                itemCount: 4,
+                itemCount: widget.minipage.length,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) {
+                itemBuilder: (context, index) {
+                  //   return Text(widget.minipage[index].toString());
                   return MiniLetterCard(
-                      miniimage: data[index]["miniimage"],
-                      minidescription: data[index]["minidescription"]);
+                      miniimage: widget.minipage[index]["miniimage"],
+                      minidescription: widget.minipage[index]
+                          ["minidescription"]);
                 },
-                // children: const [
-                // MiniLetterCard(
-                //   miniimage: "",
-                //   minidescription: '',
-                // ),
-                // MiniLetterCard(
-                //   miniimage: '',
-                //   minidescription: '',
-                // ),
-                // MiniLetterCard(
-                //   miniimage: '',
-                //   minidescription: '',
-                // ),
-                // MiniLetterCard(
-                //   miniimage: '',
-                //   minidescription: '',
-                // ),
-                //],
               ),
             )
           ],
