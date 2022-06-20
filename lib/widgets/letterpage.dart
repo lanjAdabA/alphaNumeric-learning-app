@@ -13,6 +13,8 @@ class LetterPage extends StatefulWidget {
   //place to check
   final List<Map<String, dynamic>> minipage;
 
+  //final
+
   // List minipage = [];
   const LetterPage({
     Key? key,
@@ -32,7 +34,7 @@ class _LetterPageState extends State<LetterPage> {
 
   @override
   Widget build(BuildContext context) {
-    log(widget.minipage.toString());
+    //log(widget.minipage.toString());
     // String a = widget.minipage[0]["minidescription"];
     // print("object$a");
     return Scaffold(
@@ -121,12 +123,12 @@ class _LetterPageState extends State<LetterPage> {
                     ),
                     Text(
                       widget.description,
-                      style: const TextStyle(fontSize: 40),
+                      style: const TextStyle(fontSize: 36),
                     )
                   ],
                 ),
                 Opacity(
-                  opacity: .1,
+                  opacity: .0,
                   child: Column(
                     children: [
                       const SizedBox(

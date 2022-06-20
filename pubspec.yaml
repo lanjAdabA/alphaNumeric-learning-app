@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
   provider: ^6.0.3
+  audioplayers: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -91,6 +92,14 @@ flutter:
     - family: Monoton
       fonts:
         - asset: assets/Monoton-Regular.ttf
+
+    - family: PressStart
+      fonts:
+        - asset: assets/PressStart2P-Regular.ttf
+
+    - family: Nosifer
+      fonts:
+        - asset: assets/Nosifer-Regular.ttf
        
       
   

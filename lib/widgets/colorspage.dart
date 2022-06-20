@@ -57,13 +57,14 @@ class _ColorPageState extends State<ColourPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          toolbarHeight: 150,
           title: Text(
             _colorname[_index % _colorname.length],
-            style: const TextStyle(
-              fontSize: 30,
+            style: TextStyle(
+              fontSize: 80,
               fontWeight: FontWeight.bold,
-              fontFamily: "Monoton",
-              //color: _colors[_index % _colors.length],
+              fontFamily: "Nosifer",
+              color: _colors[_index % _colors.length],
             ),
           ),
           centerTitle: true,

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:learn/widgets/alphachart.dart';
 import 'package:learn/widgets/colorspage.dart';
 import 'package:learn/widgets/numpage.dart';
+import 'package:learn/widgets/puzzlepage.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -53,7 +54,8 @@ class _LearnAppState extends State<LearnApp> {
     //const LetterPage(),
     const AlphaChart(),
     const NumPage(),
-    const ColourPage()
+    const ColourPage(),
+    const PuzzlePage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -88,10 +90,14 @@ class _LearnAppState extends State<LearnApp> {
           onTap: _navigationBottomBar,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.apps), label: "ALPHABET (A B C)"),
+                icon: Icon(Icons.abc_outlined), label: "ALPHABET (A B C)"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.apps), label: "NUMBERS (1 2 3)"),
-            BottomNavigationBarItem(icon: Icon(Icons.apps), label: "COLORS"),
+                icon: Icon(Icons.format_list_numbered_outlined),
+                label: "NUMBERS (1 2 3)"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.color_lens_outlined), label: "COLORS"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.extension_outlined), label: "COLORS"),
           ]), // body: Container(
       //   color: Colors.blueGrey,
       //   child:const  Center(child:  Text("data")),
@@ -100,6 +106,8 @@ class _LearnAppState extends State<LearnApp> {
   }
 }
 
+
+//"🍎 🍊 🍋 🥦 🍆"
 
 /* 
 
