@@ -341,7 +341,7 @@ class _ChartState extends State<AlphaChart> {
         },
         {
           "miniimage":
-              "https://thumbs.dreamstime.com/b/jar-strawberry-jam-white-background-preserved-fruits-35416936.jpg",
+              'https://5.imimg.com/data5/CW/WZ/TS/SELLER-5099161/kissan-jam-500x500.jpg',
           "minidescription": "Jam",
         },
         {
@@ -470,12 +470,12 @@ class _ChartState extends State<AlphaChart> {
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
+              'https://media.istockphoto.com/photos/needle-for-sewing-picture-id158429206?k=20&m=158429206&s=612x612&w=0&h=r0LzKznybnxC1XAP6BN978Ab5QU6zjXTXgv9siikKfQ=',
           "minidescription": "Needle",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
+              'https://media.istockphoto.com/photos/fish-net-isolated-on-white-picture-id596346662?k=20&m=596346662&s=612x612&w=0&h=-OpeHDD8eFTkvmuriD0qVYsjwnv5es3pTgtZsdP57uE=',
           "minidescription": "Net",
         },
       ],
@@ -485,29 +485,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/O6.png",
       "cap": "O",
       "small": "o",
-      "description": "owl",
+      "description": "O for Owl",
       "imgmain":
           "https://media.istockphoto.com/photos/great-horned-owl-bubo-virginianus-subarcticus-picture-id108528773?k=20&m=108528773&s=612x612&w=0&h=A6QUm8rMUVgte7qInVg4jE1yGHei3tcxHxwx8qei4kQ=",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://media.istockphoto.com/photos/orange-picture-id185284489?k=20&m=185284489&s=612x612&w=0&h=LLY2os0YTG2uAzpBKpQZOAC4DGiXBt1jJrltErTJTKI=',
+          "minidescription": "Orange",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://upload.wikimedia.org/wikipedia/commons/0/07/Struthio_camelus_-_Etosha_2014_%281%29_white_background.jpg',
+          "minidescription": "Ostrich",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              'https://img.freepik.com/free-photo/purple-onion-white-background_319172-2020.jpg?w=2000',
+          "minidescription": "Onion",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://media.istockphoto.com/photos/octopus-picture-id867283292?k=20&m=867283292&s=612x612&w=0&h=T0m4BL5NhrextUgyGUVVijpveke-G88BUE1VfJq78os=',
+          "minidescription": "Octopus",
         },
       ],
     },
@@ -516,29 +516,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/P8.png",
       "cap": "P",
       "small": "p",
-      "description": "pen",
+      "description": "P for Pen",
       "imgmain":
           "https://media.istockphoto.com/photos/ballpoint-pen-isolated-on-white-background-cutout-picture-id498609933?k=20&m=498609933&s=612x612&w=0&h=1AofVPoqEeWVFD_OxtwgfCCHEI-XD3vcJMtkOdEtJsc=",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://media.istockphoto.com/photos/parrot-picture-id1171948767?k=20&m=1171948767&s=612x612&w=0&h=WMjjcqVbQgEibxCfwK3Z-DY2iZk0eCaxsDZkbzBp9eo=',
+          "minidescription": "Parrot",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://img.freepik.com/free-photo/juicy-pineapple-white-background-isolated_96064-298.jpg?w=2000',
+          "minidescription": "Pineapple",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              'https://media.istockphoto.com/photos/pig-picture-id487646988?k=20&m=487646988&s=612x612&w=0&h=XSfi_LdOJNwuHacFvTgGhWS3xEB1MKPe0NW3jzFN8l4=',
+          "minidescription": "Pig",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://media.istockphoto.com/photos/emperor-penguin-isolated-on-white-background-with-clipping-path-picture-id1190204868?k=20&m=1190204868&s=170667a&w=0&h=ketMQZaxUpvfkwPVoAJPdSPLRw8DdLUr6mqPLayaA3o=',
+          "minidescription": "Penguin",
         },
       ],
     },
@@ -547,29 +547,28 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/Q1.png",
       "cap": "Q",
       "small": "q",
-      "description": "queen",
+      "description": "Q for Queen",
       "imgmain":
           "https://render.fineartamerica.com/images/rendered/default/flat/round-beach-towel/images/artworkimages/medium/3/queen-elizabeth-ii-carmen-polidano.jpg?&targetx=-2&targety=-16&imagewidth=788&imageheight=816&modelwidth=788&modelheight=788&backgroundcolor=070101&orientation=0",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://t4.ftcdn.net/jpg/04/10/11/83/360_F_410118346_9GirsRS1fbqL59S0jLIm3rGEtuGzGWHF.jpg',
+          "minidescription": "Quill",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://img.freepik.com/free-photo/japanese-quail-front-white-background_87557-17336.jpg',
+          "minidescription": "Quail",
+        },
+        {
+          "miniimage": 'https://m.media-amazon.com/images/I/51aLhfaZFiL.jpg',
+          "minidescription": "Quilt",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
-        },
-        {
-          "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              "https://africa-images.com/public/photos/N/U/NUTh8DtMjORAJvvn04hwUOz4O/NUTh8DtMjORAJvvn04hwUOz4O_smaller.jpg",
+          "minidescription": "Queue",
         },
       ],
     },
@@ -578,29 +577,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/R3.png",
       "cap": "R",
       "small": "r",
-      "description": "rose",
+      "description": "R for Rose",
       "imgmain":
           "https://media.istockphoto.com/photos/red-rose-on-isolated-background-picture-id467525870?k=20&m=467525870&s=612x612&w=0&h=qN380pxbOdpSHrY7O19S7wpy2_lO1CIvJmt5nAlsFX4=",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://img.freepik.com/free-photo/side-view-red-brown-cute-rabbit-isolated-white-background_112781-114.jpg?w=2000',
+          "minidescription": "Rabbit",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://t4.ftcdn.net/jpg/02/84/04/53/360_F_284045316_A5SHVJQo4igIMLZP5otcawGdOesJM8IM.jpg',
+          "minidescription": "Rhino",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              'https://media.istockphoto.com/photos/gold-wedding-ringson-white-picture-id869682500?k=20&m=869682500&s=612x612&w=0&h=OGW1h48GDPkH-rOzz3HWeWe8N1NrtztjO9i8RArv9dE=',
+          "minidescription": "Ring",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://media.istockphoto.com/photos/space-rocket-isolated-on-white-background-picture-id852721936?k=20&m=852721936&s=170667a&w=0&h=AbkeXO1B_884D6jL7J_b12PdpMJRG--KcA2s1PBSRqQ=',
+          "minidescription": "Rocket",
         },
       ],
     },
@@ -609,29 +608,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/S1.png",
       "cap": "S",
       "small": "s",
-      "description": "ship",
+      "description": "S for Spider",
       "imgmain":
-          "https://t3.ftcdn.net/jpg/01/25/62/04/360_F_125620432_V4ROqppGV0VmBdDVXi2vZpo1D0nvJ94e.jpg",
+          'https://media.istockphoto.com/photos/wasp-spider-viewed-from-up-high-argiope-bruennichi-isolated-on-white-picture-id889610028?k=20&m=889610028&s=612x612&w=0&h=E254N4GLBjhSjqN6Hu85xC6ppPHLZg94OqAzPQWDufQ=',
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://static.vecteezy.com/system/resources/thumbnails/000/797/231/small_2x/athletic-shoes-men-s-sneakers-on-a-white-background.jpg',
+          "minidescription": "Shoe",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://media.istockphoto.com/photos/old-silver-spoon-picture-id519939025?k=20&m=519939025&s=612x612&w=0&h=iO_73JuSBxpmd4ycWcXio4W0KdShLBNp76l5URVt454=',
+          "minidescription": "Spoon",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              'https://img.freepik.com/free-photo/soap-bar-isolated-white-background-close-up_93675-134651.jpg?w=2000',
+          "minidescription": "Soap",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              "https://t3.ftcdn.net/jpg/01/25/62/04/360_F_125620432_V4ROqppGV0VmBdDVXi2vZpo1D0nvJ94e.jpg",
+          "minidescription": "Ship",
         },
       ],
     },
@@ -640,29 +639,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/T2.png",
       "cap": "T",
       "small": "t",
-      "description": "tiger",
+      "description": "T for Tomato",
       "imgmain":
-          "https://img.freepik.com/free-photo/tiger-lying-down-cleaning-its-paw-isolated-white_191971-26176.jpg?w=2000",
+          'https://t4.ftcdn.net/jpg/00/29/78/85/360_F_29788505_PbGEDPBhQIxW2soJMOpLlYOybLrvPt2e.jpg',
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              "https://img.freepik.com/free-photo/tiger-lying-down-cleaning-its-paw-isolated-white_191971-26176.jpg?w=2000",
+          "minidescription": "Tiger",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              "https://t3.ftcdn.net/jpg/00/07/00/92/360_F_7009270_8E6cMwLpnLQiD31xaxPqk5ev8gwnlcmk.jpg",
+          "minidescription": "Turtle",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              'https://media.istockphoto.com/photos/modern-high-speed-train-isolated-on-white-picture-id614648698?k=20&m=614648698&s=612x612&w=0&h=34plRdW56zcVN9ipKJUzJEA5rtFOMW81E-SKOFSVP_M=',
+          "minidescription": "Train",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://media.istockphoto.com/photos/coffee-table-isolated-on-white-background-with-clipping-path-included-picture-id1250026682?k=20&m=1250026682&s=612x612&w=0&h=-TB7xWAUa4LUnsq1kyVIUmlzwm2WWa_1JWj7proQaRw=',
+          "minidescription": "Table",
         },
       ],
     },
@@ -677,23 +676,23 @@ class _ChartState extends State<AlphaChart> {
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://media.istockphoto.com/photos/blue-umbrella-wclipping-path-picture-id157440095?k=20&m=157440095&s=612x612&w=0&h=-VkExBS4i93ttqp8b1Ra_mQyrwXDwX8NC_HjEuIfxx8=',
+          "minidescription": "Umbrella",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://africa-images.com/public/photos/6/A/6AM7NTBK99KzzmF5kjtOfpAff/6AM7NTBK99KzzmF5kjtOfpAff_smaller.jpg',
+          "minidescription": "Uniform",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              'https://i.pinimg.com/736x/28/2e/a0/282ea0aeffa00207c6f75a4786fb51c1.jpg',
+          "minidescription": "Unicorn",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://img.freepik.com/free-vector/circus-unicycle-bike-isolated-white-background-design-elements-vector-illustration_201926-1550.jpg?w=2000',
+          "minidescription": "Unicycle",
         },
       ],
     },
@@ -702,29 +701,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/V1.png",
       "cap": "V",
       "small": "v",
-      "description": "van",
+      "description": "V for Van",
       "imgmain":
           "https://t4.ftcdn.net/jpg/00/78/35/99/360_F_78359966_df0fomf8xX25H2M00YFthQqpMdJQgpQ9.jpg",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://t3.ftcdn.net/jpg/01/98/17/82/360_F_198178225_WEVyvRaweIbXZRDRnZ0wWikmkjVSOxIk.jpg',
+          "minidescription": "Viollin",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://media.istockphoto.com/vectors/safety-vest-set-vector-id1307144645?k=20&m=1307144645&s=612x612&w=0&h=rpes9ykq8eaD1IBdM5iT1309dSPr0hUEp1fFqgiNOR8=',
+          "minidescription": "Vest",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              'https://i.pinimg.com/736x/9e/14/5b/9e145ba1a3f22c3f858bd6e7ba478faf.jpg',
+          "minidescription": "Vulture",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://t4.ftcdn.net/jpg/02/08/87/81/360_F_208878179_XWGL0wPpp9lRLRja9fITNwMAHYzTwlUK.jpg',
+          "minidescription": "Vegetables",
         },
       ],
     },
@@ -733,29 +732,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/W7.png",
       "cap": "W",
       "small": "w",
-      "description": "watch",
+      "description": "W for Watch",
       "imgmain":
           "https://t4.ftcdn.net/jpg/03/02/10/41/360_F_302104122_icLufAvgt2ZsR3QP5PG4DhRfwEvWHFWq.jpg",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://img.freepik.com/free-vector/blue-whale-isolated-white-background-watercolor-illustration-template-closeup_119039-227.jpg',
+          "minidescription": "Whale",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://img.freepik.com/free-photo/watermelon-fruit-with-cut-piece-isolated-white-background_285124-2.jpg',
+          "minidescription": "Watermelon",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              'https://media.istockphoto.com/photos/white-plastic-window-picture-id121592183?k=20&m=121592183&s=612x612&w=0&h=KtV7ueWyCbcoZSMAdUIJvnq_zVT3ok9nd3HJLj2sBQ8=',
+          "minidescription": "Window",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://img.freepik.com/free-photo/whistle-cards-white-background-isolated-3d-illustration_356060-3002.jpg',
+          "minidescription": "Wistle",
         },
       ],
     },
@@ -764,29 +763,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/X4.png",
       "cap": "X",
       "small": "x",
-      "description": "xylophone",
+      "description": "X for Xylophone",
       "imgmain":
           "https://media.istockphoto.com/photos/xylophone-picture-id523395087?k=20&m=523395087&s=612x612&w=0&h=G9sfGpIBwvF_Vnt4YlsqZF57Z4xdO9Lm8MMewqgaW1I=",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://static.vecteezy.com/system/resources/previews/005/016/762/original/illustration-of-a-snapshot-of-the-lungs-x-ray-of-the-lungs-isolated-on-a-white-background-vector.jpg',
+          "minidescription": "Xray",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://media.istockphoto.com/photos/decorated-christmas-tree-isolated-on-white-picture-id1170077413?k=20&m=1170077413&s=612x612&w=0&h=v0UHZpHRwxS1BEHgUFdUNl8qiX_AR7TCKxjVY_F-CSI=',
+          "minidescription": "Xmas tree",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
+              "https://static.vecteezy.com/system/resources/previews/003/544/438/non_2x/merry-christmas-text-logo-with-santa-claus-and-friends-free-vector.jpg",
+          "minidescription": "Xmas",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://us.123rf.com/450wm/zosimus/zosimus1903/zosimus190300039/119646450-illustration-of-an-indian-glassy-fish-paranoid-ranga-with-a-white-background-.jpg?ver=6',
+          "minidescription": "Xray Fish",
         },
       ],
     },
@@ -795,29 +794,28 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/Y1.png",
       "cap": "Y",
       "small": "y",
-      "description": "yak",
+      "description": "Y for Yak",
       "imgmain":
           "https://img.freepik.com/free-photo/yak-white-isolated_191971-10926.jpg?w=2000",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "apple",
+              'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/luxury-yacht-isolated-on-white-background-goce-risteski.jpg',
+          "minidescription": "Yatch",
+        },
+        {
+          "miniimage": 'https://vistapointe.net/images/yoyo-2.jpg',
+          "minidescription": "Yo-Yo",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "ant",
+              'https://media.istockphoto.com/photos/young-woman-exercising-yoga-on-a-mat-picture-id1206713929?k=20&m=1206713929&s=612x612&w=0&h=LAdguzh6Co0cVbWe3K7GyUaXiJscwphip8DN1Yqp2Po=',
+          "minidescription": "Yoga",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "axe",
-        },
-        {
-          "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "aeroplane",
+              'https://media.istockphoto.com/photos/clew-of-green-thread-for-knitting-isolated-on-white-background-picture-id918294950?k=20&m=918294950&s=612x612&w=0&h=N3DMsuX7Tnrw_jetiJUpWY9GvjVDvI_xr7l1Rne1kl4=',
+          "minidescription": "Yarn",
         },
       ],
     },
@@ -826,29 +824,29 @@ class _ChartState extends State<AlphaChart> {
       "img": "https://alphabetimals.com/wp-content/uploads/Z1.png",
       "cap": "Z",
       "small": "z",
-      "description": "zebra",
+      "description": "Z for Zebra",
       "imgmain":
           "https://media.istockphoto.com/photos/plain-burchells-zebra-female-standing-side-view-on-white-picture-id176835517?k=20&m=176835517&s=612x612&w=0&h=IOCRqrobNsTtaQC_UsLWWVb5AfWwyy2SVWXyYiPRfLc=",
       "minipage": [
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "zebra",
+              'https://img.freepik.com/free-vector/clothes-golden-zip-set-white-background-vector-illustration_269504-1223.jpg?w=2000',
+          "minidescription": "Zip",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "zoo w1",
+              'https://img.freepik.com/free-vector/illustration-collection-zoo-animals-white-background_29190-3186.jpg',
+          "minidescription": "Zoo",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "zebra",
+              'http://www.mikewallteacher.com/wp-content/uploads/2016/08/zig-zag.jpg',
+          "minidescription": "Zigzag",
         },
         {
           "miniimage":
-              "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-          "minidescription": "zoo w1",
+              'https://5.imimg.com/data5/FB/SX/MY-11406557/pedestrian-crossing-sign-board-500x500.jpg',
+          "minidescription": "Zebra Crossing",
         },
       ],
     },

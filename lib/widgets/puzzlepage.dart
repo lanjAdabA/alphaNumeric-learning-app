@@ -1,7 +1,9 @@
 import 'dart:math';
-// import 'package:audioplayers/audioplayers.dart';
 
 import 'package:flutter/material.dart';
+// import 'package:audioplayers/audio_cache.dart';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+// import 'package:flutter_beep/flutter_beep.dart';
 
 class PuzzlePage extends StatefulWidget {
   const PuzzlePage({Key? key}) : super(key: key);
@@ -22,15 +24,50 @@ class _PuzzlePageState extends State<PuzzlePage> {
     "🥔": Colors.brown,
   };
 
+  // final Map choices2 = {
+  //   "🍎": {color: Colors.red, text: 'Red'},
+  //   "🍊": Colors.orange,
+  //   "🍋": Colors.yellow,
+  //   "🍆": Colors.purple,
+  //   "🥦": Colors.green,
+  //   "🥔": Colors.brown,
+  // };
+
   int seed = 0;
-  // final AudioCache _audioController =AudioCache() ;
+  // final AudioPlayer _audioController =AudioPlayer() ;
+  // AudioPlayer audioPlugin = AudioPlayer();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Score ${score.length} /6',
-            style: const TextStyle(fontFamily: "PressStart"),
+          title: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    "*Hint*",
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Color.fromARGB(255, 182, 189, 179)),
+                  ),
+                  Text(
+                    " -- Match to color",
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Color.fromARGB(255, 156, 172, 172)),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Text(
+                'Score ${score.length} /6',
+                style: const TextStyle(fontFamily: "PressStart"),
+              ),
+            ],
           ),
           centerTitle: true,
           backgroundColor: Colors.red,
@@ -74,7 +111,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
       builder: ((BuildContext context, List<String?> incoming, List rejected) {
         if (score[emoji] == true) {
           return Container(
-            color: Colors.white,
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+                color: Colors.white),
+            // color: Colors.white,
             alignment: Alignment.center,
             height: 80,
             width: 200,
@@ -85,9 +127,14 @@ class _PuzzlePageState extends State<PuzzlePage> {
           );
         } else {
           return Container(
-            color: choices[emoji],
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: choices[emoji],
+            ),
+            // color: choices[emoji],
             height: 80,
             width: 200,
+            //child: Center(child: Text(choices[emoji].toString())),
           );
         }
       }),
@@ -96,7 +143,10 @@ class _PuzzlePageState extends State<PuzzlePage> {
         setState(() {
           score[emoji] = true;
         });
-        //  _audioController.play('success.mp3');
+        FlutterRingtonePlayer.play(fromAsset: "assets/success.wav");
+        // FlutterBeep.beep(false);
+        // FlutterBeep.playSysSound(1);
+        // audioPlugin.play('success.wav');
       },
       onLeave: (data) {},
     );
@@ -125,4 +175,4 @@ class Emoji extends StatelessWidget {
 }
 
 
-//"🍎 🍊 🍋 🍆 🥦 🥔 ✅ ⬜ ⏹️ 🔲 👌 👍"
+//"🍎 🍊 🍋 🍆 🥦 🥔 ✅ ⬜ ⏹️ 🔲 👌 👍  ctrl+cmd+space "

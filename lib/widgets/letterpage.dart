@@ -1,9 +1,8 @@
 // import 'dart:developer';
-
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:learn/widgets/minilettercard.dart';
+import 'package:learn/widgets/popuponhold.dart';
+import 'package:learn/widgets/popuponholdcenter.dart';
 
 class LetterPage extends StatefulWidget {
   final String cap;
@@ -113,8 +112,24 @@ class _LetterPageState extends State<LetterPage> {
                       child: SizedBox(
                         height: 500,
                         width: 500,
-                        child: Image.network(
-                          widget.imgLetter,
+                        child: InkWell(
+                          child: Image.network(
+                            widget.imgLetter,
+                          ),
+                          onLongPress: () {
+                            showModalBottomSheet(
+                                backgroundColor:
+                                    const Color.fromARGB(255, 255, 255, 255),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18)),
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return PopUpCenterPage(
+                                    img: widget.imgLetter,
+                                    description: widget.description,
+                                  );
+                                });
+                          },
                         ),
                       ),
                     ),
@@ -165,10 +180,28 @@ class _LetterPageState extends State<LetterPage> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   //   return Text(widget.minipage[index].toString());
-                  return MiniLetterCard(
-                      miniimage: widget.minipage[index]["miniimage"],
-                      minidescription: widget.minipage[index]
-                          ["minidescription"]);
+                  return InkWell(
+                    child: MiniLetterCard(
+                        miniimage: widget.minipage[index]["miniimage"],
+                        minidescription: widget.minipage[index]
+                            ["minidescription"]),
+                    onLongPress: () {
+                      showModalBottomSheet(
+                          backgroundColor:
+                              const Color.fromARGB(255, 255, 255, 255),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18)),
+                          context: context,
+                          builder: (BuildContext context) {
+                            return PopUpPage(
+                              miniimage: widget.minipage[index]["miniimage"],
+                              minidescription: widget.minipage[index]
+                                  ["minidescription"],
+                              cap: widget.cap,
+                            );
+                          });
+                    },
+                  );
                 },
               ),
             )

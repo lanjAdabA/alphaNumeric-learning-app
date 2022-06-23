@@ -1,182 +1,111 @@
 import 'package:flutter/material.dart';
-
-class PageNum extends StatelessWidget {
-  const PageNum({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const NumPage();
-  }
-}
+import 'package:learn/widgets/numblock.dart';
 
 class NumPage extends StatefulWidget {
-  const NumPage({Key? key}) : super(key: key);
+  const NumPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<NumPage> createState() => _NumblockState();
 }
 
 class _NumblockState extends State<NumPage> {
+  final List<Map<String, dynamic>> numdata = [
+    {
+      'fig': "1",
+      'inwords': 'ONE',
+      "color": Colors.red,
+      "image":
+          "https://media.istockphoto.com/vectors/number-1-educational-card-learning-counting-with-fingers-of-hand-vector-id1021001062?k=20&m=1021001062&s=612x612&w=0&h=6txrCPyQ5M6HgyEIfpycbUJ2qD8aFah2qBDvoR8YN8U="
+    },
+    {
+      'fig': "2",
+      'inwords': 'TWO',
+      "color": Colors.pink,
+      "image":
+          "https://media.istockphoto.com/vectors/number-2-educational-card-learning-counting-with-fingers-of-hand-vector-id1021001020?k=20&m=1021001020&s=612x612&w=0&h=r9Hp8I6_aMOtoGmRm_K5hBnBmQ7wQHTUX7caK6C9lUM="
+    },
+    {
+      'fig': "3",
+      'inwords': 'THREE',
+      "color": Colors.purple,
+      "image":
+          "https://media.istockphoto.com/vectors/number-3-educational-card-learning-counting-with-fingers-of-hand-vector-id1021001058?k=20&m=1021001058&s=612x612&w=0&h=umnpqdv9PnbBr1rOhpJEdaWXJzoUo14wRc7spccFm2E="
+    },
+    {
+      'fig': "4",
+      'inwords': 'FOUR',
+      "color": Colors.indigo,
+      "image":
+          "https://media.istockphoto.com/vectors/number-4-educational-card-learning-counting-with-fingers-of-hand-vector-id1021001028?k=20&m=1021001028&s=612x612&w=0&h=FiGcN-e7toyWl9e7jymqoh7uw94AOE620QIop9NQ3Yg="
+    },
+    {
+      'fig': "5",
+      'inwords': 'FIVE',
+      "color": Colors.blue,
+      "image":
+          "https://media.istockphoto.com/vectors/number-5-educational-card-learning-counting-with-fingers-of-hand-vector-id1021003420?k=20&m=1021003420&s=612x612&w=0&h=jAvScp2Q7Nw7cJgHwHlqC7GfnVNy5kKdbNk36Jk6o3I="
+    },
+    {
+      'fig': "6",
+      'inwords': 'SIX',
+      "color": Colors.cyan,
+      "image":
+          "https://media.istockphoto.com/vectors/number-6-educational-card-learning-counting-with-fingers-of-hand-vector-id1021003480?k=20&m=1021003480&s=612x612&w=0&h=JaEJNSNp19iW3fBBx9uz1fog9yWLWpBE8wTkmrz4dIE="
+    },
+    {
+      'fig': "7",
+      'inwords': 'SEVEN',
+      "color": Colors.green,
+      "image":
+          "https://media.istockphoto.com/vectors/number-7-educational-card-learning-counting-with-fingers-of-hand-vector-id1021003490?k=20&m=1021003490&s=612x612&w=0&h=PYxveRuCBOy9Nfjyq3a98VNCeRNLvLXhGuoiBUR3c8w="
+    },
+    {
+      'fig': "8",
+      'inwords': 'EIGHT',
+      "color": Colors.yellow,
+      "image":
+          "https://media.istockphoto.com/vectors/number-8-educational-card-learning-counting-with-fingers-of-hand-vector-id1021003576?k=20&m=1021003576&s=612x612&w=0&h=DwHYmMWPwQE_rTZR2NZAdUkblY6G2waACZPdPakSMtw="
+    },
+    {
+      'fig': "9",
+      'inwords': 'NINE',
+      "color": Colors.amber,
+      "image":
+          "https://media.istockphoto.com/vectors/number-9-educational-card-learning-counting-with-fingers-of-hand-vector-id1021003642?k=20&m=1021003642&s=612x612&w=0&h=7Gu_6bxS-T8-udF8H9QAPJrvuI5q_l69LbHaO-DU2OI="
+    },
+    {
+      'fig': "10",
+      'inwords': 'TEN',
+      "color": Colors.orange,
+      "image":
+          "https://media.istockphoto.com/vectors/number-10-educational-card-learning-counting-with-fingers-of-hand-vector-id1021001216?k=20&m=1021001216&s=612x612&w=0&h=vhegu4iNxv4EJyu6L0oDlQxggjevFBKPc3QzbBr6kV4="
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text("Number_Chart"),
-        centerTitle: true,
-      ),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        scrollDirection: Axis.vertical,
-        children: [
-          Row(
-            children: const [
-              Text(
-                "1",
-                style: TextStyle(
-                    fontFamily: "CarterOne", fontSize: 60, color: Colors.red),
-              ),
-              Text(
-                "   -   ONE",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "2",
-                style: TextStyle(
-                    fontFamily: "CarterOne", fontSize: 60, color: Colors.pink),
-              ),
-              Text(
-                "   -   TWO",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "3",
-                style: TextStyle(
-                    fontFamily: "CarterOne",
-                    fontSize: 60,
-                    color: Colors.purple),
-              ),
-              Text(
-                "   -   THREE",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "4",
-                style: TextStyle(
-                    fontFamily: "CarterOne",
-                    fontSize: 60,
-                    color: Colors.indigo),
-              ),
-              Text(
-                "   -   FOUR",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "5",
-                style: TextStyle(
-                    fontFamily: "CarterOne", fontSize: 60, color: Colors.blue),
-              ),
-              Text(
-                "   -   FIVE",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "6",
-                style: TextStyle(
-                    fontFamily: "CarterOne", fontSize: 60, color: Colors.cyan),
-              ),
-              Text(
-                "   -   SIX",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "7",
-                style: TextStyle(
-                    fontFamily: "CarterOne", fontSize: 60, color: Colors.teal),
-              ),
-              Text(
-                "   -   SEVEN",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "8",
-                style: TextStyle(
-                    fontFamily: "CarterOne", fontSize: 60, color: Colors.green),
-              ),
-              Text(
-                "   -   EIGHT",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "9",
-                style: TextStyle(
-                    fontFamily: "CarterOne", fontSize: 60, color: Colors.lime),
-              ),
-              Text(
-                "   -   NINE",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              Text(
-                "10",
-                style: TextStyle(
-                    fontFamily: "CarterOne",
-                    fontSize: 60,
-                    color: Colors.yellow),
-              ),
-              Text(
-                "   -   TEN",
-                style: TextStyle(
-                    fontFamily: "Anton", fontSize: 30, color: Colors.black),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: const Text("Number_Chart"),
+          centerTitle: true,
+        ),
+        body: SingleChildScrollView(
+          child: ListView.builder(
+              padding: const EdgeInsets.all(10),
+              itemCount: 10,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              itemBuilder: ((context, index) {
+                return NumBlock(
+                  fig: numdata[index]['fig'],
+                  inwords: numdata[index]['inwords'],
+                  color: numdata[index]["color"],
+                  image: numdata[index]['image'],
+                );
+              })),
+        ));
   }
 }

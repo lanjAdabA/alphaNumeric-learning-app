@@ -97,7 +97,7 @@ class _LearnAppState extends State<LearnApp> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.color_lens_outlined), label: "COLORS"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.extension_outlined), label: "COLORS"),
+                icon: Icon(Icons.extension_outlined), label: "EXERCISE"),
           ]), // body: Container(
       //   color: Colors.blueGrey,
       //   child:const  Center(child:  Text("data")),
