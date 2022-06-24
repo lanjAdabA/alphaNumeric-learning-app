@@ -1,17 +1,5 @@
 import 'package:flutter/material.dart';
-
-class Block extends StatelessWidget {
-  const Block({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const AlphaBlock(
-      cap: '',
-      img: '',
-      small: '',
-    );
-  }
-}
+import 'package:flutter_tts/flutter_tts.dart';
 
 class AlphaBlock extends StatefulWidget {
   final String img;
@@ -26,47 +14,83 @@ class AlphaBlock extends StatefulWidget {
 }
 
 class _AplhaState extends State<AlphaBlock> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      width: 120,
-      child: Card(
-        margin: const EdgeInsets.all(1),
-        color: Colors.grey[200],
-        child: Container(
-          padding: const EdgeInsets.only(left: 5, right: 5),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                height: 60,
-                width: 60,
-                child: Image.network(widget.img),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    widget.cap,
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey[400]),
-                  ),
-                  Text(
-                    widget.small,
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey[400]),
-                  )
-                ],
-              )
-            ],
+    return InkWell(
+      // onTap: () => speak(widget.cap),
+      child: SizedBox(
+        height: 120,
+        width: 120,
+        child: Card(
+          margin: const EdgeInsets.all(1),
+          color: Colors.grey[200],
+          child: Container(
+            padding: const EdgeInsets.only(left: 5, right: 5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  height: 60,
+                  width: 60,
+                  child: Image.network(widget.img),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      widget.cap,
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[400]),
+                    ),
+                    Text(
+                      widget.small,
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[400]),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+/* 
+class _TextToSpeechState extends State<TextToSpeech> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: InkWell(
+          child: const Center(child: Text("hello")),
+          onDoubleTap: () => speak("helloE"),
+          ),
+    );
+  }
+}
+
+
+ */

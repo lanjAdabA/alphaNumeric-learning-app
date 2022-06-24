@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:learn/widgets/alphablock.dart';
 import 'package:learn/widgets/letterpage.dart';
 
@@ -19,6 +20,38 @@ class AlphaChart extends StatefulWidget {
 }
 
 class _ChartState extends State<AlphaChart> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
+/* 
+class _TextToSpeechState extends State<TextToSpeech> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: InkWell(
+          child: const Center(child: Text("hello")),
+          onDoubleTap: () => speak("helloE"),
+          ),
+    );
+  }
+}
+
+
+ */
   // List<Map<String, dynamic>> minidata = [
   //   {},
   //   {
@@ -866,12 +899,13 @@ class _ChartState extends State<AlphaChart> {
           alignment: WrapAlignment.center,
           children: List.generate(listSize, (index) {
             return InkWell(
+              onTap: () => speak(data[index]["cap"]),
               child: AlphaBlock(
                   // key: data[index]["letterkey"] ?? '',
                   img: data[index]["img"],
                   cap: data[index]["cap"],
                   small: data[index]["small"]),
-              onTap: () {
+              onDoubleTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return LetterPage(
                     cap: data[index]["cap"],

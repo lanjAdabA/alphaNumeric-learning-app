@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class PopUpCenterPage extends StatefulWidget {
   final String img;
@@ -14,21 +15,59 @@ class PopUpCenterPage extends StatefulWidget {
 }
 
 class _PopUpPageCenterState extends State<PopUpCenterPage> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 500,
-          child: Image.network(
-            widget.img,
+    return InkWell(
+      onTap: () => speak(widget.description),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 500,
+            child: Image.network(
+              widget.img,
+            ),
           ),
-        ),
-        Text(
-          widget.description,
-          style: const TextStyle(fontSize: 50),
-        ),
-      ],
+          Text(
+            widget.description,
+            style: const TextStyle(fontSize: 50),
+          ),
+        ],
+      ),
     );
   }
 }
+
+
+
+/* 
+class _TextToSpeechState extends State<TextToSpeech> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: InkWell(
+          child: const Center(child: Text("hello")),
+          onDoubleTap: () => speak("helloE"),
+          ),
+    );
+  }
+}
+
+
+ */

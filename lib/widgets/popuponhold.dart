@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class PopUpPage extends StatefulWidget {
   final String miniimage;
@@ -16,21 +17,56 @@ class PopUpPage extends StatefulWidget {
 }
 
 class _PopUpPageState extends State<PopUpPage> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 500,
-          child: Image.network(
-            widget.miniimage,
+    return InkWell(
+      onTap: () => speak("${widget.cap} for ${widget.minidescription}"),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 500,
+            child: Image.network(
+              widget.miniimage,
+            ),
           ),
-        ),
-        Text(
-          "${widget.cap} for ${widget.minidescription}",
-          style: const TextStyle(fontSize: 50),
-        ),
-      ],
+          Text(
+            "${widget.cap} for ${widget.minidescription}",
+            style: const TextStyle(fontSize: 50),
+          ),
+        ],
+      ),
     );
   }
 }
+/* 
+class _TextToSpeechState extends State<TextToSpeech> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: InkWell(
+          child: const Center(child: Text("hello")),
+          onDoubleTap: () => speak("helloE"),
+          ),
+    );
+  }
+}
+
+
+ */

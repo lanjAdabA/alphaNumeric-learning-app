@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 class PopUpFingerPage extends StatefulWidget {
   final String img;
   final String f;
   final String description;
+
   const PopUpFingerPage({
     Key? key,
     required this.img,
@@ -16,21 +18,59 @@ class PopUpFingerPage extends StatefulWidget {
 }
 
 class _PopUpPageFingerState extends State<PopUpFingerPage> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 500,
-          child: Image.network(
-            widget.img,
+    return InkWell(
+      onTap: () => speak(
+          " ${widget.description} ${int.parse(widget.f) == 1 ? 'FINGER' : 'FINGERS'}"),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 500,
+            child: Image.network(
+              widget.img,
+            ),
           ),
-        ),
-        Text(
-          "${widget.description} ${int.parse(widget.f) == 1 ? 'FINGER' : 'FINGERS'}",
-          style: const TextStyle(fontSize: 50),
-        ),
-      ],
+          Text(
+            "${widget.description} ${int.parse(widget.f) == 1 ? 'FINGER' : 'FINGERS'}",
+            style: const TextStyle(fontSize: 50),
+          ),
+        ],
+      ),
     );
   }
 }
+
+
+/* 
+class _TextToSpeechState extends State<TextToSpeech> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(1.3);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: InkWell(
+          child: const Center(child: Text("hello")),
+          onDoubleTap: () => speak("helloE")
+          ),
+    );
+  }
+}
+
+
+ */

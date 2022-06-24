@@ -1,5 +1,6 @@
 // import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:learn/widgets/minilettercard.dart';
 import 'package:learn/widgets/popuponhold.dart';
 import 'package:learn/widgets/popuponholdcenter.dart';
@@ -29,6 +30,14 @@ class LetterPage extends StatefulWidget {
 }
 
 class _LetterPageState extends State<LetterPage> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
   //place to check
 
   @override
@@ -49,56 +58,62 @@ class _LetterPageState extends State<LetterPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      widget.cap,
-                      style: const TextStyle(
-                        fontSize: 80,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      widget.small,
-                      style: const TextStyle(
+                InkWell(
+                  onTap: () => speak(widget.cap),
+                  child: Row(
+                    children: [
+                      Text(
+                        widget.cap,
+                        style: const TextStyle(
                           fontSize: 80,
-                          color: Colors.blueGrey,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        widget.small,
+                        style: const TextStyle(
+                            fontSize: 80,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [
-                    Text(
-                      widget.cap,
-                      style: const TextStyle(
-                        fontSize: 80,
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Courgette",
+                InkWell(
+                  onTap: () => speak(widget.cap),
+                  child: Row(
+                    children: [
+                      Text(
+                        widget.cap,
+                        style: const TextStyle(
+                          fontSize: 80,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Courgette",
+                        ),
                       ),
-                    ),
-                    Text(
-                      widget.small,
-                      style: const TextStyle(
-                        fontSize: 80,
-                        color: Colors.lightBlue,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Courgette",
+                      Text(
+                        widget.small,
+                        style: const TextStyle(
+                          fontSize: 80,
+                          color: Colors.lightBlue,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Courgette",
+                        ),
                       ),
-                    ),
-                    // Text("a",
-                    //     style: TextStyle(
-                    //       fontFamily: "Courgette",
-                    //     )
+                      // Text("a",
+                      //     style: TextStyle(
+                      //       fontFamily: "Courgette",
+                      //     )
 
-                    //     // GoogleFonts.courgette(
-                    //     //     fontStyle: FontStyle.normal,
-                    //     //     color: Colors.blue,
-                    //     //     fontSize: 80),
-                    //     ),
-                  ],
+                      //     // GoogleFonts.courgette(
+                      //     //     fontStyle: FontStyle.normal,
+                      //     //     color: Colors.blue,
+                      //     //     fontSize: 80),
+                      //     ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -113,10 +128,11 @@ class _LetterPageState extends State<LetterPage> {
                         height: 500,
                         width: 500,
                         child: InkWell(
+                          onTap: () => speak(widget.description),
                           child: Image.network(
                             widget.imgLetter,
                           ),
-                          onLongPress: () {
+                          onDoubleTap: () {
                             showModalBottomSheet(
                                 backgroundColor:
                                     const Color.fromARGB(255, 255, 255, 255),
@@ -136,9 +152,12 @@ class _LetterPageState extends State<LetterPage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      widget.description,
-                      style: const TextStyle(fontSize: 36),
+                    InkWell(
+                      onTap: () => speak(widget.description),
+                      child: Text(
+                        widget.description,
+                        style: const TextStyle(fontSize: 36),
+                      ),
                     )
                   ],
                 ),
@@ -185,7 +204,7 @@ class _LetterPageState extends State<LetterPage> {
                         miniimage: widget.minipage[index]["miniimage"],
                         minidescription: widget.minipage[index]
                             ["minidescription"]),
-                    onLongPress: () {
+                    onDoubleTap: () {
                       showModalBottomSheet(
                           backgroundColor:
                               const Color.fromARGB(255, 255, 255, 255),
@@ -211,3 +230,31 @@ class _LetterPageState extends State<LetterPage> {
     );
   }
 }
+
+
+
+
+/* 
+class _TextToSpeechState extends State<TextToSpeech> {
+  final FlutterTts flutterTts = FlutterTts();
+  speak(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(.8);
+    await flutterTts.setSpeechRate(.4);
+    await flutterTts.speak(text);
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: InkWell(
+          child: const Center(child: Text("hello")),
+          onTap: () => speak("helloE"),
+          ),
+    );
+  }
+}
+
+
+ */
