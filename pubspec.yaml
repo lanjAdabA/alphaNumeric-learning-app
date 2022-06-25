@@ -41,6 +41,7 @@ dependencies:
   audioplayer: ^0.8.1
   flutter_ringtone_player: ^3.2.0
   flutter_tts: ^3.4.0
+  flutter_staggered_animations: ^1.0.0
 
 dev_dependencies:
   flutter_test:

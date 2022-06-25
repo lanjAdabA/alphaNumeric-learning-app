@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:learn/widgets/popupfingerpage.dart';
+import 'package:learn/pages/popupfingerpage.dart';
 
 class NumBlock extends StatefulWidget {
   final String fig;

@@ -25,7 +25,6 @@ class _AplhaState extends State<AlphaBlock> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: () => speak(widget.cap),
       child: SizedBox(
         height: 120,
         width: 120,

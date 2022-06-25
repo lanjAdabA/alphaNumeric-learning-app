@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 // import 'package:learn/widgets/letterpage.dart';
 // import 'package:provider/provider.dart';
 
-import 'package:learn/widgets/alphachart.dart';
-import 'package:learn/widgets/colorspage.dart';
-import 'package:learn/widgets/numpage.dart';
-import 'package:learn/widgets/puzzlepage.dart';
+import 'package:learn/pages/alphachart.dart';
+import 'package:learn/pages/colorspage.dart';
+import 'package:learn/pages/numpage.dart';
+import 'package:learn/pages/puzzlemenupage.dart';
+import 'package:learn/pages/puzzlepage.dart';
+import 'package:learn/widgets/puzzlemenublock.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -55,7 +57,8 @@ class _LearnAppState extends State<LearnApp> {
     const AlphaChart(),
     const NumPage(),
     const ColourPage(),
-    const PuzzlePage(),
+    // const PuzzlePage(),
+    const PuzzleMenuPage()
   ];
   @override
   Widget build(BuildContext context) {

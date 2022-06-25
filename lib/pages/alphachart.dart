@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:learn/widgets/alphablock.dart';
-import 'package:learn/widgets/letterpage.dart';
+import 'package:learn/pages/letterpage.dart';
 
 class Chart extends StatelessWidget {
   const Chart({Key? key}) : super(key: key);

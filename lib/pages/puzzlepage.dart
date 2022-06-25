@@ -26,6 +26,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
 
   // final Map choices2 = {
   //   "🍎": {color: Colors.red, text: 'Red'},
+  //inorder to assign another attribute
   //   "🍊": Colors.orange,
   //   "🍋": Colors.yellow,
   //   "🍆": Colors.purple,
@@ -70,7 +71,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
             ],
           ),
           centerTitle: true,
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.blueGrey,
         ),
         floatingActionButton: FloatingActionButton(
             child: const Icon(Icons.refresh_outlined),
