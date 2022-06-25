@@ -21,8 +21,8 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
   }
 
   final List menuPage = [
-    const Abc(),
-    const Numv(),
+    const PuzzleAlpha(),
+    const PuzzleNum(),
     const PuzzlePage(),
   ];
 
