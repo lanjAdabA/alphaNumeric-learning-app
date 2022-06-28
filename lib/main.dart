@@ -6,10 +6,12 @@ import 'package:learn/pages/alphachart.dart';
 import 'package:learn/pages/colorspage.dart';
 import 'package:learn/pages/numpage.dart';
 import 'package:learn/pages/puzzlemenupage.dart';
-import 'package:learn/pages/puzzlepage.dart';
-import 'package:learn/widgets/puzzlemenublock.dart';
+// import 'package:learn/pages/puzzlepage.dart';
+// import 'package:learn/splash.dart';
+// import 'package:learn/widgets/puzzlemenublock.dart';
 
 void main(List<String> args) {
+  WidgetsFlutterBinding();
   runApp(const MyApp());
 }
 
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget {
       title: "Learning App",
       theme: ThemeData(primarySwatch: Colors.blueGrey),
       debugShowCheckedModeBanner: false,
-      home: const LearnApp(),
+      home:
+          // SplashScreen()
+          const LearnApp(),
       // initialRoute: "/",
       // routes: {
       //   "/": (context) => const LearnApp(),
