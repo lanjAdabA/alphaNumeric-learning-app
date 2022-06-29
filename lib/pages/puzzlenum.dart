@@ -140,7 +140,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
         setState(() {
           score[emoji] = true;
         });
-        FlutterRingtonePlayer.play(fromAsset: "assets/success.wav");
+        FlutterRingtonePlayer.play(fromAsset: "assets/success.wav", volume: .3);
       },
       onLeave: (data) {},
     );

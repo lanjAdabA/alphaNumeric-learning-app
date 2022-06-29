@@ -144,7 +144,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
         setState(() {
           score[emoji] = true;
         });
-        FlutterRingtonePlayer.play(fromAsset: "assets/success.wav");
+        FlutterRingtonePlayer.play(fromAsset: "assets/success.wav", volume: .3);
         // FlutterBeep.beep(false);
         // FlutterBeep.playSysSound(1);
         // audioPlugin.play('success.wav');
