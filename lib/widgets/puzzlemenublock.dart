@@ -19,7 +19,7 @@ class _PluzzleMenuBLockState extends State<PluzzleMenuBLock> {
         Image.network(widget.menuimg),
         Text(
           widget.menudescription,
-          style: const TextStyle(fontSize: 30, fontFamily: "Anton"),
+          style: const TextStyle(fontSize: 28, fontFamily: "RubikMoonrocks"),
         )
       ],
     );

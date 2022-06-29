@@ -30,7 +30,7 @@ class _AplhaState extends State<AlphaBlock> {
         width: 120,
         child: Card(
           margin: const EdgeInsets.all(1),
-          color: Colors.grey[200],
+          color: Colors.blue[50],
           child: Container(
             padding: const EdgeInsets.only(left: 5, right: 5),
             child: Column(

@@ -16,16 +16,16 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
   final Map<String, bool> score = {};
 
   final Map choices = {
-    "🍎": "A-Apple",
-    "⚽️": "B-Ball",
-    "🚗": "C-Car",
-    "🦮": "D-Dog",
-    "🥚": "E-Egg",
-    "🐠": "F-Fish",
-    "🍇": "G-Grapes",
-    "🏠": "H-House",
+    "A": " 🍎 A-Apple",
+    "B": " ⚽️ B-Ball",
+    "C": " 🚗 C-Car",
+    "D": " 🦮 D-Dog",
+    "E": " 🥚 E-Egg",
+    "F": " 🐠 F-Fish",
+    "G": " 🍇 G-Grapes",
+    "H": " 🏠 H-House",
   };
-
+//
   // final Map choices2 = {
   //   "🍎": {color: Colors.red, text: 'Red'},
   //inorder to assign another attribute
@@ -93,8 +93,8 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                 return Draggable<String>(
                   data: emoji,
                   feedback: Emoji(emoji: emoji),
-                  childWhenDragging: const Emoji(emoji: "🔲"),
-                  child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
+                  childWhenDragging: const Emoji(emoji: "⍰"),
+                  child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
                 );
               }).toList(),
             ),
@@ -131,18 +131,19 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
         } else {
           return Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.blueGrey[100]
+                borderRadius: BorderRadius.circular(20), color: Colors.blue[50]
                 // color: choices[emoji],
                 ),
             // color: choices[emoji],
             height: 80,
             width: 200,
-            child: Center(
-                child: Text(
-              choices[emoji],
-              style: const TextStyle(fontSize: 24, fontFamily: "anton"),
-            )),
+            child: Row(children: [
+              // Emoji(emoji: emoji),
+              Text(
+                choices[emoji].toString(),
+                style: const TextStyle(fontSize: 36, fontFamily: "anton"),
+              ),
+            ]),
           );
         }
       }),
@@ -175,7 +176,11 @@ class Emoji extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Text(
           emoji,
-          style: const TextStyle(color: Colors.black, fontSize: 50),
+          style: const TextStyle(
+            color: Colors.blue,
+            fontSize: 60,
+            fontFamily: "TitanOne",
+          ),
         ),
       ),
     );

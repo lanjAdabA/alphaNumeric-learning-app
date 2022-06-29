@@ -73,7 +73,7 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
                     margin: EdgeInsets.only(bottom: w / 20),
                     height: w / 4,
                     decoration: BoxDecoration(
-                      color: Colors.blueGrey[100],
+                      color: Colors.blue[50],
                       borderRadius: const BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
                         BoxShadow(

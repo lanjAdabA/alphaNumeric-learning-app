@@ -83,8 +83,8 @@ class _PuzzleNumState extends State<PuzzleNum> {
                 return Draggable<String>(
                   data: emoji,
                   feedback: Emoji(emoji: emoji),
-                  childWhenDragging: const Emoji(emoji: "🔲"),
-                  child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
+                  childWhenDragging: const Emoji(emoji: "⍰"),
+                  child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
                 );
               }).toList(),
             ),
@@ -121,8 +121,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
         } else {
           return Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.blueGrey[100]
+                borderRadius: BorderRadius.circular(20), color: Colors.blue[50]
                 // color: choices[emoji],
                 ),
             // color: choices[emoji],
@@ -131,7 +130,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
             child: Center(
                 child: Text(
               choices[emoji],
-              style: const TextStyle(fontSize: 24, fontFamily: "anton"),
+              style: const TextStyle(fontSize: 36, fontFamily: "StickNoBills"),
             )),
           );
         }
@@ -163,7 +162,10 @@ class Emoji extends StatelessWidget {
         child: Text(
           emoji,
           style: const TextStyle(
-              color: Colors.black, fontSize: 50, fontFamily: "CarterOne"),
+              color: Colors.blue,
+              fontSize: 56,
+              fontWeight: FontWeight.bold,
+              fontFamily: "StickNoBills"),
         ),
       ),
     );

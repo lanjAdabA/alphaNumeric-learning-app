@@ -106,8 +106,25 @@ flutter:
     - family: Nosifer
       fonts:
         - asset: assets/Nosifer-Regular.ttf
-       
-      
+        
+    - family: TitanOne
+      fonts:
+        - asset: assets/TitanOne-Regular.ttf       
+
+    - family: StickNoBills
+      fonts:
+        - asset: assets/StickNoBills-Regular.ttf     
+    
+    - family: BungeeShade
+      fonts:
+        - asset: assets/BungeeShade-Regular.ttf       
+
+    - family: RubikMoonrocks
+      fonts:
+        - asset: assets/RubikMoonrocks-Regular.ttf     
+
+
+        
   
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

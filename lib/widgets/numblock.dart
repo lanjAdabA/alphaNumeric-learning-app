@@ -55,7 +55,7 @@ class _NumBlockState extends State<NumBlock> {
               InkWell(
                 onTap: () => speak(widget.inwords),
                 child: Text(
-                  "==>  ${widget.inwords}",
+                  "👉🏼  ${widget.inwords}",
                   style: const TextStyle(
                       fontFamily: "Anton", fontSize: 30, color: Colors.black),
                 ),

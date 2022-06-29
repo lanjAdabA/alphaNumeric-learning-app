@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn/widgets/numblock.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class NumPage extends StatefulWidget {
   const NumPage({
@@ -83,29 +84,87 @@ class _NumblockState extends State<NumPage> {
           "https://media.istockphoto.com/vectors/number-10-educational-card-learning-counting-with-fingers-of-hand-vector-id1021001216?k=20&m=1021001216&s=612x612&w=0&h=vhegu4iNxv4EJyu6L0oDlQxggjevFBKPc3QzbBr6kV4="
     },
   ];
-
+/* 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text("Number_Chart"),
-          centerTitle: true,
+      appBar: AppBar(
+        title: Text("Go Back"),
+        centerTitle: true,
+        brightness: Brightness.dark,
+      ), */
+  @override
+  Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text("Number_Chart"),
+        centerTitle: true,
+      ),
+//       body: SingleChildScrollView(
+//         child: ListView.builder(
+//             padding: const EdgeInsets.all(10),
+//             itemCount: 10,
+//             scrollDirection: Axis.vertical,
+//             shrinkWrap: true,
+//             itemBuilder: ((context, index) {
+//               return NumBlock(
+//                 fig: numdata[index]['fig'],
+//                 inwords: numdata[index]['inwords'],
+//                 color: numdata[index]["color"],
+//                 image: numdata[index]['image'],
+//               );
+//             })),
+//       ),
+//     );
+//   }
+// }
+
+      body: AnimationLimiter(
+        child: ListView.builder(
+          padding: EdgeInsets.all(w / 30),
+          physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics()),
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index) {
+            return AnimationConfiguration.staggeredList(
+              position: index,
+              delay: const Duration(milliseconds: 100),
+              child: SlideAnimation(
+                duration: const Duration(milliseconds: 2500),
+                curve: Curves.fastLinearToSlowEaseIn,
+                child: FadeInAnimation(
+                  curve: Curves.fastLinearToSlowEaseIn,
+                  duration: const Duration(milliseconds: 2500),
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: w / 80),
+                    height: w / 6,
+                    decoration: BoxDecoration(
+                      color: Colors.blue[50],
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.1),
+                          blurRadius: 40,
+                          spreadRadius: 10,
+                        ),
+                      ],
+                    ),
+                    child: NumBlock(
+                      fig: numdata[index]['fig'],
+                      inwords: numdata[index]['inwords'],
+                      color: numdata[index]["color"],
+                      image: numdata[index]['image'],
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
         ),
-        body: SingleChildScrollView(
-          child: ListView.builder(
-              padding: const EdgeInsets.all(10),
-              itemCount: 10,
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemBuilder: ((context, index) {
-                return NumBlock(
-                  fig: numdata[index]['fig'],
-                  inwords: numdata[index]['inwords'],
-                  color: numdata[index]["color"],
-                  image: numdata[index]['image'],
-                );
-              })),
-        ));
+      ),
+    );
   }
 }

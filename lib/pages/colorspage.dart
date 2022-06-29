@@ -66,6 +66,7 @@ class _ColorPageState extends State<ColourPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          // backgroundColor: Colors.blue[50],
           toolbarHeight: 150,
           title: InkWell(
             onTap: () => speak(
