@@ -84,15 +84,7 @@ class _NumblockState extends State<NumPage> {
           "https://media.istockphoto.com/vectors/number-10-educational-card-learning-counting-with-fingers-of-hand-vector-id1021001216?k=20&m=1021001216&s=612x612&w=0&h=vhegu4iNxv4EJyu6L0oDlQxggjevFBKPc3QzbBr6kV4="
     },
   ];
-/* 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Go Back"),
-        centerTitle: true,
-        brightness: Brightness.dark,
-      ), */
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;

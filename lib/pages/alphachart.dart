@@ -116,7 +116,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
       "minipage": [
         {
           "miniimage":
-              "https://nkyhealth.org/wp-content/uploads/2019/06/Bat-flying.jpg",
+              'https://upload.wikimedia.org/wikipedia/commons/c/c7/Vampire_bat_white_background.jpg',
           "minidescription": "Bat",
         },
         {
@@ -355,7 +355,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
           "miniimage":
               "https://i.pinimg.com/736x/91/a0/76/91a0763cadee6f5af2fa35fcd7edcec5.jpg",
           "minidescription": "Insects",
-        },
+        }, 
       ],
     },
     {
