@@ -90,7 +90,9 @@ class _PuzzlePageState extends State<PuzzlePage> {
               children: choices.keys.map((emoji) {
                 return Draggable<String>(
                   data: emoji,
-                  feedback: Emoji(emoji: emoji),
+                  feedback: Emoji(
+                    emoji: emoji,
+                  ),
                   childWhenDragging: const Emoji(emoji: "🔲"),
                   child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
                 );

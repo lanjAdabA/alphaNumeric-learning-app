@@ -24,19 +24,7 @@ class MyApp extends StatelessWidget {
       title: "Learning App",
       theme: ThemeData(primarySwatch: Colors.blueGrey),
       debugShowCheckedModeBanner: false,
-      home:
-          // SplashScreen()
-          const LearnApp(),
-      // initialRoute: "/",
-      // routes: {
-      //   "/": (context) => const LearnApp(),
-      //   "/second": (context) => const LetterPage(
-      //         bigLetter:'bigLetter',
-      //         descriptionLetter: 'descriptionLetter',
-      //         imgLetter: 'imgLetter',
-      //         smallLetter: 'smallLetter',
-      //       ),
-      // },
+      home: const LearnApp(),
     );
   }
 }
@@ -45,56 +33,37 @@ class LearnApp extends StatefulWidget {
   const LearnApp({Key? key}) : super(key: key);
 
   @override
-  State<LearnApp> createState() => _LearnAppState();
+  State<LearnApp> createState() => LearnAppState();
 }
 
-class _LearnAppState extends State<LearnApp> {
-  int _selectedIndex = 0;
-  void _navigationBottomBar(int index) {
+class LearnAppState extends State<LearnApp> {
+  int selectedIndex = 0;
+  void navigationBottomBar(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
 
-  final List _chartPage = [
-    //const LetterPage(),
+  final List chartPage = [
     const AlphaChart(),
     const NumPage(),
     const ColourPage(),
-    // const PuzzlePage(),
     const PuzzleMenuPage()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*  appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 24, 23, 23),
-        foregroundColor: const Color.fromARGB(255, 176, 189, 158),
-        leading: const Icon(
-          Icons.menu,
-        ),
-        title: const Text("menu page"),
-        centerTitle: true,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: Icon(
-              Icons.more_horiz_rounded,
-            ),
-          ),
-        ],
-      ), */
-      body: _chartPage[_selectedIndex],
+      body: chartPage[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color.fromARGB(0, 48, 48, 50),
           selectedItemColor: const Color.fromARGB(255, 162, 16, 206),
-          unselectedItemColor: const Color.fromARGB(255, 129, 131, 125),
-          currentIndex: _selectedIndex,
+          unselectedItemColor: const Color.fromARGB(255, 158, 160, 155),
+          currentIndex: selectedIndex,
           selectedFontSize: 16,
           showUnselectedLabels: true,
           unselectedFontSize: 10,
           enableFeedback: true,
-          onTap: _navigationBottomBar,
+          onTap: navigationBottomBar,
           items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.abc_outlined), label: "ALPHABET (A B C)"),
@@ -105,16 +74,7 @@ class _LearnAppState extends State<LearnApp> {
                 icon: Icon(Icons.color_lens_outlined), label: "COLORS"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.extension_outlined), label: "EXERCISE"),
-          ]), // body: Container(
-      //   color: Colors.blueGrey,
-      //   child:const  Center(child:  Text("data")),
-      // ),
+          ]),
     );
   }
 }
-
-
-//"🍎 🍊 🍋 🥦 🍆"
-
-/* 
- */
