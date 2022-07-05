@@ -16,16 +16,16 @@ class _PuzzleNumState extends State<PuzzleNum> {
   final Map<String, bool> score = {};
 
   final Map choices = {
-    "1": "One",
-    "2": "Two",
-    "3": "Three",
-    "4": "Four",
-    "5": "Five",
-    "6": "Six",
-    "7": "Seven",
-    "8": "Eight",
-    "9": "Nine",
-    "10": "Ten",
+    "1": "ONE",
+    "2": "TWO",
+    "3": "THREE",
+    "4": "FOUR",
+    "5": "FIVE",
+    "6": "SIX",
+    "7": "SEVEN",
+    "8": "EIGHT",
+    "9": "NINE",
+    "10": "TEN",
   };
 
   int seed = 0;
@@ -36,6 +36,10 @@ class _PuzzleNumState extends State<PuzzleNum> {
         appBar: AppBar(
           title: Column(
             children: [
+              Text(
+                'Score ${score.length} /10',
+                style: const TextStyle(fontFamily: "PressStart"),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
@@ -46,7 +50,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
                         color: Color.fromARGB(255, 182, 189, 179)),
                   ),
                   Text(
-                    " -- Match to color",
+                    " -- Match fig to words",
                     style: TextStyle(
                         fontSize: 14,
                         color: Color.fromARGB(255, 156, 172, 172)),
@@ -55,10 +59,6 @@ class _PuzzleNumState extends State<PuzzleNum> {
               ),
               const SizedBox(
                 height: 4,
-              ),
-              Text(
-                'Score ${score.length} /10',
-                style: const TextStyle(fontFamily: "PressStart"),
               ),
             ],
           ),
@@ -130,7 +130,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
             child: Center(
                 child: Text(
               choices[emoji],
-              style: const TextStyle(fontSize: 36, fontFamily: "StickNoBills"),
+              style: const TextStyle(fontSize: 36, fontFamily: "carterOne"),
             )),
           );
         }
@@ -163,9 +163,9 @@ class Emoji extends StatelessWidget {
           emoji,
           style: const TextStyle(
               color: Colors.blue,
-              fontSize: 56,
-              fontWeight: FontWeight.bold,
-              fontFamily: "StickNoBills"),
+              fontSize: 52,
+              fontWeight: FontWeight.normal,
+              fontFamily: "TitanOne"),
         ),
       ),
     );

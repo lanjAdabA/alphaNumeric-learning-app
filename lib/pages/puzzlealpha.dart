@@ -46,6 +46,10 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
         appBar: AppBar(
           title: Column(
             children: [
+              Text(
+                'Score ${score.length} /8',
+                style: const TextStyle(fontFamily: "PressStart"),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
@@ -56,7 +60,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                         color: Color.fromARGB(255, 182, 189, 179)),
                   ),
                   Text(
-                    " -- Match to color",
+                    " -- Match letter to picture",
                     style: TextStyle(
                         fontSize: 14,
                         color: Color.fromARGB(255, 156, 172, 172)),
@@ -65,10 +69,6 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
               ),
               const SizedBox(
                 height: 5,
-              ),
-              Text(
-                'Score ${score.length} /8',
-                style: const TextStyle(fontFamily: "PressStart"),
               ),
             ],
           ),

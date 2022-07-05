@@ -43,30 +43,31 @@ class _PuzzlePageState extends State<PuzzlePage> {
     return Scaffold(
         appBar: AppBar(
           title: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              Text(
+                'Score ${score.length} /6',
+                style: const TextStyle(fontFamily: "PressStart"),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Text(
                     "*Hint*",
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 12,
                         color: Color.fromARGB(255, 182, 189, 179)),
                   ),
                   Text(
-                    " -- Match to color",
+                    " -- Match picture to color",
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 12,
                         color: Color.fromARGB(255, 156, 172, 172)),
                   ),
                 ],
               ),
               const SizedBox(
                 height: 5,
-              ),
-              Text(
-                'Score ${score.length} /6',
-                style: const TextStyle(fontFamily: "PressStart"),
               ),
             ],
           ),
@@ -176,6 +177,7 @@ class Emoji extends StatelessWidget {
     );
   }
 }
+
 
 
 //"🍎 🍊 🍋 🍆 🥦 🥔 ✅ ⬜ ⏹️ 🔲 👌 👍  ctrl+cmd+space "
