@@ -1,8 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-
-import 'package:learn/widgets/colortileblock.dart';
 
 class ColourPage extends StatefulWidget {
   const ColourPage({
@@ -14,6 +14,7 @@ class ColourPage extends StatefulWidget {
 }
 
 class ColorPageState extends State<ColourPage> {
+  Color color = Colors.amber;
   final FlutterTts flutterTts = FlutterTts();
   speak(String text) async {
     await flutterTts.setLanguage("en-US");
@@ -22,14 +23,33 @@ class ColorPageState extends State<ColourPage> {
     await flutterTts.speak(text);
   }
 
-  final List<Map<String, dynamic>> card2 = [
-    {"colorname2": "amber", "color2": Colors.amber},
-    {"colorname2": "cyan", "color2": Colors.cyan},
-    {"colorname2": "lime", "color2": Colors.lime},
-    {"colorname2": "bluegrey", "color2": Colors.blueGrey},
+  final List<Map<String, dynamic>> card1 = [
+    {"colornameis": "RED", "coloris": Colors.red},
+    {"colornameis": "PINK", "coloris": Colors.pink[200]},
+    {"colornameis": "PURPLE", "coloris": Colors.purple},
+    {"colornameis": "INDIGO", "coloris": Colors.indigo},
+    {"colornameis": "BLUE", "coloris": Colors.blue},
+    {"colornameis": "GREEN", "coloris": Colors.green},
+    // {"colornameis": "DARK - GREEN", "coloris": Colors.green[900]},
+    {"colornameis": "ORANGE", "coloris": Colors.orange},
+    {"colornameis": "BROWN", "coloris": Colors.brown},
+    {"colornameis": "BLACK", "coloris": Colors.black},
+    {"colornameis": "GREY", "coloris": Colors.grey},
+    // {"colornameis": "DARK - BLUE", "coloris": Colors.blue[900]},
   ];
 
-  // final List<String> colorname1 = [
+  final List<Map<String, dynamic>> card2 = [
+    {"colornameis": "AMBER", "coloris": Colors.amber},
+    {"colornameis": "YELLOW", "coloris": Colors.yellow},
+    {"colornameis": "LIME", "coloris": Colors.lime},
+    {"colornameis": "CYAN", "coloris": Colors.cyan},
+    {"colornameis": "WHITE", "coloris": Colors.white},
+    // {"colornameis": "LIGHT - BLUE", "coloris": Colors.lightBlue},
+    // {"colornameis": "TEAL", "coloris": Colors.teal},
+    // {"colornameis": "LIGHT - GREEN", "coloris": Colors.lightGreen},
+  ];
+
+  // final List<String> colornameis = [
   //   "RED",
   //   "GREEN",
   //   "BLUE",
@@ -44,7 +64,7 @@ class ColorPageState extends State<ColourPage> {
   //   "INDIGO",
   // ];
 
-  // final List<Color> colors1 = [
+  // final List<Color> coloris = [
   //   Colors.red,
   //   Colors.green,
   //   Colors.blue,
@@ -59,21 +79,6 @@ class ColorPageState extends State<ColourPage> {
   //   Colors.indigo,
   // ];
 
-  final List<Map<String, dynamic>> card1 = [
-    {"colorname1": "RED", "colors1": Colors.red},
-    {"colorname1": "GREEN", "colors1": Colors.green},
-    {"colorname1": "BLUE", "colors1": Colors.blue},
-    {"colorname1": "YELLOW", "colors1": Colors.yellow},
-    {"colorname1": "WHITE", "colors1": Colors.white},
-    {"colorname1": "BLACK", "colors1": Colors.black},
-    {"colorname1": "PINK", "colors1": Colors.pink},
-    {"colorname1": "PURPLE", "colors1": Colors.purple},
-    {"colorname1": "BROWN", "colors1": Colors.brown},
-    {"colorname1": "ORANGE", "colors1": Colors.deepOrange},
-    {"colorname1": "GREY", "colors1": Colors.grey},
-    {"colorname1": "INDIGO", "colors1": Colors.indigo},
-  ];
-
   int index = 0;
   @override
   void initState() {
@@ -83,7 +88,7 @@ class ColorPageState extends State<ColourPage> {
   // List card1 = [
   //   const ColorTile(
   //     colour: Colors.amber,
-  //     colourname: '',
+  //     colourname1: '',
   //   ),
   // ];
 
@@ -115,23 +120,23 @@ class ColorPageState extends State<ColourPage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20)),
-                        color: card1[index]["color1"],
+                        color: color,
                       ),
                       margin: const EdgeInsets.all(20),
                     ),
-                    Container(
-                      color: Colors.black,
-                      child: Text(
-                        card1[index]["colorname"],
-                        style: const TextStyle(
-                            fontSize: 80,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "bungeeShade",
-                            color: Colors.amber
-                            // color: colors1[index % colors1.length],
-                            ),
-                      ),
-                    ),
+                    // Container(
+                    //   color: Colors.black,
+                    //   child: Text(
+                    //     card1[index]["colornameis"],
+                    //     style: const TextStyle(
+                    //         fontSize: 80,
+                    //         fontWeight: FontWeight.bold,
+                    //         fontFamily: "bungeeShade",
+                    //         color: Colors.amber
+                    //         // color: coloris[index % coloris.length],
+                    //         ),
+                    //   ),
+                    // ),
                   ],
                 ),
                 onTap: () {
@@ -159,16 +164,30 @@ class ColorPageState extends State<ColourPage> {
                         // autoPlayCurve: Curves.fastOutSlowIn,
                       ),
                       items: card1.map((card1) {
-                        return Builder(builder: (BuildContext context) {
-                          return SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width,
-                            child: ColorTile(
-                              colourname: card1[index]["colorname"],
-                              colour: card1[index]["color1"],
-                            ),
-                          );
-                        });
+                        return InkWell(
+                          child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: card1["coloris"],
+                              ),
+                              width: MediaQuery.of(context).size.width * 4,
+                              child: Center(
+                                child: Text(
+                                  card1['colornameis'],
+                                  style: const TextStyle(
+                                      fontFamily: "bungeeShade",
+                                      color: Colors.white,
+                                      fontSize: 30),
+                                ),
+                              )),
+                          onTap: () {
+                            speak(card1["colornameis"].toString());
+                            log(card1["coloris"].toString());
+                            setState(() {
+                              color = card1["coloris"];
+                            });
+                          },
+                        );
                       }).toList(),
                     ),
                     CarouselSlider(
@@ -182,17 +201,31 @@ class ColorPageState extends State<ColourPage> {
                         // autoPlayAnimationDuration: Duration(milliseconds: 800),
                         // autoPlayCurve: Curves.fastOutSlowIn,
                       ),
-                      items: card1.map((card2) {
-                        return Builder(builder: (BuildContext context) {
-                          return SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.1,
-                            width: MediaQuery.of(context).size.width,
-                            child: ColorTile(
-                              colourname: card1[index]["colorname1"],
-                              colour: card1[index]["color1"],
-                            ),
-                          );
-                        });
+                      items: card2.map((card2) {
+                        return InkWell(
+                          child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: card2["coloris"],
+                              ),
+                              width: MediaQuery.of(context).size.width * 4,
+                              child: Center(
+                                child: Text(
+                                  card2['colornameis'],
+                                  style: const TextStyle(
+                                      fontFamily: "bungeeShade",
+                                      color: Colors.black,
+                                      fontSize: 30),
+                                ),
+                              )),
+                          onTap: () {
+                            speak(card2["colornameis"].toString());
+                            log(card2["coloris"].toString());
+                            setState(() {
+                              color = card2["coloris"];
+                            });
+                          },
+                        );
                       }).toList(),
                     )
                   ],
@@ -203,7 +236,6 @@ class ColorPageState extends State<ColourPage> {
     );
   }
 }
-
 
 
 

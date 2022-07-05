@@ -124,6 +124,10 @@ flutter:
       fonts:
         - asset: assets/RubikMoonrocks-Regular.ttf     
 
+    - family: RubikMicrobe
+      fonts:
+        - asset: assets/RubikMicrobe-Regular.ttf     
+
 
         
   
