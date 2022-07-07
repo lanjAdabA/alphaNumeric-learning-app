@@ -86,6 +86,24 @@ class _PuzzleNumState extends State<PuzzleNum> {
                   feedback: Emoji(emoji: emoji),
                   childWhenDragging: const Emoji(emoji: "⍰"),
                   child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
+                  onDragEnd: (c) {
+                    {
+                      if (!c.wasAccepted) {
+                        const snackBar1 = SnackBar(
+                          duration: Duration(milliseconds: 500),
+                          backgroundColor: Colors.red,
+                          content: Text('OOPS! Try agaim'),
+                          // action: SnackBarAction(
+                          //   label: 'Undo',
+                          //   onPressed: () {},
+                          // ),
+                        );
+
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                      }
+                    }
+                    // print(c.wasAccepted);
+                  },
                 );
               }).toList(),
             ),
@@ -138,6 +156,19 @@ class _PuzzleNumState extends State<PuzzleNum> {
       }),
       onWillAccept: (data) => data == emoji,
       onAccept: (data) {
+        if (data == emoji) {
+          const snackBar = SnackBar(
+            backgroundColor: Colors.green,
+            duration: Duration(milliseconds: 500),
+            content: Text('YEAH!  Good Job!'),
+            // action: SnackBarAction(
+            //   label: 'Undo',
+            //   onPressed: () {},
+            // ),
+          );
+
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        }
         setState(() {
           score[emoji] = true;
           if (score.length == 10) {

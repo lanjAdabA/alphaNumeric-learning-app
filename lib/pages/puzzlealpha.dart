@@ -93,6 +93,24 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
               children: choices.keys.map((emoji) {
                 return Draggable<String>(
                   data: emoji,
+                  onDragEnd: (c) {
+                    {
+                      if (!c.wasAccepted) {
+                        const snackBar1 = SnackBar(
+                          duration: Duration(milliseconds: 500),
+                          backgroundColor: Colors.red,
+                          content: Text('OOPS! Try agaim'),
+                          // action: SnackBarAction(
+                          //   label: 'Undo',
+                          //   onPressed: () {},
+                          // ),
+                        );
+
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                      }
+                    }
+                    // print(c.wasAccepted);
+                  },
                   feedback: Emoji(emoji: emoji),
                   childWhenDragging: const Emoji(emoji: "⍰"),
                   child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
@@ -177,7 +195,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
         if (data == emoji) {
           const snackBar = SnackBar(
             backgroundColor: Colors.green,
-            duration: Duration(milliseconds: 100),
+            duration: Duration(milliseconds: 500),
             content: Text('YEAH!  Good Job!'),
             // action: SnackBarAction(
             //   label: 'Undo',
@@ -271,32 +289,22 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
         // audioPlugin.play('success.wav');
       },
       onLeave: (data) {
-        if (data != emoji) {
-          const snackBar1 = SnackBar(
-            duration: Duration(milliseconds: 10),
-            backgroundColor: Colors.red,
-            content: Text('OOPS! Try agaim'),
-            // action: SnackBarAction(
-            //   label: 'Undo',
-            //   onPressed: () {},
-            // ),
-          );
-
-          ScaffoldMessenger.of(context).showSnackBar(snackBar1);
-          log(22);
-        }
+        // if (data != emoji)
       },
       onMove: (data) {
-        // const snackBar1 = SnackBar(
-        //   content: Text('OOPS! Try agaim'),
-        //   // action: SnackBarAction(
-        //   //   label: 'Undo',
-        //   //   onPressed: () {},
-        //   // ),
-        // );
+        //   if (data != emoji) {
+        //     const snackBar1 = SnackBar(
+        //       duration: Duration(milliseconds: 10),
+        //       backgroundColor: Colors.red,
+        //       content: Text('OOPS! Try agaim'),
+        //       // action: SnackBarAction(
+        //       //   label: 'Undo',
+        //       //   onPressed: () {},
+        //       // ),
+        //     );
 
-        // ScaffoldMessenger.of(context).showSnackBar(snackBar1);
-        log(33);
+        //     ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+        //   }
       },
     );
   }
