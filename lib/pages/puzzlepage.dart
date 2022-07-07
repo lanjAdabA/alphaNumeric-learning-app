@@ -1,9 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-// import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-// import 'package:flutter_beep/flutter_beep.dart';
+import 'package:learn/pages/puzzlemenupage.dart';
 
 class PuzzlePage extends StatefulWidget {
   const PuzzlePage({Key? key}) : super(key: key);
@@ -27,16 +26,8 @@ class _PuzzlePageState extends State<PuzzlePage> {
   // final Map choices2 = {
   //   "🍎": {color: Colors.red, text: 'Red'},
   //inorder to assign another attribute
-  //   "🍊": Colors.orange,
-  //   "🍋": Colors.yellow,
-  //   "🍆": Colors.purple,
-  //   "🥦": Colors.green,
-  //   "🥔": Colors.brown,
-  // };
 
   int seed = 0;
-  // final AudioPlayer _audioController =AudioPlayer() ;
-  // AudioPlayer audioPlugin = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -55,13 +46,13 @@ class _PuzzlePageState extends State<PuzzlePage> {
                   Text(
                     "*Hint*",
                     style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 14,
                         color: Color.fromARGB(255, 182, 189, 179)),
                   ),
                   Text(
                     " -- Match picture to color",
                     style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 14,
                         color: Color.fromARGB(255, 156, 172, 172)),
                   ),
                 ],
@@ -120,7 +111,6 @@ class _PuzzlePageState extends State<PuzzlePage> {
                   Radius.circular(20),
                 ),
                 color: Colors.white),
-            // color: Colors.white,
             alignment: Alignment.center,
             height: 80,
             width: 200,
@@ -146,6 +136,71 @@ class _PuzzlePageState extends State<PuzzlePage> {
       onAccept: (data) {
         setState(() {
           score[emoji] = true;
+          if (score.length == 6) {
+            showDialog(
+
+                // barrierColor: Colors.blue,
+                context: context,
+                builder: (context) => AlertDialog(
+                      backgroundColor: Colors.blue[50],
+                      // contentPadding: const EdgeInsets.all(300),
+
+                      title: const Text("🥳 CONGRATULATION, You did well."),
+                      actions: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * .2,
+                              child: const Text(
+                                  " 1. Select 'Play again' to continue Playing \n 2. Select 'Menu Page' to go back "),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                TextButton(
+                                    style: ButtonStyle(
+                                        foregroundColor:
+                                            MaterialStateProperty.all(
+                                                Colors.white),
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                                Colors.blue)),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: const Text(
+                                      "Play again",
+                                      style: TextStyle(fontSize: 24),
+                                    )),
+                                TextButton(
+                                    style: ButtonStyle(
+                                        foregroundColor:
+                                            MaterialStateProperty.all(
+                                                Colors.white),
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                                Colors.blue)),
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return const PuzzleMenuPage();
+                                      }));
+                                    },
+                                    child: const Text(
+                                      "Menu Page",
+                                      style: TextStyle(fontSize: 24),
+                                    ))
+                              ],
+                            ),
+                          ],
+                        )
+                      ],
+                    ));
+            // Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //   return const PuzzleMenuPage();
+            // }));
+          }
         });
         FlutterRingtonePlayer.play(fromAsset: "assets/success.wav", volume: .3);
         // FlutterBeep.beep(false);
