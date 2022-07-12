@@ -38,6 +38,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
   // };
 
   int seed = 0;
+  int stem = 3;
   // final AudioPlayer _audioController =AudioPlayer() ;
   // AudioPlayer audioPlugin = AudioPlayer();
 
@@ -82,6 +83,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
               setState(() {
                 score.clear();
                 seed++;
+                stem--;
               });
             }),
         body: Row(
@@ -107,15 +109,19 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                         );
 
                         ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                        FlutterRingtonePlayer.play(
+                            fromAsset: "assets/error.wav", volume: .3);
                       }
                     }
+
                     // print(c.wasAccepted);
                   },
                   feedback: Emoji(emoji: emoji),
-                  childWhenDragging: const Emoji(emoji: "⍰"),
+                  childWhenDragging: const Emoji(emoji: "_"),
                   child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
                 );
-              }).toList(),
+              }).toList()
+                ..shuffle(Random(stem)),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -204,6 +210,8 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
           );
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          FlutterRingtonePlayer.play(
+              fromAsset: "assets/success.wav", volume: .3);
         }
         // else {
         //   log(44);
@@ -237,12 +245,12 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * .2,
                               child: const Text(
-                                  " 1. Select 'Play again' to continue Playing \n 2. Select 'Menu Page' to go back "),
+                                  " 1. Select 'Play again' to continue Playing \n   -- click the refresh button to refresh \n \n 2. Select 'Menu Page' to go back "),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                TextButton(
+                                ElevatedButton(
                                     style: ButtonStyle(
                                         foregroundColor:
                                             MaterialStateProperty.all(
@@ -257,7 +265,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                       "Play again",
                                       style: TextStyle(fontSize: 24),
                                     )),
-                                TextButton(
+                                ElevatedButton(
                                     style: ButtonStyle(
                                         foregroundColor:
                                             MaterialStateProperty.all(
@@ -283,7 +291,6 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                     ));
           }
         });
-        FlutterRingtonePlayer.play(fromAsset: "assets/success.wav", volume: .3);
         // FlutterBeep.beep(false);
         // FlutterBeep.playSysSound(1);
         // audioPlugin.play('success.wav');

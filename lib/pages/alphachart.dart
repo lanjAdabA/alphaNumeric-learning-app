@@ -292,7 +292,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
         {
           "miniimage":
               "https://media.istockphoto.com/photos/making-silly-faces-picture-id512404002?k=20&m=512404002&s=612x612&w=0&h=caOGVrQn3WWQtb0c--d_l2FdlGxNDqASU0S0jYDuWWY=",
-          "minidescription": "girl",
+          "minidescription": "Girl",
         },
       ],
     },
@@ -355,7 +355,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
           "miniimage":
               "https://i.pinimg.com/736x/91/a0/76/91a0763cadee6f5af2fa35fcd7edcec5.jpg",
           "minidescription": "Insects",
-        }, 
+        },
       ],
     },
     {
@@ -447,7 +447,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
         {
           "miniimage":
               "https://media.istockphoto.com/photos/table-lamp-picture-id627077732?k=20&m=627077732&s=612x612&w=0&h=VOf5uf3itAIdKDxfKvDLUwRErN8sOaiui7s_wRp-9eE=",
-          "minidescription": "lamp",
+          "minidescription": "Lamp",
         },
       ],
     },

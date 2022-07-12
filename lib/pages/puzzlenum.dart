@@ -30,6 +30,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
   };
 
   int seed = 0;
+  int stem = 4;
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +73,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
               setState(() {
                 score.clear();
                 seed++;
+                stem--;
               });
             }),
         body: Row(
@@ -84,7 +86,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
                 return Draggable<String>(
                   data: emoji,
                   feedback: Emoji(emoji: emoji),
-                  childWhenDragging: const Emoji(emoji: "⍰"),
+                  childWhenDragging: const Emoji(emoji: "_"),
                   child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
                   onDragEnd: (c) {
                     {
@@ -93,19 +95,17 @@ class _PuzzleNumState extends State<PuzzleNum> {
                           duration: Duration(milliseconds: 500),
                           backgroundColor: Colors.red,
                           content: Text('OOPS! Try agaim'),
-                          // action: SnackBarAction(
-                          //   label: 'Undo',
-                          //   onPressed: () {},
-                          // ),
                         );
 
                         ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                        FlutterRingtonePlayer.play(
+                            fromAsset: "assets/error.wav", volume: .3);
                       }
                     }
-                    // print(c.wasAccepted);
                   },
                 );
-              }).toList(),
+              }).toList()
+                ..shuffle(Random(stem)),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -168,6 +168,8 @@ class _PuzzleNumState extends State<PuzzleNum> {
           );
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          FlutterRingtonePlayer.play(
+              fromAsset: "assets/success.wav", volume: .3);
         }
         setState(() {
           score[emoji] = true;
@@ -188,12 +190,12 @@ class _PuzzleNumState extends State<PuzzleNum> {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * .2,
                               child: const Text(
-                                  " 1. Select 'Play again' to continue Playing \n 2. Select 'Menu Page' to go back "),
+                                  " 1. Select 'Play again' to continue Playing \n   -- click the refresh button to refresh \n \n 2. Select 'Menu Page' to go back "),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                TextButton(
+                                ElevatedButton(
                                     style: ButtonStyle(
                                         foregroundColor:
                                             MaterialStateProperty.all(
@@ -208,7 +210,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
                                       "Play again",
                                       style: TextStyle(fontSize: 24),
                                     )),
-                                TextButton(
+                                ElevatedButton(
                                     style: ButtonStyle(
                                         foregroundColor:
                                             MaterialStateProperty.all(
@@ -235,7 +237,6 @@ class _PuzzleNumState extends State<PuzzleNum> {
           }
           // color: coloris[index % coloris.length],
         });
-        FlutterRingtonePlayer.play(fromAsset: "assets/success.wav", volume: .3);
       },
       onLeave: (data) {},
     );

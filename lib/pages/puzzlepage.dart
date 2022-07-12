@@ -28,6 +28,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
   //inorder to assign another attribute
 
   int seed = 0;
+  int stem = 6;
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +72,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
               setState(() {
                 score.clear();
                 seed++;
+                stem--;
               });
             }),
         body: Row(
@@ -93,20 +95,18 @@ class _PuzzlePageState extends State<PuzzlePage> {
                           duration: Duration(milliseconds: 500),
                           backgroundColor: Colors.red,
                           content: Text('OOPS! Try agaim'),
-                          // action: SnackBarAction(
-                          //   label: 'Undo',
-                          //   onPressed: () {},
-                          // ),
                         );
 
                         ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                        FlutterRingtonePlayer.play(
+                            fromAsset: "assets/error.wav", volume: .3);
                       }
                     }
-                    // print(c.wasAccepted);
                   },
                   child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
                 );
-              }).toList(),
+              }).toList()
+                ..shuffle(Random(stem)),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -143,10 +143,8 @@ class _PuzzlePageState extends State<PuzzlePage> {
               borderRadius: BorderRadius.circular(20),
               color: choices[emoji],
             ),
-            // color: choices[emoji],
             height: 80,
             width: 200,
-            //child: Center(child: Text(choices[emoji].toString())),
           );
         }
       }),
@@ -157,25 +155,19 @@ class _PuzzlePageState extends State<PuzzlePage> {
             backgroundColor: Colors.green,
             duration: Duration(milliseconds: 500),
             content: Text('YEAH!  Good Job!'),
-            // action: SnackBarAction(
-            //   label: 'Undo',
-            //   onPressed: () {},
-            // ),
           );
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          FlutterRingtonePlayer.play(
+              fromAsset: "assets/success.wav", volume: .3);
         }
         setState(() {
           score[emoji] = true;
           if (score.length == 6) {
             showDialog(
-
-                // barrierColor: Colors.blue,
                 context: context,
                 builder: (context) => AlertDialog(
                       backgroundColor: Colors.blue[50],
-                      // contentPadding: const EdgeInsets.all(300),
-
                       title: const Text("🥳 CONGRATULATION, You did well."),
                       actions: [
                         Column(
@@ -184,12 +176,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * .2,
                               child: const Text(
-                                  " 1. Select 'Play again' to continue Playing \n 2. Select 'Menu Page' to go back "),
+                                  " 1. Select 'Play again' to continue Playing \n   -- click the refresh button to refresh \n \n 2. Select 'Menu Page' to go back "),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                TextButton(
+                                ElevatedButton(
                                     style: ButtonStyle(
                                         foregroundColor:
                                             MaterialStateProperty.all(
@@ -204,7 +196,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                       "Play again",
                                       style: TextStyle(fontSize: 24),
                                     )),
-                                TextButton(
+                                ElevatedButton(
                                     style: ButtonStyle(
                                         foregroundColor:
                                             MaterialStateProperty.all(
@@ -228,15 +220,8 @@ class _PuzzlePageState extends State<PuzzlePage> {
                         )
                       ],
                     ));
-            // Navigator.push(context, MaterialPageRoute(builder: (context) {
-            //   return const PuzzleMenuPage();
-            // }));
           }
         });
-        FlutterRingtonePlayer.play(fromAsset: "assets/success.wav", volume: .3);
-        // FlutterBeep.beep(false);
-        // FlutterBeep.playSysSound(1);
-        // audioPlugin.play('success.wav');
       },
       onLeave: (data) {},
     );
@@ -263,7 +248,3 @@ class Emoji extends StatelessWidget {
     );
   }
 }
-
-
-
-//"🍎 🍊 🍋 🍆 🥦 🥔 ✅ ⬜ ⏹️ 🔲 👌 👍  ctrl+cmd+space "

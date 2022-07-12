@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-// import 'package:learn/widgets/letterpage.dart';
-// import 'package:provider/provider.dart';
-
+import 'package:flutter/services.dart';
 import 'package:learn/pages/alphachart.dart';
 import 'package:learn/pages/colorspage.dart';
 import 'package:learn/pages/numpage.dart';
 import 'package:learn/pages/puzzlemenupage.dart';
-// import 'package:learn/pages/puzzlepage.dart';
-// import 'package:learn/splash.dart';
-// import 'package:learn/widgets/puzzlemenublock.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding();
@@ -41,6 +36,7 @@ class LearnAppState extends State<LearnApp> {
   void navigationBottomBar(int index) {
     setState(() {
       selectedIndex = index;
+      HapticFeedback.lightImpact();
     });
   }
 
