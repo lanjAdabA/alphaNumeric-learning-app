@@ -28,55 +28,11 @@ class _ChartState extends State<AlphaChart> {
     await flutterTts.speak(text);
   }
 
-/* 
-class _TextToSpeechState extends State<TextToSpeech> {
-  final FlutterTts flutterTts = FlutterTts();
-  speak(String text) async {
-    await flutterTts.setLanguage("en-US");
-    await flutterTts.setPitch(.8);
-    await flutterTts.setSpeechRate(.4);
-    await flutterTts.speak(text);
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: InkWell(
-          child: const Center(child: Text("hello")),
-          onDoubleTap: () => speak("helloE"),
-          ),
-    );
-  }
-}
-
-
- */
-  // List<Map<String, dynamic>> minidata = [
-  //   {},
-  //   {
-  //     "miniimage":
-  //         "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-  //     "minidescription": "axe",
-  //   },
-  //   {
-  //     "miniimage":
-  //         "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-  //     "minidescription": "aaa",
-  //   },
-  //   {
-  //     "miniimage":
-  //         "https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078?k=20&m=683494078&s=612x612&w=0&h=MtHUc7vTTZGAAP4-o87T6v57g1KaJP5Vd_oh7LwQca8=",
-  //     "minidescription": "ape",
-  //   },
-  // ];
-
   final listSize = 26;
   List<Map<String, dynamic>> data = [
     {
       "letterkey": "a",
-      "img":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/A1-1.png",
+      "img": "assets/alphaChar/A.png",
       "cap": "A",
       "small": "a",
       "description": "A for Apple",
@@ -107,8 +63,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "b",
-      "img":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/B1.png",
+      "img": "assets/alphaChar/B.png",
       "cap": "B",
       "small": "b",
       "description": "B for Ball",
@@ -138,8 +93,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "c",
-      "img":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/C2.png",
+      "img": "assets/alphaChar/C.png",
       "cap": "C",
       "small": "c",
       "description": "C for Cat",
@@ -170,8 +124,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "d",
-      "img":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/D1.png",
+      "img": "assets/alphaChar/D.png",
       "cap": "D",
       "small": "d",
       "description": "D for Dog",
@@ -202,8 +155,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "e",
-      "img":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/E1.png",
+      "img": "assets/alphaChar/E.png",
       "cap": "E",
       "small": "e",
       "description": "E for Egg",
@@ -234,8 +186,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "f",
-      "img":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/F1.png",
+      "img": "assets/alphaChar/F.png",
       "cap": "F",
       "small": "f",
       "description": "F for Fish",
@@ -266,8 +217,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "g",
-      "img":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://alphabetimals.com/wp-content/uploads/G1.png",
+      "img": "assets/alphaChar/G.png",
       "cap": "G",
       "small": "g",
       "description": "G for Grapes",
@@ -298,7 +248,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "h",
-      "img": "https://alphabetimals.com/wp-content/uploads/H1.png",
+      "img": "assets/alphaChar/H.png",
       "cap": "H",
       "small": "h",
       "description": "H for Horse",
@@ -329,7 +279,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "i",
-      "img": "https://alphabetimals.com/wp-content/uploads/I1.png",
+      "img": "assets/alphaChar/I.png",
       "cap": "I",
       "small": "i",
       "description": "I for Icecream",
@@ -360,7 +310,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "j",
-      "img": "https://alphabetimals.com/wp-content/uploads/J4.png",
+      "img": "assets/alphaChar/J.png",
       "cap": "J",
       "small": "j",
       "description": "J for Joker",
@@ -391,7 +341,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "k",
-      "img": "https://alphabetimals.com/wp-content/uploads/K4.png",
+      "img": "assets/alphaChar/K.png",
       "cap": "K",
       "small": "k",
       "description": "K for Kite",
@@ -422,7 +372,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "l",
-      "img": "https://alphabetimals.com/wp-content/uploads/L1.png",
+      "img": "assets/alphaChar/L.png",
       "cap": "L",
       "small": "l",
       "description": "L for Lemon",
@@ -453,7 +403,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "m",
-      "img": "https://alphabetimals.com/wp-content/uploads/M1.png",
+      "img": "assets/alphaChar/M.png",
       "cap": "M",
       "small": "m",
       "description": "M for Monkey",
@@ -484,7 +434,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "n",
-      "img": "https://alphabetimals.com/wp-content/uploads/N3.png",
+      "img": "assets/alphaChar/N.png",
       "cap": "N",
       "small": "n",
       "description": "N for Nest",
@@ -515,7 +465,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "o",
-      "img": "https://alphabetimals.com/wp-content/uploads/O6.png",
+      "img": "assets/alphaChar/O.png",
       "cap": "O",
       "small": "o",
       "description": "O for Owl",
@@ -546,7 +496,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "p",
-      "img": "https://alphabetimals.com/wp-content/uploads/P8.png",
+      "img": "assets/alphaChar/P.png",
       "cap": "P",
       "small": "p",
       "description": "P for Pen",
@@ -577,7 +527,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "q",
-      "img": "https://alphabetimals.com/wp-content/uploads/Q1.png",
+      "img": "assets/alphaChar/Q.png",
       "cap": "Q",
       "small": "q",
       "description": "Q for Queen",
@@ -607,7 +557,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "r",
-      "img": "https://alphabetimals.com/wp-content/uploads/R3.png",
+      "img": "assets/alphaChar/R.png",
       "cap": "R",
       "small": "r",
       "description": "R for Rose",
@@ -638,7 +588,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "s",
-      "img": "https://alphabetimals.com/wp-content/uploads/S1.png",
+      "img": "assets/alphaChar/S.png",
       "cap": "S",
       "small": "s",
       "description": "S for Spider",
@@ -669,7 +619,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "t",
-      "img": "https://alphabetimals.com/wp-content/uploads/T2.png",
+      "img": "assets/alphaChar/T.png",
       "cap": "T",
       "small": "t",
       "description": "T for Tomato",
@@ -700,7 +650,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "u",
-      "img": "https://alphabetimals.com/wp-content/uploads/U4.png",
+      "img": "assets/alphaChar/U.png",
       "cap": "U",
       "small": "u",
       "description": "urn",
@@ -731,7 +681,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "v",
-      "img": "https://alphabetimals.com/wp-content/uploads/V1.png",
+      "img": "assets/alphaChar/V.png",
       "cap": "V",
       "small": "v",
       "description": "V for Van",
@@ -762,7 +712,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "w",
-      "img": "https://alphabetimals.com/wp-content/uploads/W7.png",
+      "img": "assets/alphaChar/W.png",
       "cap": "W",
       "small": "w",
       "description": "W for Watch",
@@ -793,7 +743,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "x",
-      "img": "https://alphabetimals.com/wp-content/uploads/X4.png",
+      "img": "assets/alphaChar/X.png".toString(),
       "cap": "X",
       "small": "x",
       "description": "X for Xylophone",
@@ -824,7 +774,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "y",
-      "img": "https://alphabetimals.com/wp-content/uploads/Y1.png",
+      "img": "assets/alphaChar/Y.png".toString(),
       "cap": "Y",
       "small": "y",
       "description": "Y for Yak",
@@ -854,7 +804,7 @@ class _TextToSpeechState extends State<TextToSpeech> {
     },
     {
       "letterkey": "z",
-      "img": "https://alphabetimals.com/wp-content/uploads/Z1.png",
+      "img": "assets/alphaChar/Z.png".toString(),
       "cap": "Z",
       "small": "z",
       "description": "Z for Zebra",
@@ -918,19 +868,6 @@ class _TextToSpeechState extends State<TextToSpeech> {
               },
             );
           }),
-        )
-        /* GridView.builder(
-          padding: const EdgeInsets.all(10),
-          shrinkWrap: true,
-          itemCount: data.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4),
-          itemBuilder: (context, index) {
-            return Block(
-                img: data[index]["img"],
-                cap: data[index]["cap"],
-                small: data[index]["small"]);
-          }), */
-        );
+        ));
   }
 }

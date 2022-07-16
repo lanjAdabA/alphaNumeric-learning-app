@@ -65,7 +65,7 @@ class _NumBlockState extends State<NumBlock> {
           InkWell(
             child: SizedBox(
               height: MediaQuery.of(context).size.height - 10,
-              child: Image(image: NetworkImage(widget.image)),
+              child: Image(image: AssetImage(widget.image)),
             ),
             onDoubleTap: () {
               showModalBottomSheet(

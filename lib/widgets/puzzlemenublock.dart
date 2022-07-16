@@ -16,7 +16,7 @@ class _PluzzleMenuBLockState extends State<PluzzleMenuBLock> {
   Widget build(BuildContext c) {
     return Row(
       children: [
-        Image.network(widget.menuimg),
+        Image.asset(widget.menuimg),
         Text(
           widget.menudescription,
           style: const TextStyle(fontSize: 28, fontFamily: "RubikMoonrocks"),

@@ -28,18 +28,15 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
 
   List<Map<String, dynamic>> menudata = [
     {
-      "menuimg":
-          'https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_600/https://alphabetimals.com/wp-content/uploads/albert_coloring.png',
+      "menuimg": 'assets/menuIcon/alpha.png',
       "menudescription": "MATCH TO ALPHABET"
     },
     {
-      "menuimg":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_600/https://alphabetimals.com/wp-content/uploads/albert_typer.png",
+      "menuimg": 'assets/menuIcon/num.png',
       "menudescription": "MATCH TO NUMBER"
     },
     {
-      "menuimg":
-          "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_300/https://alphabetimals.com/wp-content/uploads/albert_dictionary_cropped-1.png",
+      "menuimg": 'assets/menuIcon/color.png',
       "menudescription": "MATCH TO COLOR"
     },
   ];
@@ -83,7 +80,6 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
                         ),
                       ],
                     ),
-                    //*
                     child: InkWell(
                       onTap: () {
                         Navigator.push(
@@ -92,22 +88,17 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
                             builder: (context) {
                               return Scaffold(
                                 body: menuPage[index],
-                              ); // const PuzzlePage();
-                              // const Numv();
-                              //const Abc();
+                              );
                             },
                           ),
                         );
                       },
-                      //*
                       child: PluzzleMenuBLock(
                         menuimg: menudata[index]["menuimg"],
                         menudescription: menudata[index]["menudescription"],
                       ),
                     ),
-                    //*
                   ),
-                  //*
                 ),
               ),
             );

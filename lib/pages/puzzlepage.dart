@@ -23,12 +23,14 @@ class _PuzzlePageState extends State<PuzzlePage> {
     "🥔": Colors.brown,
   };
 
-  // final Map choices2 = {
-  //   "🍎": {color: Colors.red, text: 'Red'},
-  //inorder to assign another attribute
-
   int seed = 0;
   int stem = 6;
+
+  @override
+  void dispose() {
+    super.dispose();
+    // print("dispose");
+  }
 
   @override
   Widget build(BuildContext context) {

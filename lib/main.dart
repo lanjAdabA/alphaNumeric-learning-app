@@ -46,31 +46,70 @@ class LearnAppState extends State<LearnApp> {
     const ColourPage(),
     const PuzzleMenuPage()
   ];
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: chartPage[selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: const Color.fromARGB(0, 48, 48, 50),
-          selectedItemColor: const Color.fromARGB(255, 162, 16, 206),
-          unselectedItemColor: const Color.fromARGB(255, 158, 160, 155),
-          currentIndex: selectedIndex,
-          selectedFontSize: 16,
-          showUnselectedLabels: true,
-          unselectedFontSize: 10,
-          enableFeedback: true,
-          onTap: navigationBottomBar,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.abc_outlined), label: "ALPHABET (A B C)"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.format_list_numbered_outlined),
-                label: "NUMBERS (1 2 3)"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.color_lens_outlined), label: "COLORS"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.extension_outlined), label: "EXERCISE"),
-          ]),
+    return WillPopScope(
+      onWillPop: () => _onBackButtonPressed(context),
+      child: Scaffold(
+        body: chartPage[selectedIndex],
+        bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: const Color.fromARGB(0, 48, 48, 50),
+            selectedItemColor: const Color.fromARGB(255, 162, 16, 206),
+            unselectedItemColor: const Color.fromARGB(255, 158, 160, 155),
+            currentIndex: selectedIndex,
+            selectedFontSize: 16,
+            showUnselectedLabels: true,
+            unselectedFontSize: 10,
+            enableFeedback: true,
+            onTap: navigationBottomBar,
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.abc_outlined), label: "ALPHABET (A B C)"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.format_list_numbered_outlined),
+                  label: "NUMBERS (1 2 3)"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.color_lens_outlined), label: "COLORS"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.extension_outlined), label: "EXERCISE"),
+            ]),
+      ),
     );
+  }
+
+  Future<bool> _onBackButtonPressed(BuildContext context) async {
+    bool exitApp = await showDialog(
+        context: context,
+        builder: ((context) {
+          return AlertDialog(
+            buttonPadding: const EdgeInsets.all(20),
+            title: const Text("Are you sure you want to exit?"),
+            // content: const Text(" press yes to exit \n press no to cancel"),
+            actions: <Widget>[
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.blue[200]),
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+                child: const Text("Cancel"),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.blue),
+                onPressed: () {
+                  Navigator.of(context).pop(true);
+                },
+                child: const Text("Ok"),
+              ),
+            ],
+          );
+        }));
+
+    return exitApp ?? false;
   }
 }

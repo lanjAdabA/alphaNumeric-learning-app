@@ -3,6 +3,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 
 class AlphaBlock extends StatefulWidget {
   final String img;
+  // final Image img;
   final String cap;
   final String small;
   const AlphaBlock(
@@ -39,7 +40,8 @@ class _AplhaState extends State<AlphaBlock> {
                 SizedBox(
                   height: 60,
                   width: 60,
-                  child: Image.network(widget.img),
+                  // child: Image.network(widget.img),
+                  child: Image.asset(widget.img),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

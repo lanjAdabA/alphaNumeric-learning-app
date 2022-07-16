@@ -1,10 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-// import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:learn/pages/puzzlemenupage.dart';
-// import 'package:flutter_beep/flutter_beep.dart';
 
 class PuzzleAlpha extends StatefulWidget {
   const PuzzleAlpha({Key? key}) : super(key: key);
@@ -26,21 +24,9 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
     "G": " 🍇 G-Grapes",
     "H": " 🏠 H-House",
   };
-//
-  // final Map choices2 = {
-  //   "🍎": {color: Colors.red, text: 'Red'},
-  //inorder to assign another attribute
-  //   "🍊": Colors.orange,
-  //   "🍋": Colors.yellow,
-  //   "🍆": Colors.purple,
-  //   "🥦": Colors.green,
-  //   "🥔": Colors.brown,
-  // };
 
   int seed = 0;
   int stem = 3;
-  // final AudioPlayer _audioController =AudioPlayer() ;
-  // AudioPlayer audioPlugin = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -102,10 +88,6 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                           duration: Duration(milliseconds: 500),
                           backgroundColor: Colors.red,
                           content: Text('OOPS! Try agaim'),
-                          // action: SnackBarAction(
-                          //   label: 'Undo',
-                          //   onPressed: () {},
-                          // ),
                         );
 
                         ScaffoldMessenger.of(context).showSnackBar(snackBar1);
@@ -113,8 +95,6 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                             fromAsset: "assets/error.wav", volume: .3);
                       }
                     }
-
-                    // print(c.wasAccepted);
                   },
                   feedback: Emoji(emoji: emoji),
                   childWhenDragging: const Emoji(emoji: "_"),
@@ -138,20 +118,12 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
     return DragTarget<String>(
       builder: ((BuildContext context, List<String?> incoming, List rejected) {
         if (score[emoji] == true) {
-          // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          //   padding: EdgeInsets.all(20),
-          //   duration: Duration(seconds: 1),
-          //   backgroundColor: Colors.amber,
-          //   content: Text("abc"),
-          // )); //
-
           return Container(
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),
                 ),
                 color: Colors.white),
-            // color: Colors.white,
             alignment: Alignment.center,
             height: 80,
             width: 200,
@@ -161,33 +133,13 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
             ),
           );
         } else {
-          //   return SnackBar(
-          //     content: const Text('Yay! A SnackBar!'),
-          //     action: SnackBarAction(
-          //       label: 'Undo',
-          //       onPressed: () {},
-          //     ),
-          //   );
-
-          // final snackBar = SnackBar(
-          //   content: const Text('Yay! A SnackBar!'),
-          //   action: SnackBarAction(
-          //     label: 'Undo',
-          //     onPressed: () {},
-          //   ),
-          // );
-          // ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
           return Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: Colors.blue[50]
-                // color: choices[emoji],
-                ),
-            // color: choices[emoji],
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.blue[50]),
             height: 80,
             width: 200,
             child: Row(children: [
-              // Emoji(emoji: emoji),
               Text(
                 choices[emoji].toString(),
                 style: const TextStyle(fontSize: 36, fontFamily: "anton"),
@@ -203,40 +155,20 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
             backgroundColor: Colors.green,
             duration: Duration(milliseconds: 500),
             content: Text('YEAH!  Good Job!'),
-            // action: SnackBarAction(
-            //   label: 'Undo',
-            //   onPressed: () {},
-            // ),
           );
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
           FlutterRingtonePlayer.play(
               fromAsset: "assets/success.wav", volume: .3);
         }
-        // else {
-        //   log(44);
-        //   const snackBar1 = SnackBar(
-        //     content: Text('OOPS! Try agaim'),
-        //     // action: SnackBarAction(
-        //     //   label: 'Undo',
-        //     //   onPressed: () {},
-        //     // ),
-        //   );
-
-        //   ScaffoldMessenger.of(context).showSnackBar(snackBar1);
-        // }
 
         setState(() {
           score[emoji] = true;
           if (score.length % 8 == 0) {
             showDialog(
-
-                // barrierColor: Colors.blue,
                 context: context,
                 builder: (context) => AlertDialog(
                       backgroundColor: Colors.blue[50],
-                      // contentPadding: const EdgeInsets.all(300),
-
                       title: const Text("🥳 CONGRATULATION, You did well."),
                       actions: [
                         Column(
@@ -291,28 +223,9 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                     ));
           }
         });
-        // FlutterBeep.beep(false);
-        // FlutterBeep.playSysSound(1);
-        // audioPlugin.play('success.wav');
       },
-      onLeave: (data) {
-        // if (data != emoji)
-      },
-      onMove: (data) {
-        //   if (data != emoji) {
-        //     const snackBar1 = SnackBar(
-        //       duration: Duration(milliseconds: 10),
-        //       backgroundColor: Colors.red,
-        //       content: Text('OOPS! Try agaim'),
-        //       // action: SnackBarAction(
-        //       //   label: 'Undo',
-        //       //   onPressed: () {},
-        //       // ),
-        //     );
-
-        //     ScaffoldMessenger.of(context).showSnackBar(snackBar1);
-        //   }
-      },
+      onLeave: (data) {},
+      onMove: (data) {},
     );
   }
 }
@@ -341,5 +254,3 @@ class Emoji extends StatelessWidget {
     );
   }
 }
-
-// ctrl+cmd+space "
