@@ -22,7 +22,8 @@ class _PuzzlePageState extends State<PuzzlePage> {
     {'object': "🥔", "color": Colors.brown},
     {'object': "🍊", "color": Colors.orange},
     {'object': "🍆", "color": Colors.purple},
-    {'object': "🥚", "color": Colors.white},
+    {'object': "🧄", "color": Colors.white},
+    {'object': "🫐", "color": Colors.indigo},
   ];
 
   int seed = 1;
@@ -31,7 +32,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
   randomgen() {
     generated = {};
     List keys = [];
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 8; i++) {
       keys.add(i);
     }
     final random = Random();

@@ -180,11 +180,12 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
         } else {
           return Container(
             decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.blue[50]),
             height: 120,
             width: 200,
-            child: Row(children: [
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
                 generated[emoji].toString(),
                 style: const TextStyle(fontSize: 28, fontFamily: "anton"),

@@ -166,6 +166,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
         } else {
           return Container(
             decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(20),
               color: Colors.blue[50],
             ),
