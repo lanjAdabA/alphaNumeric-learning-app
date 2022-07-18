@@ -1,10 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-// import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:learn/pages/puzzlemenupage.dart';
-// import 'package:flutter_beep/flutter_beep.dart';
 
 class PuzzleNum extends StatefulWidget {
   const PuzzleNum({Key? key}) : super(key: key);
@@ -128,7 +126,6 @@ class _PuzzleNumState extends State<PuzzleNum> {
                   Radius.circular(20),
                 ),
                 color: Colors.white),
-            // color: Colors.white,
             alignment: Alignment.center,
             height: 70,
             width: 200,
@@ -140,10 +137,8 @@ class _PuzzleNumState extends State<PuzzleNum> {
         } else {
           return Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: Colors.blue[50]
-                // color: choices[emoji],
-                ),
-            // color: choices[emoji],
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.blue[50]),
             height: 70,
             width: 200,
             child: Center(
@@ -161,10 +156,6 @@ class _PuzzleNumState extends State<PuzzleNum> {
             backgroundColor: Colors.green,
             duration: Duration(milliseconds: 500),
             content: Text('YEAH!  Good Job!'),
-            // action: SnackBarAction(
-            //   label: 'Undo',
-            //   onPressed: () {},
-            // ),
           );
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -175,13 +166,9 @@ class _PuzzleNumState extends State<PuzzleNum> {
           score[emoji] = true;
           if (score.length == 10) {
             showDialog(
-
-                // barrierColor: Colors.blue,
                 context: context,
                 builder: (context) => AlertDialog(
                       backgroundColor: Colors.blue[50],
-                      // contentPadding: const EdgeInsets.all(300),
-
                       title: const Text("🥳 CONGRATULATION, You did well."),
                       actions: [
                         Column(
@@ -235,7 +222,6 @@ class _PuzzleNumState extends State<PuzzleNum> {
                       ],
                     ));
           }
-          // color: coloris[index % coloris.length],
         });
       },
       onLeave: (data) {},
@@ -267,6 +253,3 @@ class Emoji extends StatelessWidget {
     );
   }
 }
-
-
-// ctrl+cmd+space "

@@ -90,7 +90,6 @@ class LearnAppState extends State<LearnApp> {
           return AlertDialog(
             buttonPadding: const EdgeInsets.all(20),
             title: const Text("Are you sure you want to exit?"),
-            // content: const Text(" press yes to exit \n press no to cancel"),
             actions: <Widget>[
               ElevatedButton(
                 style: ElevatedButton.styleFrom(primary: Colors.blue[200]),
@@ -110,6 +109,6 @@ class LearnAppState extends State<LearnApp> {
           );
         }));
 
-    return exitApp ?? false;
+    return exitApp;
   }
 }

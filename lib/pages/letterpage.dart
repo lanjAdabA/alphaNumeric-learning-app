@@ -1,4 +1,3 @@
-// import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:learn/widgets/minilettercard.dart';
@@ -10,12 +9,8 @@ class LetterPage extends StatefulWidget {
   final String small;
   final String description;
   final String imgLetter;
-  //place to check
   final List<Map<String, dynamic>> minipage;
 
-  //final
-
-  // List minipage = [];
   const LetterPage({
     Key? key,
     required this.cap,
@@ -38,13 +33,8 @@ class _LetterPageState extends State<LetterPage> {
     await flutterTts.speak(text);
   }
 
-  //place to check
-
   @override
   Widget build(BuildContext context) {
-    //log(widget.minipage.toString());
-    // String a = widget.minipage[0]["minidescription"];
-    // print("object$a");
     return Scaffold(
       appBar: AppBar(
         title: const Text("Letter-Page"),
@@ -102,16 +92,6 @@ class _LetterPageState extends State<LetterPage> {
                           fontFamily: "Courgette",
                         ),
                       ),
-                      // Text("a",
-                      //     style: TextStyle(
-                      //       fontFamily: "Courgette",
-                      //     )
-
-                      //     // GoogleFonts.courgette(
-                      //     //     fontStyle: FontStyle.normal,
-                      //     //     color: Colors.blue,
-                      //     //     fontSize: 80),
-                      //     ),
                     ],
                   ),
                 ),
@@ -186,11 +166,6 @@ class _LetterPageState extends State<LetterPage> {
                 )
               ],
             ),
-            // ListView.builder(
-            //     itemCount: 4,
-            //     // scrollDirection: Axis.horizontal,
-            //     itemBuilder: ((context, index) => const MiniLetterCard(minidescription: '', miniimage: '',))),
-
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.all(20),
@@ -198,7 +173,6 @@ class _LetterPageState extends State<LetterPage> {
                 itemCount: widget.minipage.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  //   return Text(widget.minipage[index].toString());
                   return InkWell(
                     child: MiniLetterCard(
                         miniimage: widget.minipage[index]["miniimage"],
@@ -230,31 +204,3 @@ class _LetterPageState extends State<LetterPage> {
     );
   }
 }
-
-
-
-
-/* 
-class _TextToSpeechState extends State<TextToSpeech> {
-  final FlutterTts flutterTts = FlutterTts();
-  speak(String text) async {
-    await flutterTts.setLanguage("en-US");
-    await flutterTts.setPitch(.8);
-    await flutterTts.setSpeechRate(.4);
-    await flutterTts.speak(text);
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: InkWell(
-          child: const Center(child: Text("hello")),
-          onTap: () => speak("helloE"),
-          ),
-    );
-  }
-}
-
-
- */
