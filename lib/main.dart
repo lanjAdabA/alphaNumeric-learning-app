@@ -110,6 +110,6 @@ class LearnAppState extends State<LearnApp> {
           );
         }));
 
-    return exitApp ?? false;
+    return exitApp;
   }
 }

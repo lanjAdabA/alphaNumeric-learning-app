@@ -132,7 +132,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
                 ),
                 color: Colors.white),
             alignment: Alignment.center,
-            height: 80,
+         height: 120,
             width: 200,
             child: const Text(
               "👍 correct!",
@@ -145,7 +145,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
               borderRadius: BorderRadius.circular(20),
               color: choices[emoji],
             ),
-            height: 80,
+            height: 120,
             width: 200,
           );
         }
