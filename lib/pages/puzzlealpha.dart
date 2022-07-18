@@ -13,20 +13,63 @@ class PuzzleAlpha extends StatefulWidget {
 
 class _PuzzleAlphaState extends State<PuzzleAlpha> {
   final Map<String, bool> score = {};
+  Map<dynamic, dynamic> generated = {};
 
-  final Map choices = {
-    "A": " 🍎 A-Apple",
-    "B": " ⚽️ B-Ball",
-    "C": " 🚗 C-Car",
-    "D": " 🦮 D-Dog",
-    "E": " 🥚 E-Egg",
-    "F": " 🐠 F-Fish",
-    "G": " 🍇 G-Grapes",
-    "H": " 🏠 H-House",
-  };
+  final List<Map<String, dynamic>> choices = [
+    {"alphabet": "A", "value": " 🍎 Apple"},
+    {"alphabet": "B", "value": " ⚽️ Ball"},
+    {"alphabet": "C", "value": " 🐈‍⬛ Car"},
+    {"alphabet": "D", "value": " 🦮 Dog"},
+    {"alphabet": "E", "value": " 🥚 Egg"},
+    {"alphabet": "F", "value": " 🐠 Fish"},
+    {"alphabet": "G", "value": " 🍇 Grapes"},
+    {"alphabet": "H", "value": " 🏠 House"},
+    {"alphabet": "I", "value": " 🍧 Icecream"},
+    {"alphabet": "J", "value": " 🤡 Joker"},
+    {"alphabet": "K", "value": " 🪁 Kite"},
+    {"alphabet": "L", "value": " 🍋 Lemon"},
+    {"alphabet": "M", "value": " 🐒 Monkey"},
+    {"alphabet": "N", "value": " 🥜 Nuts"},
+    {"alphabet": "O", "value": " 🍊 Orange"},
+    {"alphabet": "P", "value": " 🖊 Pen"},
+    {"alphabet": "Q", "value": " 👸🏼 Queen"},
+    {"alphabet": "R", "value": " 🌹 Rose"},
+    {"alphabet": "S", "value": " 🐏 Sheep"},
+    {"alphabet": "T", "value": " 🐅 Tiger"},
+    {"alphabet": "U", "value": " 🦄 Unicorn"},
+    {"alphabet": "V", "value": " 🦺 Vest"},
+    {"alphabet": "W", "value": " ⌚️ Watch"},
+    {"alphabet": "X", "value": " 🎄 Xmas tree"},
+    {"alphabet": "Y", "value": " 🪀 Yoyo"},
+    {"alphabet": "Z", "value": " 🦓 Zebra"},
+  ];
 
-  int seed = 0;
-  int stem = 3;
+  int seed = 1;
+  int stem = 5;
+
+  randomgen() {
+    generated = {};
+    List keys = [];
+    for (int i = 0; i < 26; i++) {
+      keys.add(i);
+    }
+    final random = Random();
+    int index = 0;
+
+    for (int i = 0; i < 6; i++) {
+      index = keys[random.nextInt(keys.length)];
+      keys.removeWhere((k) => k == index); // remove the element
+      generated[choices[index]['alphabet']] =
+          choices[index]['value']; // {"A": "value"}
+    }
+  }
+
+  @override
+  void initState() {
+    randomgen();
+    // print(generated);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +78,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
           title: Column(
             children: [
               Text(
-                'Score ${score.length} /8',
+                'Score ${score.length} /6',
                 style: const TextStyle(fontFamily: "PressStart"),
               ),
               Row(
@@ -67,6 +110,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
             child: const Icon(Icons.refresh_outlined),
             onPressed: () {
               setState(() {
+                randomgen();
                 score.clear();
                 seed++;
                 stem--;
@@ -78,7 +122,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: choices.keys.map((emoji) {
+              children: generated.keys.map((emoji) {
                 return Draggable<String>(
                   data: emoji,
                   onDragEnd: (c) {
@@ -106,9 +150,10 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:
-                  choices.keys.map((emoji) => _buildDragTarget(emoji)).toList()
-                    ..shuffle(Random(seed)),
+              children: generated.keys
+                  .map((emoji) => _buildDragTarget(emoji))
+                  .toList()
+                ..shuffle(Random(seed)),
             )
           ],
         ));
@@ -125,7 +170,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                 ),
                 color: Colors.white),
             alignment: Alignment.center,
-            height: 80,
+            height: 120,
             width: 200,
             child: const Text(
               "👍 correct!",
@@ -137,12 +182,12 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.blue[50]),
-            height: 80,
+            height: 120,
             width: 200,
             child: Row(children: [
               Text(
-                choices[emoji].toString(),
-                style: const TextStyle(fontSize: 36, fontFamily: "anton"),
+                generated[emoji].toString(),
+                style: const TextStyle(fontSize: 28, fontFamily: "anton"),
               ),
             ]),
           );
@@ -164,7 +209,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
 
         setState(() {
           score[emoji] = true;
-          if (score.length % 8 == 0) {
+          if (score.length % 6 == 0) {
             showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
