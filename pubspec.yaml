@@ -133,6 +133,10 @@ flutter:
       fonts:
         - asset: assets/RubikMicrobe-Regular.ttf     
 
+    - family: SpecialElite
+      fonts:
+        - asset: assets/SpecialElite-Regular.ttf     
+
 
         
   

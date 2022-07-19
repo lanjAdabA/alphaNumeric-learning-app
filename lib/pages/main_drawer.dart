@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learn/pages/hint.page.dart';
+import 'package:learn/pages/info.page.dart';
+import 'package:learn/pages/special_thanks.page.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -27,10 +30,6 @@ class MainDrawer extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    "Thingbaijam Jessi Khuman",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  const Text(
                     "thingbaijamjessikhuman@gmail.com",
                     style: TextStyle(
                       color: Colors.white,
@@ -40,10 +39,19 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
           ),
-          const ListTile(
-            leading: Icon(Icons.notes),
-            title: Text("Hints"),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.notes),
+            title: const Text("Hints"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const HintPage();
+                  },
+                ),
+              );
+            },
           ),
           const ListTile(
             leading: Icon(Icons.alternate_email),
@@ -55,15 +63,33 @@ class MainDrawer extends StatelessWidget {
             title: Text("feedback"),
             onTap: null,
           ),
-          const ListTile(
-            leading: Icon(Icons.star),
-            title: Text("Special Thanks"),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.star),
+            title: const Text("Special Thanks"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const ThanksPage();
+                  },
+                ),
+              );
+            },
           ),
-          const ListTile(
-            leading: Icon(Icons.info),
-            title: Text("about"),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.info),
+            title: const Text("about"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const InfoPage();
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),
