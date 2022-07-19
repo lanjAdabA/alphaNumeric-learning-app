@@ -236,7 +236,12 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                         backgroundColor:
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
-                                    onPressed: () {
+                                     onPressed: () {
+                                      randomgen();
+
+                                      setState(() {
+                                        score.clear();
+                                      });
                                       Navigator.pop(context);
                                     },
                                     child: const Text(
@@ -252,7 +257,13 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
                                     onPressed: () {
-                                      Navigator.push(context,
+                                             randomgen();
+
+                                      setState(() {
+                                        score.clear();
+                                      });
+
+                                      Navigator.pushReplacement(context,
                                           MaterialPageRoute(builder: (context) {
                                         return const PuzzleMenuPage();
                                       }));

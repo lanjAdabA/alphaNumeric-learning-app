@@ -49,7 +49,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
   @override
   void initState() {
     randomgen();
-    // print(generated);
+    print(generated);
     super.initState();
   }
 
@@ -193,7 +193,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
 
         setState(() {
           score[emoji] = true;
-          if (score.length % 6 == 0) {
+          if (score.length % 5 == 0) {
             showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
@@ -219,7 +219,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                         backgroundColor:
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
-                                    onPressed: () {
+                                   onPressed: () {
+                                      randomgen();
+
+                                      setState(() {
+                                        score.clear();
+                                      });
                                       Navigator.pop(context);
                                     },
                                     child: const Text(
@@ -234,8 +239,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                         backgroundColor:
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
-                                    onPressed: () {
-                                      Navigator.push(context,
+                                    onPressed: () {    randomgen();
+
+                                      setState(() {
+                                        score.clear();
+                                      });
+                                      Navigator.pushReplacement(context,
                                           MaterialPageRoute(builder: (context) {
                                         return const PuzzleMenuPage();
                                       }));

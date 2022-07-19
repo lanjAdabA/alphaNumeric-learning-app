@@ -12,10 +12,10 @@ class PuzzleNum extends StatefulWidget {
 }
 
 class _PuzzleNumState extends State<PuzzleNum> {
-  final Map<String, bool> score = {};
+  Map<String, bool> score = {};
   Map<dynamic, dynamic> generated = {};
 
-  final List<Map<String, dynamic>> choices = [
+  List<Map<String, dynamic>> choices = [
     {'fig': "1", "words": "ONE"},
     {'fig': "2", "words": "TWO"},
     {'fig': "3", "words": "THREE"},
@@ -224,6 +224,11 @@ class _PuzzleNumState extends State<PuzzleNum> {
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
                                     onPressed: () {
+                                      randomgen();
+
+                                      setState(() {
+                                        score.clear();
+                                      });
                                       Navigator.pop(context);
                                     },
                                     child: const Text(
@@ -239,7 +244,12 @@ class _PuzzleNumState extends State<PuzzleNum> {
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
                                     onPressed: () {
-                                      Navigator.push(context,
+                                      randomgen();
+
+                                      setState(() {
+                                        score.clear();
+                                      });
+                                      Navigator.pushReplacement(context,
                                           MaterialPageRoute(builder: (context) {
                                         return const PuzzleMenuPage();
                                       }));
