@@ -236,7 +236,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                         backgroundColor:
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
-                                     onPressed: () {
+                                    onPressed: () {
                                       randomgen();
 
                                       setState(() {
@@ -257,7 +257,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
                                     onPressed: () {
-                                             randomgen();
+                                      randomgen();
 
                                       setState(() {
                                         score.clear();

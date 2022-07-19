@@ -49,7 +49,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
   @override
   void initState() {
     randomgen();
-    print(generated);
+    // print(generated);
     super.initState();
   }
 
@@ -219,9 +219,8 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                         backgroundColor:
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
-                                   onPressed: () {
+                                    onPressed: () {
                                       randomgen();
-
                                       setState(() {
                                         score.clear();
                                       });
@@ -239,8 +238,8 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                         backgroundColor:
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
-                                    onPressed: () {    randomgen();
-
+                                    onPressed: () {
+                                      randomgen();
                                       setState(() {
                                         score.clear();
                                       });

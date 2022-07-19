@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:learn/pages/main_drawer.dart';
 import 'package:learn/widgets/alphablock.dart';
 import 'package:learn/pages/letterpage.dart';
 
@@ -843,6 +844,7 @@ class _ChartState extends State<AlphaChart> {
           title: const Text("Alphabet_Chart"),
           centerTitle: true,
         ),
+        drawer: const MainDrawer(),
         body: Wrap(
           spacing: 3,
           runSpacing: 4,
