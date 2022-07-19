@@ -13,62 +13,58 @@ class PuzzleAlpha extends StatefulWidget {
 
 class _PuzzleAlphaState extends State<PuzzleAlpha> {
   final Map<String, bool> score = {};
-  Map<dynamic, dynamic> generated={};
+  Map<dynamic, dynamic> generated = {};
 
-
-  final List <Map<String,dynamic>> choices = [
-    {"alphabet":"A", "value":" 🍎 A-Apple"},
-    {"alphabet":"B", "value":" ⚽️ B-Ball"},
-    {"alphabet":"C", "value":" 🐈‍⬛ C-Car"},
-    {"alphabet":"D", "value":" 🦮 D-Dog"},
-    {"alphabet":"E", "value":" 🥚 E-Egg"},
-    {"alphabet":"F", "value":" 🐠 F-Fish"},
-    {"alphabet":"G", "value":" 🍇 G-Grapes"},
-    {"alphabet":"H", "value":" 🏠 H-House"},
-    {"alphabet":"I", "value":" 🍧 I-Icecream"},
-    {"alphabet":"J", "value":" 🤡 J-Joker"},
-    {"alphabet":"K", "value":" 🪁 K-Kite"},
-    {"alphabet":"L", "value":" 🍋 L-Lemon"},
-    {"alphabet":"M", "value":" 🐒 M-Monkey"},
-    {"alphabet":"N", "value":" 🥜 N-Nuts"},
-    {"alphabet":"O", "value":" 🍊 O-Orange"},
-    {"alphabet":"P", "value":" 🖊 P-Pen"},
-    {"alphabet":"Q", "value":" 👸🏼 Q-Queen"},
-    {"alphabet":"R", "value":" 🌹 R-Rose"},
-    {"alphabet":"S", "value":" 🐏 S-Sheep"},
-    {"alphabet":"T", "value":" 🐅 T-Tiger"},
-    {"alphabet":"U", "value":" 🦄 U-Unicorn"},
-    {"alphabet":"V", "value":" 🦺 V-Vest"},
-    {"alphabet":"W", "value":" ⌚️ W-Watch"},
-    {"alphabet":"X", "value":" 🎄 X-Xmas tree"},
-    {"alphabet":"Y", "value":" 🪀 Y-Yoyo"},
-    {"alphabet":"Z", "value":" 🦓 Z-Zebra"},
+  final List<Map<String, dynamic>> choices = [
+    {"alphabet": "A", "value": " 🍎 Apple"},
+    {"alphabet": "B", "value": " ⚽️ Ball"},
+    {"alphabet": "C", "value": " 🐈‍⬛ Car"},
+    {"alphabet": "D", "value": " 🦮 Dog"},
+    {"alphabet": "E", "value": " 🥚 Egg"},
+    {"alphabet": "F", "value": " 🐠 Fish"},
+    {"alphabet": "G", "value": " 🍇 Grapes"},
+    {"alphabet": "H", "value": " 🏠 House"},
+    {"alphabet": "I", "value": " 🍧 Icecream"},
+    {"alphabet": "J", "value": " 🤡 Joker"},
+    {"alphabet": "K", "value": " 🪁 Kite"},
+    {"alphabet": "L", "value": " 🍋 Lemon"},
+    {"alphabet": "M", "value": " 🐒 Monkey"},
+    {"alphabet": "N", "value": " 🥜 Nuts"},
+    {"alphabet": "O", "value": " 🍊 Orange"},
+    {"alphabet": "P", "value": " 🖊 Pen"},
+    {"alphabet": "Q", "value": " 👸🏼 Queen"},
+    {"alphabet": "R", "value": " 🌹 Rose"},
+    {"alphabet": "S", "value": " 🐏 Sheep"},
+    {"alphabet": "T", "value": " 🐅 Tiger"},
+    {"alphabet": "U", "value": " 🦄 Unicorn"},
+    {"alphabet": "V", "value": " 🦺 Vest"},
+    {"alphabet": "W", "value": " ⌚️ Watch"},
+    {"alphabet": "X", "value": " 🎄 Xmas tree"},
+    {"alphabet": "Y", "value": " 🪀 Yoyo"},
+    {"alphabet": "Z", "value": " 🦓 Zebra"},
   ];
 
-
-
   int seed = 1;
-   int stem = 5;
+  int stem = 5;
 
-
-
-randomgen(){
-  generated={};
+  randomgen() {
+    generated = {};
     List keys = [];
-    for (int i=0;i<26;i++) {
+    for (int i = 0; i < 26; i++) {
       keys.add(i);
     }
     final random = Random();
     int index = 0;
-   
+
     for (int i = 0; i < 6; i++) {
       index = keys[random.nextInt(keys.length)];
-      keys.removeWhere((k) => k == index);        // remove the element
-      generated[choices[index]['alphabet']] = choices[index]['value'];    // {"A": "value"}
+      keys.removeWhere((k) => k == index); // remove the element
+      generated[choices[index]['alphabet']] =
+          choices[index]['value']; // {"A": "value"}
     }
-}
+  }
 
-@override
+  @override
   void initState() {
     randomgen();
     // print(generated);
@@ -77,8 +73,6 @@ randomgen(){
 
   @override
   Widget build(BuildContext context) {
-  
-
     return Scaffold(
         appBar: AppBar(
           title: Column(
@@ -156,9 +150,10 @@ randomgen(){
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:
-                  generated.keys.map((emoji) => _buildDragTarget(emoji)).toList()
-                    ..shuffle(Random(seed)),
+              children: generated.keys
+                  .map((emoji) => _buildDragTarget(emoji))
+                  .toList()
+                ..shuffle(Random(seed)),
             )
           ],
         ));
@@ -175,7 +170,7 @@ randomgen(){
                 ),
                 color: Colors.white),
             alignment: Alignment.center,
-            height: 80,
+            height: 120,
             width: 200,
             child: const Text(
               "👍 correct!",
@@ -185,11 +180,12 @@ randomgen(){
         } else {
           return Container(
             decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.blue[50]),
-            height: 80,
+            height: 120,
             width: 200,
-            child: Row(children:  [
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
                 generated[emoji].toString(),
                 style: const TextStyle(fontSize: 28, fontFamily: "anton"),

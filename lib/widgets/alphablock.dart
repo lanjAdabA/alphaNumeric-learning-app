@@ -3,7 +3,6 @@ import 'package:flutter_tts/flutter_tts.dart';
 
 class AlphaBlock extends StatefulWidget {
   final String img;
-  // final Image img;
   final String cap;
   final String small;
   const AlphaBlock(
@@ -40,7 +39,6 @@ class _AplhaState extends State<AlphaBlock> {
                 SizedBox(
                   height: 60,
                   width: 60,
-                  // child: Image.network(widget.img),
                   child: Image.asset(widget.img),
                 ),
                 Row(
@@ -70,28 +68,3 @@ class _AplhaState extends State<AlphaBlock> {
     );
   }
 }
-
-/* 
-class _TextToSpeechState extends State<TextToSpeech> {
-  final FlutterTts flutterTts = FlutterTts();
-  speak(String text) async {
-    await flutterTts.setLanguage("en-US");
-    await flutterTts.setPitch(.8);
-    await flutterTts.setSpeechRate(.4);
-    await flutterTts.speak(text);
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: InkWell(
-          child: const Center(child: Text("hello")),
-          onDoubleTap: () => speak("helloE"),
-          ),
-    );
-  }
-}
-
-
- */

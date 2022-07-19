@@ -44,29 +44,3 @@ class _MiniLeterCardState extends State<MiniLetterCard> {
     );
   }
 }
-
-
-/* 
-class _TextToSpeechState extends State<TextToSpeech> {
-  final FlutterTts flutterTts = FlutterTts();
-  speak(String text) async {
-    await flutterTts.setLanguage("en-US");
-    await flutterTts.setPitch(.8);
-    await flutterTts.setSpeechRate(.4);
-    await flutterTts.speak(text);
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: InkWell(
-          child: const Center(child: Text("hello")),
-          onTap: () => speak("helloE"),
-          ),
-    );
-  }
-}
-
-
- */

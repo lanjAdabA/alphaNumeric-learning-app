@@ -85,25 +85,6 @@ class _NumblockState extends State<NumPage> {
         title: const Text("Number_Chart"),
         centerTitle: true,
       ),
-//       body: SingleChildScrollView(
-//         child: ListView.builder(
-//             padding: const EdgeInsets.all(10),
-//             itemCount: 10,
-//             scrollDirection: Axis.vertical,
-//             shrinkWrap: true,
-//             itemBuilder: ((context, index) {
-//               return NumBlock(
-//                 fig: numdata[index]['fig'],
-//                 inwords: numdata[index]['inwords'],
-//                 color: numdata[index]["color"],
-//                 image: numdata[index]['image'],
-//               );
-//             })),
-//       ),
-//     );
-//   }
-// }
-
       body: AnimationLimiter(
         child: ListView.builder(
           padding: EdgeInsets.all(w / 30),

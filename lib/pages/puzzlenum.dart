@@ -1,10 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-// import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:learn/pages/puzzlemenupage.dart';
-// import 'package:flutter_beep/flutter_beep.dart';
 
 class PuzzleNum extends StatefulWidget {
   const PuzzleNum({Key? key}) : super(key: key);
@@ -15,22 +13,47 @@ class PuzzleNum extends StatefulWidget {
 
 class _PuzzleNumState extends State<PuzzleNum> {
   final Map<String, bool> score = {};
+  Map<dynamic, dynamic> generated = {};
 
-  final Map choices = {
-    "1": "ONE",
-    "2": "TWO",
-    "3": "THREE",
-    "4": "FOUR",
-    "5": "FIVE",
-    "6": "SIX",
-    "7": "SEVEN",
-    "8": "EIGHT",
-    "9": "NINE",
-    "10": "TEN",
-  };
+  final List<Map<String, dynamic>> choices = [
+    {'fig': "1", "words": "ONE"},
+    {'fig': "2", "words": "TWO"},
+    {'fig': "3", "words": "THREE"},
+    {'fig': "4", "words": "FOUR"},
+    {'fig': "5", "words": "FIVE"},
+    {'fig': "6", "words": "SIX"},
+    {'fig': "7", "words": "SEVEN"},
+    {'fig': "8", "words": "EIGHT"},
+    {'fig': "9", "words": "NINE"},
+    {'fig': "10", "words": "TEN"},
+  ];
 
-  int seed = 0;
-  int stem = 4;
+  int seed = 1;
+  int stem = 5;
+
+  randomgen() {
+    generated = {};
+    List keys = [];
+    for (int i = 0; i < 10; i++) {
+      keys.add(i);
+    }
+    final random = Random();
+    int index = 0;
+
+    for (int i = 0; i < 5; i++) {
+      index = keys[random.nextInt(keys.length)];
+      keys.removeWhere((k) => k == index); // remove the element
+      generated[choices[index]['fig']] =
+          choices[index]['words']; // {"A": "value"}
+    }
+  }
+
+  @override
+  void initState() {
+    randomgen();
+    // print(generated);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +62,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
           title: Column(
             children: [
               Text(
-                'Score ${score.length} /10',
+                'Score ${score.length} /5',
                 style: const TextStyle(fontFamily: "PressStart"),
               ),
               Row(
@@ -52,7 +75,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
                         color: Color.fromARGB(255, 182, 189, 179)),
                   ),
                   Text(
-                    " -- Match fig to words",
+                    " -- Match letter to picture",
                     style: TextStyle(
                         fontSize: 14,
                         color: Color.fromARGB(255, 156, 172, 172)),
@@ -60,7 +83,7 @@ class _PuzzleNumState extends State<PuzzleNum> {
                 ],
               ),
               const SizedBox(
-                height: 4,
+                height: 5,
               ),
             ],
           ),
@@ -71,50 +94,54 @@ class _PuzzleNumState extends State<PuzzleNum> {
             child: const Icon(Icons.refresh_outlined),
             onPressed: () {
               setState(() {
+                randomgen();
                 score.clear();
                 seed++;
                 stem--;
               });
             }),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: choices.keys.map((emoji) {
-                return Draggable<String>(
-                  data: emoji,
-                  feedback: Emoji(emoji: emoji),
-                  childWhenDragging: const Emoji(emoji: "_"),
-                  child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
-                  onDragEnd: (c) {
-                    {
-                      if (!c.wasAccepted) {
-                        const snackBar1 = SnackBar(
-                          duration: Duration(milliseconds: 500),
-                          backgroundColor: Colors.red,
-                          content: Text('OOPS! Try agaim'),
-                        );
+        body: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: generated.keys.map((emoji) {
+                  return Draggable<String>(
+                    data: emoji,
+                    onDragEnd: (c) {
+                      {
+                        if (!c.wasAccepted) {
+                          const snackBar1 = SnackBar(
+                            duration: Duration(milliseconds: 500),
+                            backgroundColor: Colors.red,
+                            content: Text('OOPS! Try agaim'),
+                          );
 
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar1);
-                        FlutterRingtonePlayer.play(
-                            fromAsset: "assets/error.wav", volume: .3);
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+                          FlutterRingtonePlayer.play(
+                              fromAsset: "assets/error.wav", volume: .3);
+                        }
                       }
-                    }
-                  },
-                );
-              }).toList()
-                ..shuffle(Random(stem)),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:
-                  choices.keys.map((emoji) => _buildDragTarget(emoji)).toList()
-                    ..shuffle(Random(seed)),
-            )
-          ],
+                    },
+                    feedback: Emoji(emoji: emoji),
+                    childWhenDragging: const Emoji(emoji: ""),
+                    child: Emoji(emoji: score[emoji] == true ? '' : emoji),
+                  );
+                }).toList()
+                  ..shuffle(Random(stem)),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: generated.keys
+                    .map((emoji) => _buildDragTarget(emoji))
+                    .toList()
+                  ..shuffle(Random(seed)),
+              )
+            ],
+          ),
         ));
   }
 
@@ -128,9 +155,8 @@ class _PuzzleNumState extends State<PuzzleNum> {
                   Radius.circular(20),
                 ),
                 color: Colors.white),
-            // color: Colors.white,
             alignment: Alignment.center,
-            height: 70,
+            height: 120,
             width: 200,
             child: const Text(
               "👍 correct!",
@@ -140,17 +166,18 @@ class _PuzzleNumState extends State<PuzzleNum> {
         } else {
           return Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: Colors.blue[50]
-                // color: choices[emoji],
-                ),
-            // color: choices[emoji],
-            height: 70,
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.blue[50],
+            ),
+            height: 120,
             width: 200,
             child: Center(
-                child: Text(
-              choices[emoji],
-              style: const TextStyle(fontSize: 36, fontFamily: "carterOne"),
-            )),
+              child: Text(
+                generated[emoji].toString(),
+                style: const TextStyle(fontSize: 28, fontFamily: "anton"),
+              ),
+            ),
           );
         }
       }),
@@ -161,27 +188,20 @@ class _PuzzleNumState extends State<PuzzleNum> {
             backgroundColor: Colors.green,
             duration: Duration(milliseconds: 500),
             content: Text('YEAH!  Good Job!'),
-            // action: SnackBarAction(
-            //   label: 'Undo',
-            //   onPressed: () {},
-            // ),
           );
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
           FlutterRingtonePlayer.play(
               fromAsset: "assets/success.wav", volume: .3);
         }
+
         setState(() {
           score[emoji] = true;
-          if (score.length == 10) {
+          if (score.length % 5 == 0) {
             showDialog(
-
-                // barrierColor: Colors.blue,
                 context: context,
                 builder: (context) => AlertDialog(
                       backgroundColor: Colors.blue[50],
-                      // contentPadding: const EdgeInsets.all(300),
-
                       title: const Text("🥳 CONGRATULATION, You did well."),
                       actions: [
                         Column(
@@ -235,10 +255,10 @@ class _PuzzleNumState extends State<PuzzleNum> {
                       ],
                     ));
           }
-          // color: coloris[index % coloris.length],
         });
       },
       onLeave: (data) {},
+      onMove: (data) {},
     );
   }
 }
@@ -267,6 +287,3 @@ class Emoji extends StatelessWidget {
     );
   }
 }
-
-
-// ctrl+cmd+space "

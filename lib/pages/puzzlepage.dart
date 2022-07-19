@@ -13,23 +13,44 @@ class PuzzlePage extends StatefulWidget {
 
 class _PuzzlePageState extends State<PuzzlePage> {
   final Map<String, bool> score = {};
+  Map<dynamic, dynamic> generated = {};
 
-  final Map choices = {
-    "🍎": Colors.red,
-    "🍊": Colors.orange,
-    "🍋": Colors.yellow,
-    "🍆": Colors.purple,
-    "🥦": Colors.green,
-    "🥔": Colors.brown,
-  };
+  final List<Map<String, dynamic>> choices = [
+    {'object': "🍎", "color": Colors.red},
+    {'object': "🍋", "color": Colors.yellow},
+    {'object': "🫑", "color": Colors.green},
+    {'object': "🥔", "color": Colors.brown},
+    {'object': "🍊", "color": Colors.orange},
+    {'object': "🍆", "color": Colors.purple},
+    {'object': "🧄", "color": Colors.white},
+    {'object': "🫐", "color": Colors.indigo},
+  ];
 
-  int seed = 0;
-  int stem = 6;
+  int seed = 1;
+  int stem = 5;
+
+  randomgen() {
+    generated = {};
+    List keys = [];
+    for (int i = 0; i < 8; i++) {
+      keys.add(i);
+    }
+    final random = Random();
+    int index = 0;
+
+    for (int i = 0; i < 5; i++) {
+      index = keys[random.nextInt(keys.length)];
+      keys.removeWhere((k) => k == index); // remove the element
+      generated[choices[index]['object']] =
+          choices[index]['color']; // {"A": "value"}
+    }
+  }
 
   @override
-  void dispose() {
-    super.dispose();
-    // print("dispose");
+  void initState() {
+    randomgen();
+    // print(generated);
+    super.initState();
   }
 
   @override
@@ -37,10 +58,9 @@ class _PuzzlePageState extends State<PuzzlePage> {
     return Scaffold(
         appBar: AppBar(
           title: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                'Score ${score.length} /6',
+                'Score ${score.length} /5',
                 style: const TextStyle(fontFamily: "PressStart"),
               ),
               Row(
@@ -53,7 +73,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
                         color: Color.fromARGB(255, 182, 189, 179)),
                   ),
                   Text(
-                    " -- Match picture to color",
+                    " -- Match letter to picture",
                     style: TextStyle(
                         fontSize: 14,
                         color: Color.fromARGB(255, 156, 172, 172)),
@@ -72,6 +92,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
             child: const Icon(Icons.refresh_outlined),
             onPressed: () {
               setState(() {
+                randomgen();
                 score.clear();
                 seed++;
                 stem--;
@@ -83,13 +104,9 @@ class _PuzzlePageState extends State<PuzzlePage> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: choices.keys.map((emoji) {
+              children: generated.keys.map((emoji) {
                 return Draggable<String>(
                   data: emoji,
-                  feedback: Emoji(
-                    emoji: emoji,
-                  ),
-                  childWhenDragging: const Emoji(emoji: "🔲"),
                   onDragEnd: (c) {
                     {
                       if (!c.wasAccepted) {
@@ -105,6 +122,8 @@ class _PuzzlePageState extends State<PuzzlePage> {
                       }
                     }
                   },
+                  feedback: Emoji(emoji: emoji),
+                  childWhenDragging: const Emoji(emoji: "🔲"),
                   child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
                 );
               }).toList()
@@ -113,9 +132,10 @@ class _PuzzlePageState extends State<PuzzlePage> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:
-                  choices.keys.map((emoji) => _buildDragTarget(emoji)).toList()
-                    ..shuffle(Random(seed)),
+              children: generated.keys
+                  .map((emoji) => _buildDragTarget(emoji))
+                  .toList()
+                ..shuffle(Random(seed)),
             )
           ],
         ));
@@ -132,7 +152,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
                 ),
                 color: Colors.white),
             alignment: Alignment.center,
-         height: 120,
+            height: 120,
             width: 200,
             child: const Text(
               "👍 correct!",
@@ -142,11 +162,18 @@ class _PuzzlePageState extends State<PuzzlePage> {
         } else {
           return Container(
             decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(20),
-              color: choices[emoji],
+              color: generated[emoji],
             ),
             height: 120,
             width: 200,
+            child: Row(children: const [
+              // Text(
+              //   generated[emoji].toString(),
+              //   style: const TextStyle(fontSize: 28, fontFamily: "anton"),
+              // ),
+            ]),
           );
         }
       }),
@@ -163,9 +190,10 @@ class _PuzzlePageState extends State<PuzzlePage> {
           FlutterRingtonePlayer.play(
               fromAsset: "assets/success.wav", volume: .3);
         }
+
         setState(() {
           score[emoji] = true;
-          if (score.length == 6) {
+          if (score.length % 6 == 0) {
             showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
@@ -226,6 +254,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
         });
       },
       onLeave: (data) {},
+      onMove: (data) {},
     );
   }
 }
@@ -244,7 +273,10 @@ class Emoji extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Text(
           emoji,
-          style: const TextStyle(color: Colors.black, fontSize: 50),
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 50,
+          ),
         ),
       ),
     );
