@@ -33,7 +33,7 @@ class _PopUpPageState extends State<PopUpPage> {
         children: [
           SizedBox(
             height: 500,
-            child: Image.network(
+            child: Image.asset(
               widget.miniimage,
             ),
           ),

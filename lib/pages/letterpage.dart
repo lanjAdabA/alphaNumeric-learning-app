@@ -109,7 +109,7 @@ class _LetterPageState extends State<LetterPage> {
                         width: 500,
                         child: InkWell(
                           onTap: () => speak(widget.description),
-                          child: Image.network(
+                          child: Image.asset(
                             widget.imgLetter,
                           ),
                           onDoubleTap: () {

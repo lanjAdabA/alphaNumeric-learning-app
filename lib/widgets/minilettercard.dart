@@ -30,7 +30,7 @@ class _MiniLeterCardState extends State<MiniLetterCard> {
           children: [
             SizedBox(
               height: 100,
-              child: Image.network(
+              child: Image.asset(
                 widget.miniimage,
               ),
             ),

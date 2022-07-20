@@ -47,7 +47,7 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Exercises"),
+        title: const Text("Exercises_Menu"),
         centerTitle: true,
       ),
       drawer: const MainDrawer(),

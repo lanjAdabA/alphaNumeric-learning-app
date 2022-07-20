@@ -71,6 +71,7 @@ flutter:
   assets:
     - assets/alphaChar/
     - assets/
+    - assets/charecters/
     - assets/fingerNumber/
     - assets/menuIcon/
     - assets/success.wav

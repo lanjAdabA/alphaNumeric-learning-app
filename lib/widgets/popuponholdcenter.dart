@@ -31,7 +31,7 @@ class _PopUpPageCenterState extends State<PopUpCenterPage> {
         children: [
           SizedBox(
             height: 500,
-            child: Image.network(
+            child: Image.asset(
               widget.img,
             ),
           ),

@@ -64,7 +64,7 @@ class ColorPageState extends State<ColourPage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 215, 242, 250),
       appBar: AppBar(
-        title: const Text("Color Page"),
+        title: const Text("Color_Page"),
         centerTitle: true,
       ),
       drawer: const MainDrawer(),
