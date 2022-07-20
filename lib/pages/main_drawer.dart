@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn/pages/contact.page.dart';
 import 'package:learn/pages/hint.page.dart';
 import 'package:learn/pages/info.page.dart';
 import 'package:learn/pages/special_thanks.page.dart';
@@ -53,10 +54,19 @@ class MainDrawer extends StatelessWidget {
               );
             },
           ),
-          const ListTile(
-            leading: Icon(Icons.alternate_email),
-            title: Text("contact me"),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.alternate_email),
+            title: const Text("contact me"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const ContactPage();
+                  },
+                ),
+              );
+            },
           ),
           const ListTile(
             leading: Icon(Icons.feedback),

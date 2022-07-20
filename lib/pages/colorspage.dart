@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:learn/pages/main_drawer.dart';
 
 class ColourPage extends StatefulWidget {
   const ColourPage({
@@ -66,6 +67,7 @@ class ColorPageState extends State<ColourPage> {
         title: const Text("Color Page"),
         centerTitle: true,
       ),
+      drawer: const MainDrawer(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

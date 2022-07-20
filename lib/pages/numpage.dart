@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn/pages/main_drawer.dart';
 import 'package:learn/widgets/numblock.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
@@ -85,6 +86,7 @@ class _NumblockState extends State<NumPage> {
         title: const Text("Number_Chart"),
         centerTitle: true,
       ),
+      drawer: const MainDrawer(),
       body: AnimationLimiter(
         child: ListView.builder(
           padding: EdgeInsets.all(w / 30),

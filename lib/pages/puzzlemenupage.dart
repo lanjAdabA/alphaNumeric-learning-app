@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:learn/pages/main_drawer.dart';
 import 'package:learn/pages/puzzlealpha.dart';
 import 'package:learn/pages/puzzlenum.dart';
 import 'package:learn/pages/puzzlepage.dart';
@@ -46,9 +47,10 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("EXERCISES"),
+        title: const Text("Exercises"),
         centerTitle: true,
       ),
+      drawer: const MainDrawer(),
       body: AnimationLimiter(
         child: ListView.builder(
           padding: EdgeInsets.all(w / 30),
