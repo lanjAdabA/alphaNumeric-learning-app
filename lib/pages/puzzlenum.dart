@@ -231,9 +231,9 @@ class _PuzzleNumState extends State<PuzzleNum> {
                                       });
                                       Navigator.pop(context);
                                     },
-                                    child: const Text(
+                                    child:  Text(
                                       "Play again",
-                                      style: TextStyle(fontSize: 24),
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width/27),
                                     )),
                                 ElevatedButton(
                                     style: ButtonStyle(
@@ -254,9 +254,9 @@ class _PuzzleNumState extends State<PuzzleNum> {
                                         return const PuzzleMenuPage();
                                       }));
                                     },
-                                    child: const Text(
+                                    child:  Text(
                                       "Menu Page",
-                                      style: TextStyle(fontSize: 24),
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width/27),
                                     ))
                               ],
                             ),

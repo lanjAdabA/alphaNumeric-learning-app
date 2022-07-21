@@ -18,12 +18,12 @@ class _PuzzlePageState extends State<PuzzlePage> {
   final List<Map<String, dynamic>> choices = [
     {'object': "🍎", "color": Colors.red},
     {'object': "🍋", "color": Colors.yellow},
-    {'object': "🫑", "color": Colors.green},
+    {'object': "🍏", "color": Colors.green},
     {'object': "🥔", "color": Colors.brown},
     {'object': "🍊", "color": Colors.orange},
     {'object': "🍆", "color": Colors.purple},
     {'object': "🧄", "color": Colors.white},
-    {'object': "🫐", "color": Colors.indigo},
+    // {'object': "🫐", "color": Colors.indigo},
   ];
 
   int seed = 1;
@@ -226,9 +226,9 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                       });
                                       Navigator.pop(context);
                                     },
-                                    child: const Text(
+                                    child:  Text(
                                       "Play again",
-                                      style: TextStyle(fontSize: 24),
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width/27),
                                     )),
                                 ElevatedButton(
                                     style: ButtonStyle(
@@ -248,9 +248,9 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                         return const PuzzleMenuPage();
                                       }));
                                     },
-                                    child: const Text(
+                                    child:  Text(
                                       "Menu Page",
-                                      style: TextStyle(fontSize: 24),
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width/27),
                                     ))
                               ],
                             ),

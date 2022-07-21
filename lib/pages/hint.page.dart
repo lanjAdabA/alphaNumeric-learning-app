@@ -19,7 +19,7 @@ class HintPage extends StatelessWidget {
               children:  [
                 Text(
                   " Hints / Guides ",
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: width*0.08),
+                  style: TextStyle(fontFamily: "SpecialElite", fontSize: width*0.09),
                 ),
               ],
             ),

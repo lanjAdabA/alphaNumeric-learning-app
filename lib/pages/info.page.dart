@@ -5,6 +5,8 @@ class InfoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+         double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
         body: SingleChildScrollView(
       child: Container(
@@ -18,16 +20,16 @@ class InfoPage extends StatelessWidget {
             Column(
               children: [
                 Row(
-                  children: const [
+                  children:  [
                     Text(
                       " about ",
                       style:
-                          TextStyle(fontFamily: "SpecialElite", fontSize: 44),
+                          TextStyle(fontFamily: "SpecialElite", fontSize: width*.09),
                     ),
-                    Text(
-                      " the application",
+                     Text(
+                      " the application:",
                       style:
-                          TextStyle(fontFamily: "SpecialElite", fontSize: 24),
+                          TextStyle(fontFamily: "SpecialElite", fontSize: width*.06),
                     ),
                   ],
                 ),
@@ -45,7 +47,7 @@ class InfoPage extends StatelessWidget {
                 // ),
                 const Text(
                   "The  application provides alphabet chart, and corresponding alphabet letter pages, numeric list- figure and words from one to ten, color demonstration page, and exercise page to test toddlers knowledge/ to play.",
-                  
+
                   style: TextStyle(fontFamily: "SpecialElite", fontSize: 16,  ),
                 ),
                 const Text(

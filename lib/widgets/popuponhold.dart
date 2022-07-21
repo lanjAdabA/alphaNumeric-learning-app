@@ -27,19 +27,20 @@ class _PopUpPageState extends State<PopUpPage> {
 
   @override
   Widget build(BuildContext context) {
+     double width = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: () => speak("${widget.cap} for ${widget.minidescription}"),
       child: Column(
         children: [
           SizedBox(
-            height: 500,
+            height: MediaQuery.of(context).size.height/2.3,
             child: Image.asset(
               widget.miniimage,
             ),
           ),
           Text(
             "${widget.cap} for ${widget.minidescription}",
-            style: const TextStyle(fontSize: 50),
+            style: TextStyle(fontSize: width/9),
           ),
         ],
       ),

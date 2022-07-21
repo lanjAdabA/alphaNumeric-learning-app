@@ -18,7 +18,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
   final List<Map<String, dynamic>> choices = [
     {"alphabet": "A", "value": " 🍎 Apple"},
     {"alphabet": "B", "value": " ⚽️ Ball"},
-    {"alphabet": "C", "value": " 🐈‍⬛ Car"},
+    {"alphabet": "C", "value": " 🐈‍ Cat"},
     {"alphabet": "D", "value": " 🦮 Dog"},
     {"alphabet": "E", "value": " 🥚 Egg"},
     {"alphabet": "F", "value": " 🐠 Fish"},
@@ -73,6 +73,8 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
 
   @override
   Widget build(BuildContext context) {
+         double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
         appBar: AppBar(
           title: Column(
@@ -170,7 +172,8 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                 ),
                 color: Colors.white),
             alignment: Alignment.center,
-            height: 120,
+            height: MediaQuery.of(context).size.width/4
+            ,
             width: 200,
             child: const Text(
               "👍 correct!",
@@ -183,7 +186,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                 border: Border.all(color: Colors.black),
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.blue[50]),
-            height: 120,
+            height: MediaQuery.of(context).size.width/3.6,
             width: 200,
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
@@ -244,9 +247,9 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                       });
                                       Navigator.pop(context);
                                     },
-                                    child: const Text(
+                                    child:  Text(
                                       "Play again",
-                                      style: TextStyle(fontSize: 24),
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width/27),
                                     )),
                                 ElevatedButton(
                                     style: ButtonStyle(
@@ -268,9 +271,9 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                         return const PuzzleMenuPage();
                                       }));
                                     },
-                                    child: const Text(
+                                    child:  Text(
                                       "Menu Page",
-                                      style: TextStyle(fontSize: 24),
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width/27),
                                     ))
                               ],
                             ),

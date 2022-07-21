@@ -5,6 +5,7 @@ class ThanksPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     double width = MediaQuery.of(context).size.width;
     return Scaffold(
         body: Container(
       padding: const EdgeInsets.all(20),
@@ -14,15 +15,12 @@ class ThanksPage extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              children: const [
+              children:  [
                 Text(
-                  " special THANKS ",
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 40),
+                  " special THANKS to :",
+                  style: TextStyle(fontFamily: "SpecialElite", fontSize: width*.086),
                 ),
-                Text(
-                  " to:",
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 30),
-                ),
+               
               ],
             ),
             const SizedBox(

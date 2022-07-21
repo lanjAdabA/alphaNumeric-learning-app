@@ -35,138 +35,150 @@ class _LetterPageState extends State<LetterPage> {
 
   @override
   Widget build(BuildContext context) {
+     double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Letter-Page"),
         centerTitle: true,
       ),
-      body: Container(
-        color: Colors.white,
-        margin: const EdgeInsets.all(14),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                InkWell(
-                  onTap: () => speak(widget.cap),
-                  child: Row(
+      body: Column(
+        children: [
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: Colors.white,
+              margin: const EdgeInsets.all(14),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        widget.cap,
-                        style: const TextStyle(
-                          fontSize: 80,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
+                      InkWell(
+                        onTap: () => speak(widget.cap),
+                        child: Row(
+                          children: [
+                            Text(
+                              widget.cap,
+                              style: const TextStyle(
+                                fontSize: 80,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              widget.small,
+                              style: const TextStyle(
+                                  fontSize: 80,
+                                  color: Colors.blueGrey,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
                         ),
                       ),
-                      Text(
-                        widget.small,
-                        style: const TextStyle(
-                            fontSize: 80,
-                            color: Colors.blueGrey,
-                            fontWeight: FontWeight.bold),
-                      )
+                      InkWell(
+                        onTap: () => speak(widget.cap),
+                        child: Row(
+                          children: [
+                            Text(
+                              widget.cap,
+                              style: const TextStyle(
+                                fontSize: 80,
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Courgette",
+                              ),
+                            ),
+                            Text(
+                              widget.small,
+                              style: const TextStyle(
+                                fontSize: 80,
+                                color: Colors.lightBlue,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Courgette",
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
-                ),
-                InkWell(
-                  onTap: () => speak(widget.cap),
-                  child: Row(
+                  Stack(
                     children: [
-                      Text(
-                        widget.cap,
-                        style: const TextStyle(
-                          fontSize: 80,
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Courgette",
-                        ),
-                      ),
-                      Text(
-                        widget.small,
-                        style: const TextStyle(
-                          fontSize: 80,
-                          color: Colors.lightBlue,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Courgette",
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Stack(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 40),
-                      child: SizedBox(
-                        height: 500,
-                        width: 500,
-                        child: InkWell(
-                          onTap: () => speak(widget.description),
-                          child: Image.asset(
-                            widget.imgLetter,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 40),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height/3,
+                              width: double.infinity,
+                              child: InkWell(
+                                onTap: () => speak(widget.description),
+                                child: Image.asset(
+                                  widget.imgLetter,
+                                ),
+                                onDoubleTap: () {
+                                  showModalBottomSheet(
+                                      backgroundColor:
+                                          const Color.fromARGB(255, 255, 255, 255),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(18)),
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return PopUpCenterPage(
+                                          img: widget.imgLetter,
+                                          description: widget.description,
+                                        );
+                                      });
+                                },
+                              ),
+                            ),
                           ),
-                          onDoubleTap: () {
-                            showModalBottomSheet(
-                                backgroundColor:
-                                    const Color.fromARGB(255, 255, 255, 255),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18)),
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return PopUpCenterPage(
-                                    img: widget.imgLetter,
-                                    description: widget.description,
-                                  );
-                                });
-                          },
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    InkWell(
-                      onTap: () => speak(widget.description),
-                      child: Text(
-                        widget.description,
-                        style: const TextStyle(fontSize: 36),
-                      ),
-                    )
-                  ],
-                ),
-                Opacity(
-                  opacity: .0,
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 350,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Icon(
-                            Icons.arrow_back_ios_new_outlined,
-                            size: 100,
+                          const SizedBox(
+                            height: 20,
                           ),
-                          Icon(
-                            Icons.arrow_forward_ios_sharp,
-                            size: 100,
+                          InkWell(
+                            onTap: () => speak(widget.description),
+                            child: Text(
+                              widget.description,
+                              style: const TextStyle(fontSize: 36),
+                            ),
                           )
                         ],
                       ),
+                      Opacity(
+                        opacity: .0,
+                        child: Column(
+                          children: [
+                             SizedBox(
+                              height: MediaQuery.of(context).size.height/3.1,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Icon(
+                                  Icons.arrow_back_ios_new_outlined,
+                                  size: 100,
+                                ),
+                                Icon(
+                                  Icons.arrow_forward_ios_sharp,
+                                  size: 100,
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
-                )
-              ],
+                  
+                ],
+              ),
             ),
-            Expanded(
+          ),
+          Expanded(
+            flex: 2,
               child: ListView.builder(
                 padding: const EdgeInsets.all(20),
                 shrinkWrap: true,
@@ -198,8 +210,7 @@ class _LetterPageState extends State<LetterPage> {
                 },
               ),
             )
-          ],
-        ),
+        ],
       ),
     );
   }

@@ -28,20 +28,22 @@ class _PopUpPageFingerState extends State<PopUpFingerPage> {
 
   @override
   Widget build(BuildContext context) {
+         double width = MediaQuery.of(context).size.width;
+
     return InkWell(
       onTap: () => speak(
           " ${widget.description} ${int.parse(widget.f) == 1 ? 'FINGER' : 'FINGERS'}"),
       child: Column(
         children: [
           SizedBox(
-            height: 500,
+            height: MediaQuery.of(context).size.height/2,
             child: Image.asset(
               widget.img,
             ),
           ),
           Text(
             "${widget.description} ${int.parse(widget.f) == 1 ? 'FINGER' : 'FINGERS'}",
-            style: const TextStyle(fontSize: 50),
+            style: TextStyle(fontSize: width/9),
           ),
         ],
       ),

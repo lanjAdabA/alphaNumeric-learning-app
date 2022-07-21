@@ -23,24 +23,29 @@ class _MiniLeterCardState extends State<MiniLetterCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: InkWell(
-        onTap: () => speak(widget.minidescription),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 100,
-              child: Image.asset(
-                widget.miniimage,
+         double height = MediaQuery.of(context).size.height;
+
+    return InkWell(
+      onTap: () => speak(widget.minidescription),
+    
+        child: Card(
+          child: Column(
+            
+            children: [
+              SizedBox(
+                height: height/7,
+                child: Image.asset(
+                  widget.miniimage,
+                ),
               ),
-            ),
-            Text(
-              widget.minidescription,
-              style: const TextStyle(fontSize: 20),
-            ),
-          ],
+              Text(
+                widget.minidescription,
+                style: const TextStyle(fontSize: 20),
+              ),
+            ],
+          ),
         ),
-      ),
+      
     );
   }
 }
