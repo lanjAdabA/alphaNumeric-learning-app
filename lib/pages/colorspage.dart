@@ -60,7 +60,8 @@ class ColorPageState extends State<ColourPage> {
   }
 
   @override
-  Widget build(BuildContext context) { var screeensize= MediaQuery.of(context).size;
+  Widget build(BuildContext context) {
+    var screeensize = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 215, 242, 250),
@@ -104,7 +105,7 @@ class ColorPageState extends State<ColourPage> {
                         enlargeCenterPage: true,
                         enableInfiniteScroll: true,
                         viewportFraction: 0.35,
-                        height: screeensize.height*.09,
+                        height: screeensize.height * .09,
                       ),
                       items: card1.map((card1) {
                         return InkWell(
@@ -117,10 +118,13 @@ class ColorPageState extends State<ColourPage> {
                               child: Center(
                                 child: Text(
                                   card1['colornameis'],
-                                  style: const TextStyle(
-                                      fontFamily: "bungeeShade",
+                                  style: TextStyle(
+                                      fontFamily: "StickNoBills",
+                                      fontWeight: FontWeight.bold,
                                       color: Colors.white,
-                                      fontSize: 26),
+                                      fontSize:
+                                          MediaQuery.of(context).size.width /
+                                              20),
                                 ),
                               )),
                           onTap: () {
@@ -138,7 +142,7 @@ class ColorPageState extends State<ColourPage> {
                         enlargeCenterPage: true,
                         enableInfiniteScroll: true,
                         viewportFraction: 0.35,
-                        height: screeensize.height*.09,
+                        height: screeensize.height * .09,
                       ),
                       items: card2.map((card2) {
                         return InkWell(
@@ -151,15 +155,18 @@ class ColorPageState extends State<ColourPage> {
                               child: Center(
                                 child: Text(
                                   card2['colornameis'],
-                                  style: const TextStyle(
-                                      fontFamily: "bungeeShade",
+                                  style: TextStyle(
+                                      fontFamily: "StickNoBills",
+                                      fontWeight: FontWeight.bold,
                                       color: Colors.black,
-                                      fontSize: 26),
+                                      fontSize:
+                                          MediaQuery.of(context).size.width /
+                                              20),
                                 ),
                               )),
                           onTap: () {
                             speak(card2["colornameis"].toString());
-                            log(card2["coloris"].toString());
+                            // log(card2["coloris"].toString());
                             setState(() {
                               color = card2["coloris"];
                             });

@@ -152,7 +152,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
                 ),
                 color: Colors.white),
             alignment: Alignment.center,
-            height: 120,
+            height: MediaQuery.of(context).size.width / 3.6,
             width: 200,
             child: const Text(
               "👍 correct!",
@@ -166,7 +166,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
               borderRadius: BorderRadius.circular(20),
               color: generated[emoji],
             ),
-            height: 120,
+            height: MediaQuery.of(context).size.width / 3.6,
             width: 200,
             child: Row(children: const [
               // Text(
@@ -226,9 +226,13 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                       });
                                       Navigator.pop(context);
                                     },
-                                    child:  Text(
+                                    child: Text(
                                       "Play again",
-                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width/27),
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              20),
                                     )),
                                 ElevatedButton(
                                     style: ButtonStyle(
@@ -248,9 +252,13 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                         return const PuzzleMenuPage();
                                       }));
                                     },
-                                    child:  Text(
+                                    child: Text(
                                       "Menu Page",
-                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width/27),
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              20),
                                     ))
                               ],
                             ),
