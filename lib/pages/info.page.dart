@@ -32,17 +32,17 @@ class InfoPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 90,
                 ),
-                Row(
-                  children: const [
-                    Text(
-                      " summary : \n",
-                      style:
-                          TextStyle(fontFamily: "SpecialElite", fontSize: 28),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: const [
+                //     Text(
+                //       " summary : \n",
+                //       style:
+                //           TextStyle(fontFamily: "SpecialElite", fontSize: 28),
+                //     ),
+                //   ],
+                // ),
                 const Text(
                   "The  application provides alphabet chart, and corresponding alphabet letter pages, numeric list- figure and words from one to ten, color demonstration page, and exercise page to test toddlers knowledge/ to play.",
                   style: TextStyle(fontFamily: "SpecialElite", fontSize: 16),
@@ -56,7 +56,7 @@ class InfoPage extends StatelessWidget {
                   style: TextStyle(fontFamily: "SpecialElite", fontSize: 16),
                 ),
                 const Text(
-                  '\n The application was created in partial fulfillment of the requirements for the award od Degree of Masters of Computer Application, under Manipur University, Canchipur, Imphal-795003, MAnipur. \n The Project was choosen as I strongly believe that the application will be of great assistance to toddlers in taking the first steps to learning. And I really hope that I can contribute something through this application. ',
+                  '\n The application was created in partial fulfillment of the requirements for the award of Degree of Masters of Computer Application, under Manipur University, Canchipur, Imphal-795003, MAnipur. \n The Project was choosen as I strongly believe that the application will be of great assistance to toddlers in taking their first steps to learning and make the process fun and easy. And I really hope that I can contribute something through this application. ',
                   style: TextStyle(fontFamily: "SpecialElite", fontSize: 16),
                 ),
               ],

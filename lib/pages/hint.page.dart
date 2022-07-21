@@ -30,7 +30,7 @@ class HintPage extends StatelessWidget {
               children: const [
                 Text(
                   '[1]. Single tap on text / image for sound:',
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 18),
+                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 20),
                 ),
                 Text(
                   '-eg. try clicking in the alphabet chart.',
@@ -53,7 +53,7 @@ class HintPage extends StatelessWidget {
                 ),
                 Text(
                   '[2]. Double tap on text / image to open:',
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 18),
+                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 20),
                 ),
                 Text(
                   '-eg. try taping twice in the alphabet chart.',
@@ -79,7 +79,7 @@ class HintPage extends StatelessWidget {
                 ),
                 Text(
                   '[3]. The Color tiles are Scrollable:',
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 18),
+                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 20),
                 ),
                 Text(
                   '-N.B. the tile list can be scrolled individually,  \n they can be scrolled either left or right',
@@ -102,11 +102,11 @@ class HintPage extends StatelessWidget {
                   height: 60,
                 ),
                 Text(
-                  '[4]. Draggable Exercises:',
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 16),
+                  '[4]. Draggable Exercises: \n ',
+                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 20),
                 ),
                 Text(
-                  '[a]. Alphabet Exercises: drag the letters to its corresponding Words/Image.',
+                  '[a]. Alphabet Exercises: drag the letters to its corresponding Words/Image. \n',
                   style: TextStyle(
                     fontFamily: "SpecialElite",
                     fontSize: 16,
@@ -118,7 +118,7 @@ class HintPage extends StatelessWidget {
                   height: 60,
                 ),
                 Text(
-                  '[b]. Number Exercises: drag the Number Figures to its corresponding in-Words.',
+                  '[b]. Number Exercises: drag the Number Figures to its corresponding in-Words. \n',
                   style: TextStyle(
                     fontFamily: "SpecialElite",
                     fontSize: 16,
@@ -130,7 +130,7 @@ class HintPage extends StatelessWidget {
                   height: 60,
                 ),
                 Text(
-                  '[c]. Color Exercises: drag to same color tile.',
+                  '[c]. Color Exercises: drag to same color tile.\n ',
                   style: TextStyle(
                     fontFamily: "SpecialElite",
                     fontSize: 16,
