@@ -126,8 +126,8 @@ class _PuzzleNumState extends State<PuzzleNum> {
                       }
                     },
                     feedback: Emoji(emoji: emoji),
-                    childWhenDragging: const Emoji(emoji: ""),
-                    child: Emoji(emoji: score[emoji] == true ? '' : emoji),
+                    childWhenDragging: const Emoji(emoji: "_"),
+                    child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
                   );
                 }).toList()
                   ..shuffle(Random(stem)),

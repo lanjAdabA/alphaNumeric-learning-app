@@ -19,60 +19,70 @@ class _NumblockState extends State<NumPage> {
       'inwords': 'ONE',
       "color": Colors.red,
       "image": "assets/fingerNumber/1.jpg",
+      "speechlong": "o : n : e . one"
     },
     {
       'fig': "2",
       'inwords': 'TWO',
       "color": Colors.pink,
       "image": "assets/fingerNumber/2.jpg",
+      "speechlong": "t : w : o . two"
     },
     {
       'fig': "3",
       'inwords': 'THREE',
       "color": Colors.purple,
       "image": "assets/fingerNumber/3.jpg",
+      "speechlong": "t : h : r : e : e . three"
     },
     {
       'fig': "4",
       'inwords': 'FOUR',
       "color": Colors.indigo,
       "image": "assets/fingerNumber/4.jpg",
+      "speechlong": " f : o : u : r . four"
     },
     {
       'fig': "5",
       'inwords': 'FIVE',
       "color": Colors.blue,
       "image": "assets/fingerNumber/5.jpg",
+      "speechlong": "f : i : v : e . five"
     },
     {
       'fig': "6",
       'inwords': 'SIX',
       "color": Colors.cyan,
       "image": "assets/fingerNumber/6.jpg",
+      "speechlong": "s : i : x . six"
     },
     {
       'fig': "7",
       'inwords': 'SEVEN',
       "color": Colors.green,
       "image": "assets/fingerNumber/7.jpg",
+      "speechlong": "S : e : v : e : n . seven"
     },
     {
       'fig': "8",
       'inwords': 'EIGHT',
       "color": Colors.yellow,
       "image": "assets/fingerNumber/8.jpg",
+      "speechlong": "e : i : g : h : t  . eight"
     },
     {
       'fig': "9",
       'inwords': 'NINE',
       "color": Colors.amber,
       "image": "assets/fingerNumber/9.jpg",
+      "speechlong": "n : i : n : e . nine"
     },
     {
       'fig': "10",
       'inwords': 'TEN',
       "color": Colors.orange,
       "image": "assets/fingerNumber/10.jpg",
+      "speechlong": "t : e : n . ten"
     },
   ];
 
@@ -122,6 +132,7 @@ class _NumblockState extends State<NumPage> {
                       inwords: numdata[index]['inwords'],
                       color: numdata[index]["color"],
                       image: numdata[index]['image'],
+                      speechlong: numdata[index]["speechlong"],
                     ),
                   ),
                 ),

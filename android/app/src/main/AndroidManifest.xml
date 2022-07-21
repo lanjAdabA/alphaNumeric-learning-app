@@ -1,7 +1,39 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.learn">
+
+<uses-permission android:name="android. permission. INTERNET"/>
+
+<!-- Provide required visibility configuration for API level 30 and above -->
+<queries>
+  <!-- If your app checks for SMS support -->
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="sms" />
+  </intent>
+  <!-- If your app checks for call support -->
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="tel" />
+  </intent> 
+  <!-- If your app makes calls -->
+  <intent>
+    <action android:name="android.intent.action.DIAL" />
+    <data android:scheme="tel" />
+  </intent>
+  <!-- Place inside the <queries> element. -->
+<intent>
+  <action android:name="android.intent.action.SENDTO"/>
+  <data android:scheme="smsto" android:host="*" />
+</intent>
+ <!-- If your app sends emails -->
+  <intent>
+    <action android:name="android.intent.action.SEND" />
+    <data android:mimeType="*/*" />
+  </intent>
+</queries>
    <application
         android:label="learn"
+        android:usesCleartextTraffic="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

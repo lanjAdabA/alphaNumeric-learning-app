@@ -3,6 +3,7 @@ import 'package:learn/pages/contact.page.dart';
 import 'package:learn/pages/hint.page.dart';
 import 'package:learn/pages/info.page.dart';
 import 'package:learn/pages/special_thanks.page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -56,7 +57,7 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.alternate_email),
-            title: const Text("contact me"),
+            title: const Text("Contact me"),
             onTap: () {
               Navigator.push(
                 context,
@@ -68,13 +69,22 @@ class MainDrawer extends StatelessWidget {
               );
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.feedback_outlined),
+            title: const Text("Feedback"),
+            onTap: () async {
+              String email = "thingbaijamjessikhuman@gmail.com";
+              final Uri launchUri = Uri(scheme: 'mailto', path: email);
+              await launchUrl(launchUri);
+            },
+          ),
           const ListTile(
-            leading: Icon(Icons.feedback),
-            title: Text("feedback"),
+            leading: Icon(Icons.star_border),
+            title: Text("Rating"),
             onTap: null,
           ),
           ListTile(
-            leading: const Icon(Icons.star),
+            leading: const Icon(Icons.thumb_up_alt_outlined),
             title: const Text("Special Thanks"),
             onTap: () {
               Navigator.push(
@@ -88,8 +98,8 @@ class MainDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.info),
-            title: const Text("about"),
+            leading: const Icon(Icons.info_outline),
+            title: const Text("About"),
             onTap: () {
               Navigator.push(
                 context,

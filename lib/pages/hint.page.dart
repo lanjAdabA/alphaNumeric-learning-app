@@ -47,6 +47,10 @@ class HintPage extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
+                Center(child: Image(image: AssetImage("assets/click.JPG"))),
+                SizedBox(
+                  height: 60,
+                ),
                 Text(
                   '[2]. Double tap on text / image to open:',
                   style: TextStyle(fontFamily: "SpecialElite", fontSize: 18),
@@ -65,6 +69,13 @@ class HintPage extends StatelessWidget {
                     fontFamily: "SpecialElite",
                     fontSize: 16,
                   ),
+                ),
+                Center(child: Image(image: AssetImage("assets/2tap.JPG"))),
+                SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                  height: 60,
                 ),
                 Text(
                   '[3]. The Color tiles are Scrollable:',
@@ -85,6 +96,11 @@ class HintPage extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
+                Center(
+                    child: Image(image: AssetImage("assets/colorscroll.JPG"))),
+                SizedBox(
+                  height: 60,
+                ),
                 Text(
                   '[4]. Draggable Exercises:',
                   style: TextStyle(fontFamily: "SpecialElite", fontSize: 16),
@@ -97,6 +113,10 @@ class HintPage extends StatelessWidget {
                     color: Colors.blueGrey,
                   ),
                 ),
+                Center(child: Image(image: AssetImage("assets/alphint.JPG"))),
+                SizedBox(
+                  height: 60,
+                ),
                 Text(
                   '[b]. Number Exercises: drag the Number Figures to its corresponding in-Words.',
                   style: TextStyle(
@@ -105,6 +125,10 @@ class HintPage extends StatelessWidget {
                     color: Colors.blueGrey,
                   ),
                 ),
+                Center(child: Image(image: AssetImage("assets/ numhint.JPG"))),
+                SizedBox(
+                  height: 60,
+                ),
                 Text(
                   '[c]. Color Exercises: drag to same color tile.',
                   style: TextStyle(
@@ -112,6 +136,10 @@ class HintPage extends StatelessWidget {
                     fontSize: 16,
                     color: Colors.blueGrey,
                   ),
+                ),
+                Center(child: Image(image: AssetImage("assets/colhint.JPG"))),
+                SizedBox(
+                  height: 60,
                 ),
               ],
             ),

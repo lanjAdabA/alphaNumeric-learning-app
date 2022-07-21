@@ -7,10 +7,12 @@ class NumBlock extends StatefulWidget {
   final String inwords;
   final Color color;
   final String image;
+  final String speechlong;
   const NumBlock(
       {Key? key,
       required this.fig,
       required this.inwords,
+      required this.speechlong,
       required this.color,
       required this.image})
       : super(key: key);
@@ -53,7 +55,7 @@ class _NumBlockState extends State<NumBlock> {
                 ),
               ),
               InkWell(
-                onTap: () => speak(widget.inwords),
+                onTap: () => speak(widget.speechlong),
                 child: Text(
                   "👉🏼  ${widget.inwords}",
                   style: const TextStyle(

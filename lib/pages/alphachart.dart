@@ -718,31 +718,36 @@ class _ChartState extends State<AlphaChart> {
           centerTitle: true,
         ),
         drawer: const MainDrawer(),
-        body: Wrap(
-          spacing: 3,
-          runSpacing: 4,
-          alignment: WrapAlignment.center,
-          children: List.generate(listSize, (index) {
-            return InkWell(
-              onTap: () => speak(data[index]["cap"]),
-              child: AlphaBlock(
-                  // key: data[index]["letterkey"] ?? '',
-                  img: data[index]["img"],
-                  cap: data[index]["cap"],
-                  small: data[index]["small"]),
-              onDoubleTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return LetterPage(
-                    cap: data[index]["cap"],
-                    small: data[index]["small"],
-                    description: data[index]["description"],
-                    imgLetter: data[index]["imgmain"],
-                    minipage: data[index]["minipage"],
-                  );
-                }));
-              },
-            );
-          }),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Wrap(
+              spacing: 3,
+              runSpacing: 3,
+              alignment: WrapAlignment.center,
+              children: List.generate(listSize, (index) {
+                return InkWell(
+                  onTap: () => speak(data[index]["cap"]),
+                  child: AlphaBlock(
+                      // key: data[index]["letterkey"] ?? '',
+                      img: data[index]["img"],
+                      cap: data[index]["cap"],
+                      small: data[index]["small"]),
+                  onDoubleTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return LetterPage(
+                        cap: data[index]["cap"],
+                        small: data[index]["small"],
+                        description: data[index]["description"],
+                        imgLetter: data[index]["imgmain"],
+                        minipage: data[index]["minipage"],
+                      );
+                    }));
+                  },
+                );
+              }),
+            ),
+          ),
         ));
   }
 }

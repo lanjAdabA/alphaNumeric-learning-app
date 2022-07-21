@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({Key? key}) : super(key: key);
@@ -47,35 +48,58 @@ class ContactPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const ListTile(
-                    leading: Icon(
-                      Icons.phone,
-                      size: 42,
-                      color: Colors.blue,
+                  InkWell(
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.phone_android_outlined,
+                        size: 42,
+                        color: Colors.blue,
+                      ),
+                      title: Text("+91 7005843058"),
                     ),
-                    title: Text("7005843058"),
+                    onTap: () async {
+                      // await launch("tel:+917005843058");  //working but 'launch' is deprecated
+
+                      final Uri launchUri =
+                          Uri(scheme: 'tel', path: "+91 7005843058");
+                      await launchUrl(launchUri);
+                    },
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  const ListTile(
-                    leading: Icon(
-                      Icons.whatsapp,
-                      size: 42,
-                      color: Colors.green,
+                  InkWell(
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.whatsapp,
+                        size: 42,
+                        color: Colors.green,
+                      ),
+                      title: Text("+91 7005843058"),
                     ),
-                    title: Text("7005843058"),
+                    onTap: () async {
+                      final Uri launchUri =
+                          Uri(scheme: 'tel', path: "+91 7005843058");
+                      await launchUrl(launchUri);
+                    },
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  const ListTile(
-                    leading: Icon(
-                      Icons.mail,
-                      size: 42,
-                      color: Colors.red,
+                  InkWell(
+                    child: const ListTile(
+                      leading: Icon(
+                        Icons.mail_outline,
+                        size: 42,
+                        color: Colors.red,
+                      ),
+                      title: Text("thingbaijamjessikhuman@gmail.com"),
                     ),
-                    title: Text("thingbaijamjessi@gmail.com"),
+                    onTap: () async {
+                      String email = "thingbaijamjessikhuman@gmail.com";
+                      final Uri launchUri = Uri(scheme: 'mailto', path: email);
+                      await launchUrl(launchUri);
+                    },
                   ),
                   const SizedBox(
                     height: 20,
