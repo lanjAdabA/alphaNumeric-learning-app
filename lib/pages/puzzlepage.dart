@@ -16,14 +16,14 @@ class _PuzzlePageState extends State<PuzzlePage> {
   Map<dynamic, dynamic> generated = {};
 
   final List<Map<String, dynamic>> choices = [
-    {'object': "🍎", "color": Colors.red},
-    {'object': "🍋", "color": Colors.yellow},
-    {'object': "🍏", "color": Colors.green},
-    {'object': "🥔", "color": Colors.brown},
-    {'object': "🍊", "color": Colors.orange},
-    {'object': "🍆", "color": Colors.purple},
-    {'object': "🧄", "color": Colors.white},
-    // {'object': "🫐", "color": Colors.indigo},
+    {'object': "🍎", "color": Colors.red, "clipart": "assets/red.png"},
+    {'object': "🍋", "color": Colors.yellow, "clipart": "assets/yellow.png"},
+    {'object': "🍏", "color": Colors.green, "clipart": "assets/green.png"},
+    {'object': "🥔", "color": Colors.brown, "clipart": "assets/brown.png"},
+    {'object': "🍊", "color": Colors.orange, "clipart": "assets/orange.png"},
+    {'object': "🍆", "color": Colors.purple, "clipart": "assets/indigo.png"},
+    {'object': "🧄", "color": Colors.white, "clipart": "assets/white.png"},
+    {'object': "🫐", "color": Colors.indigo, "clipart": "assets/blue.png"},
   ];
 
   int seed = 1;
@@ -81,7 +81,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
                 ],
               ),
               const SizedBox(
-                height: 5,
+                height: 1,
               ),
             ],
           ),
@@ -105,7 +105,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: generated.keys.map((emoji) {
-                return Draggable<String>(
+                return Draggable(
                   data: emoji,
                   onDragEnd: (c) {
                     {
@@ -123,6 +123,11 @@ class _PuzzlePageState extends State<PuzzlePage> {
                     }
                   },
                   feedback: Emoji(emoji: emoji),
+
+                  // childWhenDragging: CircleAvatar(
+                  //   backgroundImage: AssetImage(generated[choices]["clipart"]),
+                  //   radius: 40,
+                  // ),
                   childWhenDragging: const Emoji(emoji: "🔲"),
                   child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
                 );

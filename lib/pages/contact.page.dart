@@ -10,15 +10,6 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
-  // launchWhatsApp({
-  //   required int phone,
-  //   required String message,
-  // }) async {
-  //   {
-  //     return " https://wa.me/$phone:7005843058:/?text=${Uri.parse(message)}";
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     {
@@ -39,7 +30,7 @@ class _ContactPageState extends State<ContactPage> {
                 ],
               ),
               const SizedBox(
-                height: 80,
+                height: 60,
               ),
               Container(
                 padding: const EdgeInsets.all(20),
@@ -121,7 +112,20 @@ class _ContactPageState extends State<ContactPage> {
                       height: 20,
                     ),
                     const Text(
-                      'contact for any queries, tips and suggestions',
+                      'Feel free to contact for any queries, tips, suggestions and support.',
+                      style:
+                          TextStyle(fontFamily: "SpecialElite", fontSize: 16),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    const Text(
+                      "About me: \n  ",
+                      style:
+                          TextStyle(fontFamily: "SpecialElite", fontSize: 20),
+                    ),
+                    const Text(
+                      " Currently  pursuing  Master's of  Computer Application, Under Manipur University, Canchipur. And this Application is created as for the Project for partial fulfilment of the Degree completion. ",
                       style:
                           TextStyle(fontFamily: "SpecialElite", fontSize: 16),
                     ),

@@ -35,7 +35,7 @@ class _LetterPageState extends State<LetterPage> {
 
   @override
   Widget build(BuildContext context) {
-     double height = MediaQuery.of(context).size.height;
+    //  double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
@@ -111,7 +111,7 @@ class _LetterPageState extends State<LetterPage> {
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 40),
                             child: SizedBox(
-                              height: MediaQuery.of(context).size.height/3,
+                              height: MediaQuery.of(context).size.height / 3,
                               width: double.infinity,
                               child: InkWell(
                                 onTap: () => speak(widget.description),
@@ -120,10 +120,11 @@ class _LetterPageState extends State<LetterPage> {
                                 ),
                                 onDoubleTap: () {
                                   showModalBottomSheet(
-                                      backgroundColor:
-                                          const Color.fromARGB(255, 255, 255, 255),
+                                      backgroundColor: const Color.fromARGB(
+                                          255, 255, 255, 255),
                                       shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18)),
+                                          borderRadius:
+                                              BorderRadius.circular(18)),
                                       context: context,
                                       builder: (BuildContext context) {
                                         return PopUpCenterPage(
@@ -151,8 +152,8 @@ class _LetterPageState extends State<LetterPage> {
                         opacity: .0,
                         child: Column(
                           children: [
-                             SizedBox(
-                              height: MediaQuery.of(context).size.height/3.1,
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height / 3.1,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -172,44 +173,43 @@ class _LetterPageState extends State<LetterPage> {
                       )
                     ],
                   ),
-                  
                 ],
               ),
             ),
           ),
           Expanded(
             flex: 2,
-              child: ListView.builder(
-                padding: const EdgeInsets.all(20),
-                shrinkWrap: true,
-                itemCount: widget.minipage.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    child: MiniLetterCard(
-                        miniimage: widget.minipage[index]["miniimage"],
-                        minidescription: widget.minipage[index]
-                            ["minidescription"]),
-                    onDoubleTap: () {
-                      showModalBottomSheet(
-                          backgroundColor:
-                              const Color.fromARGB(255, 255, 255, 255),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18)),
-                          context: context,
-                          builder: (BuildContext context) {
-                            return PopUpPage(
-                              miniimage: widget.minipage[index]["miniimage"],
-                              minidescription: widget.minipage[index]
-                                  ["minidescription"],
-                              cap: widget.cap,
-                            );
-                          });
-                    },
-                  );
-                },
-              ),
-            )
+            child: ListView.builder(
+              padding: const EdgeInsets.all(20),
+              shrinkWrap: true,
+              itemCount: widget.minipage.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  child: MiniLetterCard(
+                      miniimage: widget.minipage[index]["miniimage"],
+                      minidescription: widget.minipage[index]
+                          ["minidescription"]),
+                  onDoubleTap: () {
+                    showModalBottomSheet(
+                        backgroundColor:
+                            const Color.fromARGB(255, 255, 255, 255),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18)),
+                        context: context,
+                        builder: (BuildContext context) {
+                          return PopUpPage(
+                            miniimage: widget.minipage[index]["miniimage"],
+                            minidescription: widget.minipage[index]
+                                ["minidescription"],
+                            cap: widget.cap,
+                          );
+                        });
+                  },
+                );
+              },
+            ),
+          )
         ],
       ),
     );

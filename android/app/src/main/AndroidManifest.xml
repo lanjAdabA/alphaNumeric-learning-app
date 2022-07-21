@@ -32,7 +32,7 @@
   </intent>
 </queries>
    <application
-        android:label="learn"
+        android:label="Easy Learning"
         android:usesCleartextTraffic="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
