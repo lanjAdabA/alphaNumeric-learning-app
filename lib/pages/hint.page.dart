@@ -4,7 +4,9 @@ class HintPage extends StatelessWidget {
   const HintPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {        double width = MediaQuery.of(context).size.width;
+
+
     return Scaffold(
         body: Container(
       padding: const EdgeInsets.all(20),
@@ -14,10 +16,10 @@ class HintPage extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              children: const [
+              children:  [
                 Text(
                   " Hints / Guides ",
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 40),
+                  style: TextStyle(fontFamily: "SpecialElite", fontSize: width*0.08),
                 ),
               ],
             ),

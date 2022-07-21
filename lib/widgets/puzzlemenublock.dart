@@ -13,13 +13,15 @@ class PluzzleMenuBLock extends StatefulWidget {
 
 class _PluzzleMenuBLockState extends State<PluzzleMenuBLock> {
   @override
-  Widget build(BuildContext c) {
+  Widget build(BuildContext c) {  
+    double width = MediaQuery.of(context).size.width;
+
     return Row(
       children: [
         Image.asset(widget.menuimg),
         Text(
           widget.menudescription,
-          style: const TextStyle(fontSize: 28, fontFamily: "RubikMoonrocks"),
+          style:  TextStyle(fontSize: width*.054, fontFamily: "RubikMoonrocks"),
         )
       ],
     );

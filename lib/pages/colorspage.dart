@@ -60,7 +60,8 @@ class ColorPageState extends State<ColourPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { var screeensize= MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 215, 242, 250),
       appBar: AppBar(
@@ -72,7 +73,7 @@ class ColorPageState extends State<ColourPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-              flex: 3,
+              flex: 90,
               child: InkWell(
                 child: Stack(
                   children: [
@@ -93,10 +94,9 @@ class ColorPageState extends State<ColourPage> {
                 },
               )),
           Expanded(
-              flex: 1,
+              flex: 27,
               child: Container(
                 color: Colors.blue[50],
-                padding: const EdgeInsets.all(2),
                 child: Column(
                   children: [
                     CarouselSlider(
@@ -104,7 +104,7 @@ class ColorPageState extends State<ColourPage> {
                         enlargeCenterPage: true,
                         enableInfiniteScroll: true,
                         viewportFraction: 0.35,
-                        height: 110,
+                        height: screeensize.height*.09,
                       ),
                       items: card1.map((card1) {
                         return InkWell(
@@ -120,7 +120,7 @@ class ColorPageState extends State<ColourPage> {
                                   style: const TextStyle(
                                       fontFamily: "bungeeShade",
                                       color: Colors.white,
-                                      fontSize: 30),
+                                      fontSize: 26),
                                 ),
                               )),
                           onTap: () {
@@ -138,7 +138,7 @@ class ColorPageState extends State<ColourPage> {
                         enlargeCenterPage: true,
                         enableInfiniteScroll: true,
                         viewportFraction: 0.35,
-                        height: 110,
+                        height: screeensize.height*.09,
                       ),
                       items: card2.map((card2) {
                         return InkWell(
@@ -154,7 +154,7 @@ class ColorPageState extends State<ColourPage> {
                                   style: const TextStyle(
                                       fontFamily: "bungeeShade",
                                       color: Colors.black,
-                                      fontSize: 30),
+                                      fontSize: 26),
                                 ),
                               )),
                           onTap: () {

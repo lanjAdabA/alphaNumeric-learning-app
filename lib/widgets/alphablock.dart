@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -24,10 +25,12 @@ class _AplhaState extends State<AlphaBlock> {
 
   @override
   Widget build(BuildContext context) {
+    var screeensize= MediaQuery.of(context).size;
     return InkWell(
       child: SizedBox(
-        height: 120,
-        width: 120,
+        
+        height:screeensize.width/4 ,
+        width: screeensize.width/4.5,
         child: Card(
           margin: const EdgeInsets.all(1),
           color: Colors.blue[50],

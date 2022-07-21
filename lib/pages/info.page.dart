@@ -45,7 +45,8 @@ class InfoPage extends StatelessWidget {
                 // ),
                 const Text(
                   "The  application provides alphabet chart, and corresponding alphabet letter pages, numeric list- figure and words from one to ten, color demonstration page, and exercise page to test toddlers knowledge/ to play.",
-                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 16),
+                  
+                  style: TextStyle(fontFamily: "SpecialElite", fontSize: 16,  ),
                 ),
                 const Text(
                   " \n Learning alphabets, numeric fig, with corresponding words, colors that too comfortably is an essential part of early part of learning about literacy.\n \n It is also learnt that learning through playing is an important part of a child’s development. \n \n Distinguishing between the letters and learning their names is not the end to 'learning the alphabet.' Knowing specific letter-sound associations and letter- word associations are very crucial.\n In this process, using an “easy to use” learning method is of prime importance.\n\n Keeping these facts in mind, this project/application is developed based on mobile platform. ",

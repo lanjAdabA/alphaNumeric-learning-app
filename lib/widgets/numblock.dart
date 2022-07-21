@@ -32,6 +32,8 @@ class _NumBlockState extends State<NumBlock> {
 
   @override
   Widget build(BuildContext context) {
+        double width = MediaQuery.of(context).size.width;
+
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.084,
       width: MediaQuery.of(context).size.width * 1,
@@ -49,7 +51,7 @@ class _NumBlockState extends State<NumBlock> {
                     widget.fig,
                     style: TextStyle(
                         fontFamily: "CarterOne",
-                        fontSize: 60,
+                        fontSize: width*.099,
                         color: widget.color),
                   ),
                 ),
@@ -58,8 +60,8 @@ class _NumBlockState extends State<NumBlock> {
                 onTap: () => speak(widget.speechlong),
                 child: Text(
                   "👉🏼  ${widget.inwords}",
-                  style: const TextStyle(
-                      fontFamily: "Anton", fontSize: 30, color: Colors.black),
+                  style:  TextStyle(
+                      fontFamily: "Anton", fontSize: width*.075, color: Colors.black),
                 ),
               ),
             ],
