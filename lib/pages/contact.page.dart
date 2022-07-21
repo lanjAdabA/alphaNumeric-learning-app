@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({Key? key}) : super(key: key);
@@ -93,7 +94,7 @@ class _ContactPageState extends State<ContactPage> {
                         title: Text("+91 7005843058"),
                       ),
                       onTap: () {
-                        launch(
+                        launchUrlString(
                             'whatsapp://send?text=sample text&phone=7005843058');
                       },
                     ),
