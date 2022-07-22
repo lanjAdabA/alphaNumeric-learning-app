@@ -28,18 +28,9 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
   ];
 
   List<Map<String, dynamic>> menudata = [
-    {
-      "menuimg": 'assets/menuIcon/alpha.png',
-      "menudescription": "MATCH TO ALPHABET"
-    },
-    {
-      "menuimg": 'assets/menuIcon/num.png',
-      "menudescription": "MATCH TO NUMBER"
-    },
-    {
-      "menuimg": 'assets/menuIcon/color.png',
-      "menudescription": "MATCH TO COLOR"
-    },
+    {"menuimg": 'assets/alphaMenu.png', "menudescription": "MATCH TO ALPHABET"},
+    {"menuimg": 'assets/numMenu.png', "menudescription": "MATCH TO NUMBER"},
+    {"menuimg": 'assets/colorMenu.png', "menudescription": "MATCH TO COLOR"},
   ];
   @override
   Widget build(BuildContext context) {

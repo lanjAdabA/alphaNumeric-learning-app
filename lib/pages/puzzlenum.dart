@@ -298,8 +298,8 @@ class Emoji extends StatelessWidget {
           style: const TextStyle(
               color: Colors.blue,
               fontSize: 52,
-              fontWeight: FontWeight.normal,
-              fontFamily: "TitanOne"),
+              fontWeight: FontWeight.bold,
+              fontFamily: "SpecialElite"),
         ),
       ),
     );

@@ -170,6 +170,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                 ),
                 color: Colors.white),
             alignment: Alignment.center,
+            height: MediaQuery.of(context).size.width / 3.6,
             width: 200,
             child: const Text(
               "👍 correct!",
@@ -304,15 +305,15 @@ class Emoji extends StatelessWidget {
       color: Colors.transparent,
       child: Container(
         alignment: Alignment.center,
-        height: 100,
+        height: MediaQuery.of(context).size.height * .09,
         padding: const EdgeInsets.all(10),
         child: Text(
           emoji,
           style: const TextStyle(
-            color: Colors.blue,
-            fontSize: 60,
-            fontFamily: "TitanOne",
-          ),
+              color: Colors.blue,
+              fontSize: 60,
+              fontFamily: "rubikMicribe",
+              fontWeight: FontWeight.bold),
         ),
       ),
     );

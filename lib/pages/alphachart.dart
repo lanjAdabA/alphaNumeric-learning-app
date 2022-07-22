@@ -404,7 +404,7 @@ class _ChartState extends State<AlphaChart> {
       "imgmain": 'assets/charecters/owl.jpg',
       "minipage": [
         {
-          "miniimage": 'assets/charecters/Apple.jpg',
+          "miniimage": 'assets/charecters/orange.jpg',
           "minidescription": "Orange",
         },
         {

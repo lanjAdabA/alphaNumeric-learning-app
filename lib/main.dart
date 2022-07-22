@@ -68,16 +68,27 @@ class LearnAppState extends State<LearnApp> {
             unselectedFontSize: 10,
             enableFeedback: true,
             onTap: navigationBottomBar,
-            items: const [
+            items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.abc_outlined), label: "ALPHABET (A B C)"),
+                  icon: SizedBox(
+                      height: MediaQuery.of(context).size.height * .04,
+                      child: Image.asset("assets/alphaIcon.png")),
+                  label: "ALPHABET (A B C)"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.format_list_numbered_outlined),
+                  icon: SizedBox(
+                      height: MediaQuery.of(context).size.height * .04,
+                      child: Image.asset("assets/numIcon.png")),
                   label: "NUMBERS (1 2 3)"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.color_lens_outlined), label: "COLORS"),
+                  icon: SizedBox(
+                      height: MediaQuery.of(context).size.height * .04,
+                      child: Image.asset("assets/colorIcon.png")),
+                  label: "COLORS"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.extension_outlined), label: "EXERCISE"),
+                  icon: SizedBox(
+                      height: MediaQuery.of(context).size.height * .04,
+                      child: Image.asset("assets/exerciseIcon.png")),
+                  label: "EXERCISE"),
             ]),
       ),
     );
