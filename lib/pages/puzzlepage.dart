@@ -21,9 +21,10 @@ class _PuzzlePageState extends State<PuzzlePage> {
     {'object': "🍏", "color": Colors.green, "clipart": "assets/green.png"},
     {'object': "🥔", "color": Colors.brown, "clipart": "assets/brown.png"},
     {'object': "🍊", "color": Colors.orange, "clipart": "assets/orange.png"},
-    {'object': "🍆", "color": Colors.purple, "clipart": "assets/indigo.png"},
+    {'object': "🍆", "color": Colors.purple, "clipart": "assets/purple.png"},
     {'object': "🧄", "color": Colors.white, "clipart": "assets/white.png"},
     {'object': "🫐", "color": Colors.indigo, "clipart": "assets/blue.png"},
+    {'object': "🌸", "color": Colors.pink[200], "clipart": "assets/pink.png"},
   ];
 
   int seed = 1;
@@ -32,7 +33,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
   randomgen() {
     generated = {};
     List keys = [];
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 9; i++) {
       keys.add(i);
     }
     final random = Random();
@@ -41,7 +42,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
     for (int i = 0; i < 5; i++) {
       index = keys[random.nextInt(keys.length)];
       keys.removeWhere((k) => k == index); // remove the element
-      generated[choices[index]['object']] =
+      generated[choices[index]['clipart']] =
           choices[index]['color']; // {"A": "value"}
     }
   }
@@ -122,14 +123,16 @@ class _PuzzlePageState extends State<PuzzlePage> {
                       }
                     }
                   },
+                // feedback:  SizedBox(height:60,width: 60 ,child: Image.asset("assets/white.png"),),
+
                   feedback: Emoji(emoji: emoji),
 
                   // childWhenDragging: CircleAvatar(
                   //   backgroundImage: AssetImage(generated[choices]["clipart"]),
                   //   radius: 40,
                   // ),
-                  childWhenDragging: const Emoji(emoji: "🔲"),
-                  child: Emoji(emoji: score[emoji] == true ? '✅' : emoji),
+                  childWhenDragging:  const Emoji(emoji: "assets/box.png"),
+                  child: Emoji(emoji: score[emoji] == true ? 'assets/tick.png' : emoji),
                 );
               }).toList()
                 ..shuffle(Random(stem)),
@@ -292,13 +295,14 @@ class Emoji extends StatelessWidget {
         alignment: Alignment.center,
         height: 100,
         padding: const EdgeInsets.all(10),
-        child: Text(
-          emoji,
-          style: const TextStyle(
-            color: Colors.black,
-            fontSize: 50,
-          ),
-        ),
+        child: Image.asset(emoji),
+        // child: Text(
+        //   emoji,
+        //   style: const TextStyle(
+        //     color: Colors.black,
+        //     fontSize: 20,
+        //   ),
+        // ),
       ),
     );
   }

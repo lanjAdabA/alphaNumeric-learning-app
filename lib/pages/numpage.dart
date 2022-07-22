@@ -19,7 +19,7 @@ class _NumblockState extends State<NumPage> {
       'inwords': 'ONE',
       "color": Colors.red,
       "image": "assets/fingerNumber/1.jpg",
-      "speechlong": "o : n : e . one"
+      "speechlong": "o , n , e . one"
     },
     {
       'fig': "2",
