@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:learn/pages/main_drawer.dart';
 import 'package:learn/pages/puzzlealpha.dart';
+import 'package:learn/pages/puzzlecount.dart';
 import 'package:learn/pages/puzzlenum.dart';
 import 'package:learn/pages/puzzlepage.dart';
 import 'package:learn/widgets/puzzlemenublock.dart';
@@ -25,12 +26,14 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
     const PuzzleAlpha(),
     const PuzzleNum(),
     const PuzzlePage(),
+    const PuzzleCount()
   ];
 
   List<Map<String, dynamic>> menudata = [
-    {"menuimg": 'assets/alphaMenu.png', "menudescription": "MATCH TO ALPHABET"},
-    {"menuimg": 'assets/numMenu.png', "menudescription": "MATCH TO NUMBER"},
-    {"menuimg": 'assets/colorMenu.png', "menudescription": "MATCH TO COLOR"},
+    {"menuimg": 'assets/alphaMenu.png', "menudescription": "Alphabet MAtching"},
+    {"menuimg": 'assets/numMenu.png', "menudescription": "Number Matching"},
+    {"menuimg": 'assets/colorMenu.png', "menudescription": "Color Matching"},
+    {"menuimg": 'assets/countMenu.png', "menudescription": "Let's count"},
   ];
   @override
   Widget build(BuildContext context) {
@@ -47,7 +50,7 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
           padding: EdgeInsets.all(w / 30),
           physics: const BouncingScrollPhysics(
               parent: AlwaysScrollableScrollPhysics()),
-          itemCount: 3,
+          itemCount: 4,
           itemBuilder: (BuildContext context, int index) {
             return AnimationConfiguration.staggeredList(
               position: index,

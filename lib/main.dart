@@ -63,9 +63,10 @@ class LearnAppState extends State<LearnApp> {
             selectedItemColor: const Color.fromARGB(255, 162, 16, 206),
             unselectedItemColor: const Color.fromARGB(255, 158, 160, 155),
             currentIndex: selectedIndex,
-            selectedFontSize: 16,
+            selectedFontSize: 18,
+            showSelectedLabels: true,
             showUnselectedLabels: true,
-            unselectedFontSize: 10,
+            unselectedFontSize: 8,
             enableFeedback: true,
             onTap: navigationBottomBar,
             items: [
