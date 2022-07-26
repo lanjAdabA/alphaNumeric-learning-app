@@ -4,6 +4,7 @@ import 'package:learn/pages/alphachart.dart';
 import 'package:learn/pages/colorspage.dart';
 import 'package:learn/pages/numpage.dart';
 import 'package:learn/pages/puzzlemenupage.dart';
+import 'package:learn/pages/shapepage.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding();
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Easy Learning",
-      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+              color: Colors.white70, foregroundColor: Colors.black45)),
       debugShowCheckedModeBanner: false,
       home: const LearnApp(),
     );
@@ -44,6 +47,7 @@ class LearnAppState extends State<LearnApp> {
     const AlphaChart(),
     const NumPage(),
     const ColourPage(),
+    const ShapePage(),
     const PuzzleMenuPage()
   ];
 
@@ -85,6 +89,11 @@ class LearnAppState extends State<LearnApp> {
                       height: MediaQuery.of(context).size.height * .04,
                       child: Image.asset("assets/colorIcon.png")),
                   label: "COLORS"),
+              BottomNavigationBarItem(
+                  icon: SizedBox(
+                      height: MediaQuery.of(context).size.height * .04,
+                      child: Image.asset("assets/shapeIcon.png")),
+                  label: "SHAPES"),
               BottomNavigationBarItem(
                   icon: SizedBox(
                       height: MediaQuery.of(context).size.height * .04,

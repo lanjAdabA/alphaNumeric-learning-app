@@ -33,7 +33,7 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
     {"menuimg": 'assets/alphaMenu.png', "menudescription": "Alphabet MAtching"},
     {"menuimg": 'assets/numMenu.png', "menudescription": "Number Matching"},
     {"menuimg": 'assets/colorMenu.png', "menudescription": "Color Matching"},
-    {"menuimg": 'assets/countMenu.png', "menudescription": "Let's count"},
+    {"menuimg": 'assets/countMenu.png', "menudescription": "Count and Match"},
   ];
   @override
   Widget build(BuildContext context) {

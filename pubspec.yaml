@@ -72,9 +72,9 @@ flutter:
   assets:
     - assets/alphaChar/
     - assets/
+    - assets/shapeImg/    
     - assets/charecters/
     - assets/fingerNumber/
-    - assets/menuIcon/
     - assets/success.wav
     - assets/error.wav
   #   - images/a_dot_ham.jpeg
