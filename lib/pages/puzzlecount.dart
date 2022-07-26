@@ -98,10 +98,10 @@ class _PuzzleCountState extends State<PuzzleCount> {
               stem--;
             });
           }),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            GridView.count(
+      body: Column(
+        children: [
+          Expanded( flex: 78,
+            child: GridView.count(
               crossAxisCount: 2,
               shrinkWrap: true,
               children: generated.keys
@@ -109,7 +109,9 @@ class _PuzzleCountState extends State<PuzzleCount> {
                   .toList()
                 ..shuffle(Random(seed)),
             ),
-            GridView.count(
+          ),
+          Expanded( flex: 22,
+            child: GridView.count(
               padding: const EdgeInsets.all(10),
               shrinkWrap: true,
               crossAxisCount: 5,
@@ -124,7 +126,7 @@ class _PuzzleCountState extends State<PuzzleCount> {
                           backgroundColor: Colors.red,
                           content: Text('OOPS! Try agaim'),
                         );
-
+          
                         ScaffoldMessenger.of(context).showSnackBar(snackBar1);
                         FlutterRingtonePlayer.play(
                             fromAsset: "assets/error.wav", volume: .3);
@@ -139,8 +141,8 @@ class _PuzzleCountState extends State<PuzzleCount> {
               }).toList()
                 ..shuffle(Random(stem)),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -64,38 +65,45 @@ class _NumblockState extends State<ShapePage> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text("Number_Chart"),
-          centerTitle: true,
-        ),
-        drawer: const MainDrawer(),
-        body: ListWheelScrollView(
-          itemExtent: width / 1.3,
-          onSelectedItemChanged: (index) {
-            speak({index + 1}.toString());
-          },
-          physics: const FixedExtentScrollPhysics(),
-          children: shapeData.map((e) {
-            return Container(
-                width: width * 1,
-                color: e["shapeColor"],
-                height: 400,
-                child: Column(
-                  children: [
-                    SizedBox(
-                        height: 300,
-                        width: 300,
-                        child: Image.asset(e["shapeImg"])),
-                    // Image(image: e["shapeImg"]),
-                    Text(
-                      e["shapeName"],
-                      style: TextStyle(
-                          fontFamily: "titanOne", fontSize: width * 0.06),
-                    )
-                  ],
-                ));
-          }).toList(),
-        ));
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text("Number_Chart"),
+        centerTitle: true,
+      ),
+      drawer: const MainDrawer(),
+      body: ListWheelScrollView(
+        itemExtent: width / 1.3,
+        // onSelectedItemChanged: (index) {
+        //   speak("data");
+        // },
+        physics:  const FixedExtentScrollPhysics(),
+        children: shapeData.map((e) {
+          return Container( decoration:
+   BoxDecoration(
+            color: e["shapeColor"],
+
+    borderRadius: const BorderRadius.all(Radius.circular(20),),),
+            
+            width: width * 1,
+            height: 400,
+            child: InkWell(
+              child: Column(
+                children: [
+                  SizedBox(
+                      height: 300, width: 300, child: Image.asset(e["shapeImg"])),
+                  // Image(image: e["shapeImg"]),
+                  Text(
+                    e["shapeName"],
+                    style:
+                        TextStyle(fontFamily: "titanOne", fontSize: width * 0.06),
+                  ),
+                ],
+              ),
+              onTap: () => speak("text"),
+            ),
+          );
+        }).toList(),
+      ),
+    );
   }
 }

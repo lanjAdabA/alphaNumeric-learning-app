@@ -5,6 +5,7 @@ import 'package:learn/pages/puzzlealpha.dart';
 import 'package:learn/pages/puzzlecount.dart';
 import 'package:learn/pages/puzzlenum.dart';
 import 'package:learn/pages/puzzlepage.dart';
+import 'package:learn/pages/puzzleshape.dart';
 import 'package:learn/widgets/puzzlemenublock.dart';
 
 class PuzzleMenuPage extends StatefulWidget {
@@ -26,7 +27,8 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
     const PuzzleAlpha(),
     const PuzzleNum(),
     const PuzzlePage(),
-    const PuzzleCount()
+    const PuzzleCount(),
+    const PuzzleShape(),
   ];
 
   List<Map<String, dynamic>> menudata = [
@@ -34,6 +36,8 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
     {"menuimg": 'assets/numMenu.png', "menudescription": "Number Matching"},
     {"menuimg": 'assets/colorMenu.png', "menudescription": "Color Matching"},
     {"menuimg": 'assets/countMenu.png', "menudescription": "Count and Match"},
+    {"menuimg": 'assets/shapeMenu.png', "menudescription": "Shape Matching"},
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -50,7 +54,7 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
           padding: EdgeInsets.all(w / 30),
           physics: const BouncingScrollPhysics(
               parent: AlwaysScrollableScrollPhysics()),
-          itemCount: 4,
+          itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return AnimationConfiguration.staggeredList(
               position: index,

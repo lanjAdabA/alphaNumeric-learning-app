@@ -4,44 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:learn/pages/puzzlemenupage.dart';
 
-class PuzzleAlpha extends StatefulWidget {
-  const PuzzleAlpha({Key? key}) : super(key: key);
+class PuzzleShape extends StatefulWidget {
+  const PuzzleShape({Key? key}) : super(key: key);
 
   @override
-  State<PuzzleAlpha> createState() => _PuzzleAlphaState();
+  State<PuzzleShape> createState() => PuzzleShapeState();
 }
 
-class _PuzzleAlphaState extends State<PuzzleAlpha> {
+class PuzzleShapeState extends State<PuzzleShape> {
   final Map<String, bool> score = {};
   Map<dynamic, dynamic> generated = {};
 
   final List<Map<String, dynamic>> choices = [
-    {"alphabet": "A", "value": " 🍎 Apple"},
-    {"alphabet": "B", "value": " ⚽️ Ball"},
-    {"alphabet": "C", "value": " 🐈‍ Cat"},
-    {"alphabet": "D", "value": " 🦮 Dog"},
-    {"alphabet": "E", "value": " 🥚 Egg"},
-    {"alphabet": "F", "value": " 🐠 Fish"},
-    {"alphabet": "G", "value": " 🍇 Grapes"},
-    {"alphabet": "H", "value": " 🏠 House"},
-    {"alphabet": "I", "value": " 🍧 Icecream"},
-    {"alphabet": "J", "value": " 🤡 Joker"},
-    {"alphabet": "K", "value": " 🪁 Kite"},
-    {"alphabet": "L", "value": " 🍋 Lemon"},
-    {"alphabet": "M", "value": " 🐒 Monkey"},
-    {"alphabet": "N", "value": " 🥜 Nuts"},
-    {"alphabet": "O", "value": " 🍊 Orange"},
-    {"alphabet": "P", "value": " 🖊 Pen"},
-    {"alphabet": "Q", "value": " 👸🏼 Queen"},
-    {"alphabet": "R", "value": " 🌹 Rose"},
-    {"alphabet": "S", "value": " 🐏 Sheep"},
-    {"alphabet": "T", "value": " 🐅 Tiger"},
-    {"alphabet": "U", "value": " 🦄 Unicorn"},
-    {"alphabet": "V", "value": " 🦺 Vest"},
-    {"alphabet": "W", "value": " ⌚️ Watch"},
-    {"alphabet": "X", "value": " 🎄 Xmas tree"},
-    {"alphabet": "Y", "value": " 🪀 Yoyo"},
-    {"alphabet": "Z", "value": " 🦓 Zebra"},
+    {"count": "assets/1x.png", "figr": "assets/shapedrag/squaredrag.png"},
+    {"count": "assets/2x.png", "figr": "assets/shapedrag/rectangledrag.png"},
+    {"count": "assets/3x.png", "figr": "assets/shapedrag/triangledrag.png"},
+    {"count": "assets/4x.png", "figr": "assets/shapedrag/circledrag.png"},
+    {"count": "assets/5x.png", "figr": "assets/shapedrag/heartdrag.png"},
+    {"count": "assets/6x.png", "figr": "assets/shapedrag/stardrag.png"},
+    {"count": "assets/7x.png", "figr": "assets/shapedrag/ovaldrag.png"},
   ];
 
   int seed = 1;
@@ -50,7 +31,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
   randomgen() {
     generated = {};
     List keys = [];
-    for (int i = 0; i < 26; i++) {
+    for (int i = 0; i < 7; i++) {
       keys.add(i);
     }
     final random = Random();
@@ -59,8 +40,8 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
     for (int i = 0; i < 6; i++) {
       index = keys[random.nextInt(keys.length)];
       keys.removeWhere((k) => k == index); // remove the element
-      generated[choices[index]['alphabet']] =
-          choices[index]['value']; // {"A": "value"}
+      generated[choices[index]['figr']] =
+          choices[index]['count']; // {"A": "value"}
     }
   }
 
@@ -74,56 +55,55 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Column(
-            children: [
-              Text(
-                'Score ${score.length} /6',
-                style: const TextStyle(fontFamily: "PressStart"),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "*Hint*",
-                    style: TextStyle(
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 182, 189, 179)),
-                  ),
-                  Text(
-                    " -- Match letter to picture",
-                    style: TextStyle(
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 156, 172, 172)),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-            ],
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.blueGrey,
+      appBar: AppBar(
+        title: Column(
+          children: [
+            Text(
+              'Score ${score.length} /6',
+              style: const TextStyle(fontFamily: "PressStart"),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  "*Hint*",
+                  style: TextStyle(
+                      fontSize: 14, color: Color.fromARGB(255, 182, 189, 179)),
+                ),
+                Text(
+                  " -- count and match",
+                  style: TextStyle(
+                      fontSize: 14, color: Color.fromARGB(255, 156, 172, 172)),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 1,
+            ),
+          ],
         ),
-        floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.refresh_outlined),
-            onPressed: () {
-              setState(() {
-                randomgen();
-                score.clear();
-                seed++;
-                stem--;
-              });
-            }),
-        body: Row(
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey,
+      ),
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.refresh_outlined),
+          onPressed: () {
+            setState(() {
+              randomgen();
+              score.clear();
+              seed++;
+              stem--;
+            });
+          }),
+      body: Center(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: generated.keys.map((emoji) {
-                return Draggable<String>(
+                return Draggable(
                   data: emoji,
                   onDragEnd: (c) {
                     {
@@ -141,25 +121,29 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                     }
                   },
                   feedback: Emoji(emoji: emoji),
-                  childWhenDragging: const Emoji(emoji: "_"),
-                  child: Emoji(emoji: score[emoji] == true ? '☑️' : emoji),
+                  childWhenDragging: const Emoji(emoji: "assets/box.png"),
+                  child: Emoji(
+                      emoji: score[emoji] == true ? 'assets/tick.png' : emoji),
                 );
               }).toList()
                 ..shuffle(Random(stem)),
             ),
             Column(
+            
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: generated.keys
                   .map((emoji) => _buildDragTarget(emoji))
                   .toList()
                 ..shuffle(Random(seed)),
-            )
+            ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 
-  Widget _buildDragTarget(emoji) {
+ Widget _buildDragTarget(emoji) {
     return DragTarget<String>(
       builder: ((BuildContext context, List<String?> incoming, List rejected) {
         if (score[emoji] == true) {
@@ -180,17 +164,20 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
         } else {
           return Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.blue[50]),
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.blue[50],
+            ),
             height: MediaQuery.of(context).size.width / 3.6,
             width: 200,
-            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text(
-                generated[emoji].toString(),
-                style: const TextStyle(fontSize: 28, fontFamily: "anton"),
-              ),
-            ]),
+            child: Center(
+              child: Image.asset(generated[emoji])
+              
+              // Text(
+              //   generated[emoji].toString(),
+              //   style: const TextStyle(fontSize: 28, fontFamily: "anton"),
+              // ),
+            ),
           );
         }
       }),
@@ -210,7 +197,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
 
         setState(() {
           score[emoji] = true;
-          if (score.length % 6 == 0) {
+          if (score.length % 5 == 0) {
             showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
@@ -260,7 +247,17 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                         backgroundColor:
                                             MaterialStateProperty.all(
                                                 Colors.blue)),
-                                   
+                                    onPressed: () {
+                                      randomgen();
+
+                                      setState(() {
+                                        score.clear();
+                                      });
+                                      Navigator.pushReplacement(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return const PuzzleMenuPage();
+                                      }));
+                                    },
                                     child: Text(
                                       "Menu Page",
                                       style: TextStyle(
@@ -268,18 +265,7 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                                   .size
                                                   .width /
                                               20),
-                                    ), onPressed: () {
-                                      randomgen();
-
-                                      setState(() {
-                                        score.clear();
-                                      });
-
-                                      Navigator.pushReplacement(context,
-                                          MaterialPageRoute(builder: (context) {
-                                        return const PuzzleMenuPage();
-                                      }));
-                                    },)
+                                    ))
                               ],
                             ),
                           ],
@@ -305,16 +291,15 @@ class Emoji extends StatelessWidget {
       color: Colors.transparent,
       child: Container(
         alignment: Alignment.center,
-        height: MediaQuery.of(context).size.height * .09,
-        padding: const EdgeInsets.all(10),
-        child: Text(
-          emoji,
-          style: const TextStyle(
-              color: Colors.blue,
-              fontSize: 60,
-              fontFamily: "rubikMicribe",
-              fontWeight: FontWeight.bold),
-        ),
+        height: MediaQuery.of(context).size.height * .06,
+        child: Image.asset(emoji),
+        // child: Text(
+        //   emoji,
+        //   style: const TextStyle(
+        //     color: Colors.black,
+        //     fontSize: 20,
+        //   ),
+        // ),
       ),
     );
   }

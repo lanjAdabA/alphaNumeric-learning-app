@@ -73,6 +73,7 @@ flutter:
     - assets/alphaChar/
     - assets/
     - assets/shapeImg/    
+    - assets/shapedrag/    
     - assets/charecters/
     - assets/fingerNumber/
     - assets/success.wav
