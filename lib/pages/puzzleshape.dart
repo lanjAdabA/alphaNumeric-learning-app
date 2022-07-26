@@ -16,13 +16,34 @@ class PuzzleShapeState extends State<PuzzleShape> {
   Map<dynamic, dynamic> generated = {};
 
   final List<Map<String, dynamic>> choices = [
-    {"count": "assets/1x.png", "figr": "assets/shapedrag/squaredrag.png"},
-    {"count": "assets/2x.png", "figr": "assets/shapedrag/rectangledrag.png"},
-    {"count": "assets/3x.png", "figr": "assets/shapedrag/triangledrag.png"},
-    {"count": "assets/4x.png", "figr": "assets/shapedrag/circledrag.png"},
-    {"count": "assets/5x.png", "figr": "assets/shapedrag/heartdrag.png"},
-    {"count": "assets/6x.png", "figr": "assets/shapedrag/stardrag.png"},
-    {"count": "assets/7x.png", "figr": "assets/shapedrag/ovaldrag.png"},
+    {
+      "count": "assets/shapedrag/dice.png",
+      "figr": "assets/shapedrag/squaredrag.png"
+    },
+    {
+      "count": "assets/shapedrag/gift.png",
+      "figr": "assets/shapedrag/rectangledrag.png"
+    },
+    {
+      "count": "assets/shapedrag/hat.jpeg",
+      "figr": "assets/shapedrag/triangledrag.png"
+    },
+    {
+      "count": "assets/shapedrag/ball.png",
+      "figr": "assets/shapedrag/circledrag.png"
+    },
+    {
+      "count": "assets/shapedrag/cake.png",
+      "figr": "assets/shapedrag/heartdrag.png"
+    },
+    {
+      "count": "assets/shapedrag/starfish.jpeg",
+      "figr": "assets/shapedrag/stardrag.png"
+    },
+    {
+      "count": "assets/shapedrag/egg.jpeg",
+      "figr": "assets/shapedrag/ovaldrag.png"
+    },
   ];
 
   int seed = 1;
@@ -37,7 +58,7 @@ class PuzzleShapeState extends State<PuzzleShape> {
     final random = Random();
     int index = 0;
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 5; i++) {
       index = keys[random.nextInt(keys.length)];
       keys.removeWhere((k) => k == index); // remove the element
       generated[choices[index]['figr']] =
@@ -59,7 +80,7 @@ class PuzzleShapeState extends State<PuzzleShape> {
         title: Column(
           children: [
             Text(
-              'Score ${score.length} /6',
+              'Score ${score.length} /5',
               style: const TextStyle(fontFamily: "PressStart"),
             ),
             Row(
@@ -129,7 +150,6 @@ class PuzzleShapeState extends State<PuzzleShape> {
                 ..shuffle(Random(stem)),
             ),
             Column(
-            
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: generated.keys
@@ -143,7 +163,7 @@ class PuzzleShapeState extends State<PuzzleShape> {
     );
   }
 
- Widget _buildDragTarget(emoji) {
+  Widget _buildDragTarget(emoji) {
     return DragTarget<String>(
       builder: ((BuildContext context, List<String?> incoming, List rejected) {
         if (score[emoji] == true) {
@@ -166,18 +186,17 @@ class PuzzleShapeState extends State<PuzzleShape> {
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(20),
-              color: Colors.blue[50],
+              color: Colors.white,
             ),
             height: MediaQuery.of(context).size.width / 3.6,
             width: 200,
-            child: Center(
-              child: Image.asset(generated[emoji])
-              
-              // Text(
-              //   generated[emoji].toString(),
-              //   style: const TextStyle(fontSize: 28, fontFamily: "anton"),
-              // ),
-            ),
+            child: Center(child: Image.asset(generated[emoji])
+
+                // Text(
+                //   generated[emoji].toString(),
+                //   style: const TextStyle(fontSize: 28, fontFamily: "anton"),
+                // ),
+                ),
           );
         }
       }),

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.learn">
+    package="com.lanjAdabA">
 
 <uses-permission android:name="android. permission. INTERNET"/>
 

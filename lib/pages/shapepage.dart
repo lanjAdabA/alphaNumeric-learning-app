@@ -1,4 +1,4 @@
-
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -71,35 +71,40 @@ class _NumblockState extends State<ShapePage> {
         centerTitle: true,
       ),
       drawer: const MainDrawer(),
-      body: ListWheelScrollView(
-        itemExtent: width / 1.3,
-        // onSelectedItemChanged: (index) {
-        //   speak("data");
-        // },
-        physics:  const FixedExtentScrollPhysics(),
-        children: shapeData.map((e) {
-          return Container( decoration:
-   BoxDecoration(
-            color: e["shapeColor"],
-
-    borderRadius: const BorderRadius.all(Radius.circular(20),),),
-            
+      body: CarouselSlider(
+        options: CarouselOptions(
+          enlargeCenterPage: true,
+          scrollDirection: Axis.vertical,
+          enableInfiniteScroll: true,
+          viewportFraction: .45,
+          height: width * 2,
+        ),
+        items: shapeData.map((e) {
+          return Container(
+            decoration: BoxDecoration(
+              color: e["shapeColor"],
+              borderRadius: const BorderRadius.all(
+                Radius.circular(30),
+              ),
+            ),
             width: width * 1,
             height: 400,
-            child: InkWell(
+            child: GestureDetector(
+              onTap: () => speak(e["shapeName"]),
               child: Column(
                 children: [
                   SizedBox(
-                      height: 300, width: 300, child: Image.asset(e["shapeImg"])),
+                      height: 300,
+                      width: 300,
+                      child: Image.asset(e["shapeImg"])),
                   // Image(image: e["shapeImg"]),
                   Text(
                     e["shapeName"],
-                    style:
-                        TextStyle(fontFamily: "titanOne", fontSize: width * 0.06),
+                    style: TextStyle(
+                        fontFamily: "titanOne", fontSize: width * 0.06),
                   ),
                 ],
               ),
-              onTap: () => speak("text"),
             ),
           );
         }).toList(),
