@@ -74,7 +74,7 @@ class ColorPageState extends State<ColourPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-              flex: 90,
+              flex: 80,
               child: InkWell(
                 child: Stack(
                   children: [
@@ -105,7 +105,7 @@ class ColorPageState extends State<ColourPage> {
                         enlargeCenterPage: true,
                         enableInfiniteScroll: true,
                         viewportFraction: 0.35,
-                        height: screeensize.height * .09,
+                        height: screeensize.height * .1,
                       ),
                       items: card1.map((card1) {
                         return InkWell(
@@ -142,7 +142,7 @@ class ColorPageState extends State<ColourPage> {
                         enlargeCenterPage: true,
                         enableInfiniteScroll: true,
                         viewportFraction: 0.35,
-                        height: screeensize.height * .09,
+                        height: screeensize.height * .1,
                       ),
                       items: card2.map((card2) {
                         return InkWell(

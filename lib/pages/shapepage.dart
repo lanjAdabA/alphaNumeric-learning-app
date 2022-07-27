@@ -63,6 +63,7 @@ class _NumblockState extends State<ShapePage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -76,32 +77,33 @@ class _NumblockState extends State<ShapePage> {
           enlargeCenterPage: true,
           scrollDirection: Axis.vertical,
           enableInfiniteScroll: true,
-          viewportFraction: .45,
-          height: width * 2,
+          viewportFraction: .5,
+          height: height * 1,
         ),
         items: shapeData.map((e) {
           return Container(
             decoration: BoxDecoration(
               color: e["shapeColor"],
+              // color: Colors.blue[50],
               borderRadius: const BorderRadius.all(
                 Radius.circular(30),
               ),
             ),
             width: width * 1,
-            height: 400,
+            height: height / 2,
             child: GestureDetector(
               onTap: () => speak(e["shapeName"]),
               child: Column(
                 children: [
                   SizedBox(
-                      height: 300,
-                      width: 300,
+                      height: height / 3.5,
+                      width: width / 2,
                       child: Image.asset(e["shapeImg"])),
                   // Image(image: e["shapeImg"]),
                   Text(
                     e["shapeName"],
                     style: TextStyle(
-                        fontFamily: "titanOne", fontSize: width * 0.06),
+                        fontFamily: "titanOne", fontSize: height * 0.04),
                   ),
                 ],
               ),
