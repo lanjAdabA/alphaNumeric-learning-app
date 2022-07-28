@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-import 'package:learn/pages/puzzlemenupage.dart';
+import 'package:learn/main.dart';
 
 class PuzzlePage extends StatefulWidget {
   const PuzzlePage({Key? key}) : super(key: key);
@@ -17,14 +17,26 @@ class _PuzzlePageState extends State<PuzzlePage> {
 
   final List<Map<String, dynamic>> choices = [
     {'object': "🍎", "color": Colors.red, "clipart": "assets/red.png"},
-    {'object': "🍋", "color": Colors.yellow, "clipart": "assets/yellow.png"},
+    {
+      'object': "🍋",
+      "color": Colors.yellow[300],
+      "clipart": "assets/yellow.png"
+    },
     {'object': "🍏", "color": Colors.green, "clipart": "assets/green.png"},
     {'object': "🥔", "color": Colors.brown, "clipart": "assets/brown.png"},
-    {'object': "🍊", "color": Colors.orange, "clipart": "assets/orange.png"},
-    {'object': "🍆", "color": Colors.purple, "clipart": "assets/purple.png"},
+    {
+      'object': "🍊",
+      "color": Colors.orange[400],
+      "clipart": "assets/orange.png"
+    },
+    {
+      'object': "🍆",
+      "color": Colors.purple[800],
+      "clipart": "assets/purple.png"
+    },
     {'object': "🧄", "color": Colors.white, "clipart": "assets/white.png"},
     {'object': "🫐", "color": Colors.indigo, "clipart": "assets/blue.png"},
-    {'object': "🌸", "color": Colors.pink[200], "clipart": "assets/pink.png"},
+    {'object': "🌸", "color": Colors.pink[100], "clipart": "assets/pink.png"},
   ];
 
   int seed = 1;
@@ -123,7 +135,7 @@ class _PuzzlePageState extends State<PuzzlePage> {
                       }
                     }
                   },
-                // feedback:  SizedBox(height:60,width: 60 ,child: Image.asset("assets/white.png"),),
+                  // feedback:  SizedBox(height:60,width: 60 ,child: Image.asset("assets/white.png"),),
 
                   feedback: Emoji(emoji: emoji),
 
@@ -131,8 +143,9 @@ class _PuzzlePageState extends State<PuzzlePage> {
                   //   backgroundImage: AssetImage(generated[choices]["clipart"]),
                   //   radius: 40,
                   // ),
-                  childWhenDragging:  const Emoji(emoji: "assets/box.png"),
-                  child: Emoji(emoji: score[emoji] == true ? 'assets/tick.png' : emoji),
+                  childWhenDragging: const Emoji(emoji: "assets/box.png"),
+                  child: Emoji(
+                      emoji: score[emoji] == true ? 'assets/tick.png' : emoji),
                 );
               }).toList()
                 ..shuffle(Random(stem)),
@@ -254,14 +267,15 @@ class _PuzzlePageState extends State<PuzzlePage> {
                                       randomgen();
                                       setState(() {
                                         score.clear();
+                                        dispose();
                                       });
                                       Navigator.pushReplacement(context,
                                           MaterialPageRoute(builder: (context) {
-                                        return const PuzzleMenuPage();
+                                        return const MyApp();
                                       }));
                                     },
                                     child: Text(
-                                      "Menu Page",
+                                      "Main Page",
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size

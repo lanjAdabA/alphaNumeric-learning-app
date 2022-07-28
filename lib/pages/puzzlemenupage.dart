@@ -26,16 +26,16 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
   final List menuPage = [
     const PuzzleAlpha(),
     const PuzzleNum(),
-    const PuzzleCount(),
     const PuzzlePage(),
+    const PuzzleCount(),
     const PuzzleShape(),
   ];
 
   List<Map<String, dynamic>> menudata = [
     {"menuimg": 'assets/alphaMenu.png', "menudescription": "Alphabet MAtching"},
     {"menuimg": 'assets/numMenu.png', "menudescription": "Number Matching"},
-    {"menuimg": 'assets/countMenu.png', "menudescription": "Count and Match"},
     {"menuimg": 'assets/colorMenu.png', "menudescription": "Color Matching"},
+    {"menuimg": 'assets/countMenu.png', "menudescription": "Count and Match"},
     {"menuimg": 'assets/shapeMenu.png', "menudescription": "Shape Matching"},
   ];
   @override

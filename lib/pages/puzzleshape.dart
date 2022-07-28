@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-import 'package:learn/pages/puzzlemenupage.dart';
+import 'package:learn/main.dart';
 
 class PuzzleShape extends StatefulWidget {
   const PuzzleShape({Key? key}) : super(key: key);
@@ -274,11 +274,11 @@ class PuzzleShapeState extends State<PuzzleShape> {
                                       });
                                       Navigator.pushReplacement(context,
                                           MaterialPageRoute(builder: (context) {
-                                        return const PuzzleMenuPage();
+                                        return const MyApp();
                                       }));
                                     },
                                     child: Text(
-                                      "Menu Page",
+                                      "Main Page",
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size

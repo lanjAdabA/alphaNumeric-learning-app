@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-import 'package:learn/pages/puzzlemenupage.dart';
+import 'package:learn/main.dart';
 
 class PuzzleCount extends StatefulWidget {
   const PuzzleCount({Key? key}) : super(key: key);
@@ -100,7 +100,8 @@ class _PuzzleCountState extends State<PuzzleCount> {
           }),
       body: Column(
         children: [
-          Expanded( flex: 78,
+          Expanded(
+            flex: 78,
             child: GridView.count(
               crossAxisCount: 2,
               shrinkWrap: true,
@@ -110,7 +111,8 @@ class _PuzzleCountState extends State<PuzzleCount> {
                 ..shuffle(Random(seed)),
             ),
           ),
-          Expanded( flex: 22,
+          Expanded(
+            flex: 22,
             child: GridView.count(
               padding: const EdgeInsets.all(10),
               shrinkWrap: true,
@@ -126,7 +128,7 @@ class _PuzzleCountState extends State<PuzzleCount> {
                           backgroundColor: Colors.red,
                           content: Text('OOPS! Try agaim'),
                         );
-          
+
                         ScaffoldMessenger.of(context).showSnackBar(snackBar1);
                         FlutterRingtonePlayer.play(
                             fromAsset: "assets/error.wav", volume: .3);
@@ -253,11 +255,11 @@ class _PuzzleCountState extends State<PuzzleCount> {
                                         Navigator.pushReplacement(context,
                                             MaterialPageRoute(
                                                 builder: (context) {
-                                          return const PuzzleMenuPage();
+                                          return const MyApp();
                                         }));
                                       },
                                       child: Text(
-                                        "Menu Page",
+                                        "Main Page",
                                         style: TextStyle(
                                             fontSize: MediaQuery.of(context)
                                                     .size

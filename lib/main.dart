@@ -52,11 +52,6 @@ class LearnAppState extends State<LearnApp> {
   ];
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () => _onBackButtonPressed(context),

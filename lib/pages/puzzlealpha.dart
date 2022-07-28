@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
-import 'package:learn/pages/puzzlemenupage.dart';
+import 'package:learn/main.dart';
 
 class PuzzleAlpha extends StatefulWidget {
   const PuzzleAlpha({Key? key}) : super(key: key);
@@ -253,33 +253,33 @@ class _PuzzleAlphaState extends State<PuzzleAlpha> {
                                               20),
                                     )),
                                 ElevatedButton(
-                                    style: ButtonStyle(
-                                        foregroundColor:
-                                            MaterialStateProperty.all(
-                                                Colors.white),
-                                        backgroundColor:
-                                            MaterialStateProperty.all(
-                                                Colors.blue)),
-                                   
-                                    child: Text(
-                                      "Menu Page",
-                                      style: TextStyle(
-                                          fontSize: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              20),
-                                    ), onPressed: () {
-                                      randomgen();
+                                  style: ButtonStyle(
+                                      foregroundColor:
+                                          MaterialStateProperty.all(
+                                              Colors.white),
+                                      backgroundColor:
+                                          MaterialStateProperty.all(
+                                              Colors.blue)),
+                                  child: Text(
+                                    "Main Page",
+                                    style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                20),
+                                  ),
+                                  onPressed: () {
+                                    randomgen();
 
-                                      setState(() {
-                                        score.clear();
-                                      });
+                                    setState(() {
+                                      score.clear();
+                                    });
 
-                                      Navigator.pushReplacement(context,
-                                          MaterialPageRoute(builder: (context) {
-                                        return const PuzzleMenuPage();
-                                      }));
-                                    },)
+                                    Navigator.pushReplacement(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return const MyApp();
+                                    }));
+                                  },
+                                )
                               ],
                             ),
                           ],
