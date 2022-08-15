@@ -83,28 +83,29 @@ class _NumblockState extends State<ShapePage> {
         items: shapeData.map((e) {
           return Container(
             decoration: BoxDecoration(
-              color: e["shapeColor"],
-              // color: Colors.blue[50],
+              // color: e["shapeColor"],
+              color: Colors.blue[50],
               borderRadius: const BorderRadius.all(
                 Radius.circular(30),
               ),
             ),
             width: width * 1,
-            height: height / 2,
+            height: height / 2.6,
             child: GestureDetector(
               onTap: () => speak(e["shapeName"]),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  SizedBox(
-                      height: height / 3.5,
-                      width: width / 2,
-                      child: Image.asset(e["shapeImg"])),
-                  // Image(image: e["shapeImg"]),
                   Text(
                     e["shapeName"],
                     style: TextStyle(
                         fontFamily: "titanOne", fontSize: height * 0.04),
                   ),
+                  SizedBox(
+                      height: height / 3,
+                      width: width / 2,
+                      child: Image.asset(e["shapeImg"])),
+                  // Image(image: e["shapeImg"]),
                 ],
               ),
             ),

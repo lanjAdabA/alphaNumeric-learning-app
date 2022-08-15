@@ -1,12 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:learn/pages/contact.page.dart';
 import 'package:learn/pages/hint.page.dart';
+import 'package:rate_my_app/rate_my_app.dart';
+
 import 'package:learn/pages/info.page.dart';
 import 'package:learn/pages/special_thanks.page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class MainDrawer extends StatelessWidget {
+class MainDrawer extends StatefulWidget {
   const MainDrawer({Key? key}) : super(key: key);
+
+  @override
+  State<MainDrawer> createState() => _MainDrawerState();
+}
+
+class _MainDrawerState extends State<MainDrawer> {
+  final RateMyApp rateMyApp = RateMyApp(
+    minLaunches: 1,
+    minDays: 0,
+    remindDays: 2,
+    remindLaunches: 10,
+    googlePlayIdentifier: "com.lanjAdabA",
+  );
+  @override
+  void initState() {
+    rateMyApp.init().then((_) {
+//
+      // for (var condition in rateMyApp.conditions) {
+      //   if (condition is DebuggableCondition) {
+      //     print(condition.valuesAsString);
+      //   }
+      // }
+
+//
+
+      // if (rateMyApp.shouldOpenDialog) {
+      //   rateMyApp.showRateDialog(
+      //     context,
+      //     message:
+      //         "If you like this app, please take a little bit of your time to review it! \n It really helps us and it shouldn't take you more than a minute.",
+      //     title: "Rate this app",
+      //     rateButton: "RATE",
+      //     noButton: "NO THANKS",
+      //     laterButton: "MAYBE LATER",
+      //     onDismissed: () =>
+      //         rateMyApp.callEvent(RateMyAppEventType.laterButtonPressed),
+      //   );
+      // }
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,10 +121,22 @@ class MainDrawer extends StatelessWidget {
               await launchUrl(launchUri);
             },
           ),
-          const ListTile(
-            leading: Icon(Icons.star_border),
-            title: Text("Rating"),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.star_border),
+            title: const Text("Rating"),
+            onTap: () {
+              rateMyApp.showRateDialog(
+                context,
+                message:
+                    "If you like this app, please take a little bit of your time to review it! \n It really helps us and it shouldn't take you more than a minute.",
+                title: "Rate this app",
+                rateButton: "RATE",
+                noButton: "NO THANKS",
+                laterButton: "MAYBE LATER",
+                onDismissed: () =>
+                    rateMyApp.callEvent(RateMyAppEventType.laterButtonPressed),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.thumb_up_alt_outlined),

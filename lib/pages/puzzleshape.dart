@@ -229,7 +229,7 @@ class PuzzleShapeState extends State<PuzzleShape> {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * .2,
                               child: const Text(
-                                  " 1. Select 'Play again' to continue Playing \n   -- click the refresh button to refresh \n \n 2. Select 'Menu Page' to go back "),
+                                  " 1. Select 'Play again' to continue Playing \n   -- click the refresh button to refresh \n \n 2. Select 'Main Page' to go back "),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,

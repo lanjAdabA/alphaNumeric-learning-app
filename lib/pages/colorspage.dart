@@ -26,11 +26,11 @@ class ColorPageState extends State<ColourPage> {
 
   final List<Map<String, dynamic>> card1 = [
     {"colornameis": "RED", "coloris": Colors.red},
+    {"colornameis": "GREEN", "coloris": Colors.green},
+    {"colornameis": "BLUE", "coloris": Colors.blue},
     {"colornameis": "PINK", "coloris": Colors.pink[200]},
     {"colornameis": "PURPLE", "coloris": Colors.purple},
     {"colornameis": "INDIGO", "coloris": Colors.indigo},
-    {"colornameis": "BLUE", "coloris": Colors.blue},
-    {"colornameis": "GREEN", "coloris": Colors.green},
     {"colornameis": "ORANGE", "coloris": Colors.orange},
     {"colornameis": "BROWN", "coloris": Colors.brown},
     {"colornameis": "BLACK", "coloris": Colors.black},
@@ -38,10 +38,15 @@ class ColorPageState extends State<ColourPage> {
   ];
 
   final List<Map<String, dynamic>> card2 = [
-    {"colornameis": "AMBER", "coloris": Colors.amber},
     {"colornameis": "YELLOW", "coloris": Colors.yellow},
+    {"colornameis": "DARK GREEN", "coloris": Colors.green[900]},
+    {"colornameis": "LIGHT GREEN", "coloris": Colors.lightGreen},
     {"colornameis": "LIME", "coloris": Colors.lime},
+    {"colornameis": "DARK BLUE", "coloris": Colors.blue[900]},
+    {"colornameis": "LIGHT BLUE", "coloris": Colors.lightBlue},
     {"colornameis": "CYAN", "coloris": Colors.cyan},
+    {"colornameis": "AMBER", "coloris": Colors.amber},
+    {"colornameis": "SAFFRON", "coloris": Colors.orange[700]},
     {"colornameis": "WHITE", "coloris": Colors.white},
   ];
 
@@ -161,7 +166,7 @@ class ColorPageState extends State<ColourPage> {
                                       color: Colors.black,
                                       fontSize:
                                           MediaQuery.of(context).size.width /
-                                              20),
+                                              25),
                                 ),
                               )),
                           onTap: () {
