@@ -136,7 +136,11 @@ flutter:
 
     - family: SpecialElite
       fonts:
-        - asset: assets/SpecialElite-Regular.ttf     
+        - asset: assets/SpecialElite-Regular.ttf  
+        
+    # - family: EPAOMAYEK
+    #   fonts:
+    #     - asset: assets/EPAOMAYEK.TTF  
 
 
         

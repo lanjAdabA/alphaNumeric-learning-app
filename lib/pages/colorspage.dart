@@ -15,7 +15,7 @@ class ColourPage extends StatefulWidget {
 }
 
 class ColorPageState extends State<ColourPage> {
-  Color color = Colors.amber;
+  Color color = Colors.transparent;
   final FlutterTts flutterTts = FlutterTts();
   speak(String text) async {
     await flutterTts.setLanguage("en-US");

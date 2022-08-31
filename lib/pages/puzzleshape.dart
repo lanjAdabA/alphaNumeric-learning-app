@@ -17,31 +17,31 @@ class PuzzleShapeState extends State<PuzzleShape> {
 
   final List<Map<String, dynamic>> choices = [
     {
-      "count": "assets/shapedrag/dice.png",
+      "count": "assets/shapedrag/square.png",
       "figr": "assets/shapedrag/squaredrag.png"
     },
     {
-      "count": "assets/shapedrag/gift.png",
+      "count": "assets/shapedrag/rectangle.png",
       "figr": "assets/shapedrag/rectangledrag.png"
     },
     {
-      "count": "assets/shapedrag/hat.jpeg",
+      "count": "assets/shapedrag/triangle.png",
       "figr": "assets/shapedrag/triangledrag.png"
     },
     {
-      "count": "assets/shapedrag/ball.png",
+      "count": "assets/shapedrag/circle.png",
       "figr": "assets/shapedrag/circledrag.png"
     },
     {
-      "count": "assets/shapedrag/cake.png",
+      "count": "assets/shapedrag/heart.png",
       "figr": "assets/shapedrag/heartdrag.png"
     },
     {
-      "count": "assets/shapedrag/starfish.jpeg",
+      "count": "assets/shapedrag/star.png",
       "figr": "assets/shapedrag/stardrag.png"
     },
     {
-      "count": "assets/shapedrag/egg.jpeg",
+      "count": "assets/shapedrag/oval.png",
       "figr": "assets/shapedrag/ovaldrag.png"
     },
   ];

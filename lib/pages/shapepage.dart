@@ -44,6 +44,11 @@ class _NumblockState extends State<ShapePage> {
       "shapeColor": Colors.teal,
     },
     {
+      'shapeName': "DIAMOND",
+      'shapeImg': 'assets/shapeImg/diamond.png',
+      "shapeColor": Colors.pink,
+    },
+    {
       'shapeName': "OVAL",
       'shapeImg': 'assets/shapeImg/oval.png',
       "shapeColor": Colors.green,
