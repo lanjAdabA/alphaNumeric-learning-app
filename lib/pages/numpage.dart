@@ -18,70 +18,70 @@ class _NumblockState extends State<NumPage> {
       'fig': "1",
       'inwords': 'ONE',
       "color": Colors.red,
-      "image": "assets/fingerNumber/1.jpg",
+      "image": "assets/fingerNumber/1.png",
       "speechlong": "o , n , e . one"
     },
     {
       'fig': "2",
       'inwords': 'TWO',
       "color": Colors.pink,
-      "image": "assets/fingerNumber/2.jpg",
+      "image": "assets/fingerNumber/2.png",
       "speechlong": "t : w : o . two"
     },
     {
       'fig': "3",
       'inwords': 'THREE',
       "color": Colors.purple,
-      "image": "assets/fingerNumber/3.jpg",
+      "image": "assets/fingerNumber/3.png",
       "speechlong": "t : h : r : e : e . three"
     },
     {
       'fig': "4",
       'inwords': 'FOUR',
       "color": Colors.indigo,
-      "image": "assets/fingerNumber/4.jpg",
+      "image": "assets/fingerNumber/4.png",
       "speechlong": " f : o : u : r . four"
     },
     {
       'fig': "5",
       'inwords': 'FIVE',
       "color": Colors.blue,
-      "image": "assets/fingerNumber/5.jpg",
+      "image": "assets/fingerNumber/5.png",
       "speechlong": "f : i : v : e . five"
     },
     {
       'fig': "6",
       'inwords': 'SIX',
       "color": Colors.cyan,
-      "image": "assets/fingerNumber/6.jpg",
+      "image": "assets/fingerNumber/6.png",
       "speechlong": "s : i : x . six"
     },
     {
       'fig': "7",
       'inwords': 'SEVEN',
       "color": Colors.green,
-      "image": "assets/fingerNumber/7.jpg",
+      "image": "assets/fingerNumber/7.png",
       "speechlong": "S : e : v : e : n . seven"
     },
     {
       'fig': "8",
       'inwords': 'EIGHT',
       "color": Colors.yellow,
-      "image": "assets/fingerNumber/8.jpg",
+      "image": "assets/fingerNumber/8.png",
       "speechlong": "e : i : g : h : t  . eight"
     },
     {
       'fig': "9",
       'inwords': 'NINE',
       "color": Colors.amber,
-      "image": "assets/fingerNumber/9.jpg",
+      "image": "assets/fingerNumber/9.png",
       "speechlong": "n : i : n : e . nine"
     },
     {
       'fig': "10",
       'inwords': 'TEN',
       "color": Colors.orange,
-      "image": "assets/fingerNumber/10.jpg",
+      "image": "assets/fingerNumber/10.png",
       "speechlong": "t : e : n . ten"
     },
   ];
@@ -91,7 +91,7 @@ class _NumblockState extends State<NumPage> {
     double w = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[400],
       appBar: AppBar(
         title: const Text("Number_Chart"),
         centerTitle: true,
@@ -117,7 +117,8 @@ class _NumblockState extends State<NumPage> {
                     margin: EdgeInsets.only(bottom: w / 80),
                     height: w / 6,
                     decoration: BoxDecoration(
-                      color: Colors.blue[50],
+                      border: Border.all(color: Colors.black),
+                      color: const Color.fromARGB(255, 215, 228, 239),
                       borderRadius: const BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
                         BoxShadow(

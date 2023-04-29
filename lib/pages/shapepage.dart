@@ -71,51 +71,57 @@ class _NumblockState extends State<ShapePage> {
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[400],
       appBar: AppBar(
         title: const Text("Number_Chart"),
         centerTitle: true,
       ),
       drawer: const MainDrawer(),
-      body: CarouselSlider(
-        options: CarouselOptions(
-          enlargeCenterPage: true,
-          scrollDirection: Axis.vertical,
-          enableInfiniteScroll: true,
-          viewportFraction: .5,
-          height: height * 1,
-        ),
-        items: shapeData.map((e) {
-          return Container(
-            decoration: BoxDecoration(
-              // color: e["shapeColor"],
-              color: Colors.blue[50],
-              borderRadius: const BorderRadius.all(
-                Radius.circular(30),
-              ),
-            ),
-            width: width * 1,
-            height: height / 2.6,
-            child: GestureDetector(
-              onTap: () => speak(e["shapeName"]),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    e["shapeName"],
-                    style: TextStyle(
-                        fontFamily: "titanOne", fontSize: height * 0.04),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: CarouselSlider(
+          options: CarouselOptions(
+            enlargeCenterPage: true,
+            scrollDirection: Axis.vertical,
+            enableInfiniteScroll: true,
+            viewportFraction: .5,
+            height: height * 1,
+          ),
+          items: shapeData.map((e) {
+            return FittedBox(
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 2),
+                  // color: e["shapeColor"],
+                  color: Colors.blue[50],
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(30),
                   ),
-                  SizedBox(
-                      height: height / 3,
-                      width: width / 2,
-                      child: Image.asset(e["shapeImg"])),
-                  // Image(image: e["shapeImg"]),
-                ],
+                ),
+                width: width * 1,
+                height: height / 2.6,
+                child: GestureDetector(
+                  onTap: () => speak(e["shapeName"]),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(
+                          height: height / 3,
+                          width: width / 2,
+                          child: Image.asset(e["shapeImg"])),
+                      // Image(image: e["shapeImg"]),
+                      Text(
+                        e["shapeName"],
+                        style: TextStyle(
+                            fontFamily: "titanOne", fontSize: height * 0.04),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          );
-        }).toList(),
+            );
+          }).toList(),
+        ),
       ),
     );
   }

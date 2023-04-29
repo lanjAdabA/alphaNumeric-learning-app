@@ -58,7 +58,9 @@ class LearnAppState extends State<LearnApp> {
       child: Scaffold(
         body: chartPage[selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: const Color.fromARGB(0, 48, 48, 50),
+            // backgroundColor: const Color.fromARGB(0, 48, 48, 50),
+            //
+            backgroundColor: Colors.amber,
             selectedItemColor: const Color.fromARGB(255, 162, 16, 206),
             unselectedItemColor: const Color.fromARGB(255, 158, 160, 155),
             currentIndex: selectedIndex,

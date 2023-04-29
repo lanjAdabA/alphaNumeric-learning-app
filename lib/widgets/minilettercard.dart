@@ -4,6 +4,8 @@ import 'package:flutter_tts/flutter_tts.dart';
 class MiniLetterCard extends StatefulWidget {
   final String miniimage;
   final String minidescription;
+
+  static var length;
   const MiniLetterCard(
       {Key? key, required this.miniimage, required this.minidescription})
       : super(key: key);
@@ -23,29 +25,26 @@ class _MiniLeterCardState extends State<MiniLetterCard> {
 
   @override
   Widget build(BuildContext context) {
-         double height = MediaQuery.of(context).size.height;
+    double height = MediaQuery.of(context).size.height;
 
     return InkWell(
       onTap: () => speak(widget.minidescription),
-    
-        child: Card(
-          child: Column(
-            
-            children: [
-              SizedBox(
-                height: height/7,
-                child: Image.asset(
-                  widget.miniimage,
-                ),
+      child: Card(
+        child: Column(
+          children: [
+            SizedBox(
+              height: height / 7,
+              child: Image.asset(
+                widget.miniimage,
               ),
-              Text(
-                widget.minidescription,
-                style: const TextStyle(fontSize: 20),
-              ),
-            ],
-          ),
+            ),
+            Text(
+              widget.minidescription,
+              style: const TextStyle(fontSize: 20),
+            ),
+          ],
         ),
-      
+      ),
     );
   }
 }

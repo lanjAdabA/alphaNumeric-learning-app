@@ -69,10 +69,14 @@ class _NumBlockState extends State<NumBlock> {
             ],
           ),
           InkWell(
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height - 10,
+            child: ClipOval( 
+              // height: MediaQuery.of(context).size.height - 10,
               child: Image(image: AssetImage(widget.image)),
             ),
+            // child: SizedBox(
+            //   height: MediaQuery.of(context).size.height - 10,
+            //   child: Image: AssetImage(widget.image)),
+            // ),
             onDoubleTap: () {
               showModalBottomSheet(
                   backgroundColor: const Color.fromARGB(255, 255, 255, 255),

@@ -631,7 +631,7 @@ class _ChartState extends State<AlphaChart> {
     },
     {
       "letterkey": "x",
-      "img": "assets/alphaChar/X.png".toString(),
+      "img": "assets/alphaChar/X.png",
       "cap": "X",
       "small": "x",
       "description": "X for Xylophone",
@@ -657,7 +657,7 @@ class _ChartState extends State<AlphaChart> {
     },
     {
       "letterkey": "y",
-      "img": "assets/alphaChar/Y.png".toString(),
+      "img": "assets/alphaChar/Y.png",
       "cap": "Y",
       "small": "y",
       "description": "Y for Yak",
@@ -683,7 +683,7 @@ class _ChartState extends State<AlphaChart> {
     },
     {
       "letterkey": "z",
-      "img": "assets/alphaChar/Z.png".toString(),
+      "img": "assets/alphaChar/Z.png",
       "cap": "Z",
       "small": "z",
       "description": "Z for Zebra",
@@ -712,7 +712,7 @@ class _ChartState extends State<AlphaChart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(0, 60, 60, 64),
+        backgroundColor: Colors.grey[400],
         appBar: AppBar(
           title: const Text("Alphabet_Chart"),
           centerTitle: true,

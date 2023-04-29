@@ -15,7 +15,8 @@ class ColourPage extends StatefulWidget {
 }
 
 class ColorPageState extends State<ColourPage> {
-  Color color = Colors.transparent;
+  Color _color = Colors.transparent;
+  String _colorname = "Choose A COLOR FIRST.";
   final FlutterTts flutterTts = FlutterTts();
   speak(String text) async {
     await flutterTts.setLanguage("en-US");
@@ -28,27 +29,28 @@ class ColorPageState extends State<ColourPage> {
     {"colornameis": "RED", "coloris": Colors.red},
     {"colornameis": "GREEN", "coloris": Colors.green},
     {"colornameis": "BLUE", "coloris": Colors.blue},
-    {"colornameis": "PINK", "coloris": Colors.pink[200]},
+    {"colornameis": "PINK", "coloris": Colors.pink[300]},
     {"colornameis": "PURPLE", "coloris": Colors.purple},
     {"colornameis": "INDIGO", "coloris": Colors.indigo},
     {"colornameis": "ORANGE", "coloris": Colors.orange},
     {"colornameis": "BROWN", "coloris": Colors.brown},
     {"colornameis": "BLACK", "coloris": Colors.black},
     {"colornameis": "GREY", "coloris": Colors.grey},
-  ];
-
-  final List<Map<String, dynamic>> card2 = [
     {"colornameis": "YELLOW", "coloris": Colors.yellow},
-    {"colornameis": "DARK GREEN", "coloris": Colors.green[900]},
-    {"colornameis": "LIGHT GREEN", "coloris": Colors.lightGreen},
-    {"colornameis": "LIME", "coloris": Colors.lime},
-    {"colornameis": "DARK BLUE", "coloris": Colors.blue[900]},
-    {"colornameis": "LIGHT BLUE", "coloris": Colors.lightBlue},
-    {"colornameis": "CYAN", "coloris": Colors.cyan},
-    {"colornameis": "AMBER", "coloris": Colors.amber},
-    {"colornameis": "SAFFRON", "coloris": Colors.orange[700]},
     {"colornameis": "WHITE", "coloris": Colors.white},
   ];
+
+//! 2nd card
+  // final List<Map<String, dynamic>> card2 = [
+  //   {"colornameis": "DARK GREEN", "coloris": Colors.green[900]},
+  //   {"colornameis": "LIGHT GREEN", "coloris": Colors.lightGreen},
+  //   {"colornameis": "LIME", "coloris": Colors.lime},
+  //   {"colornameis": "DARK BLUE", "coloris": Colors.blue[900]},
+  //   {"colornameis": "LIGHT BLUE", "coloris": Colors.lightBlue},
+  //   {"colornameis": "CYAN", "coloris": Colors.cyan},
+  //   {"colornameis": "AMBER", "coloris": Colors.amber},
+  //   {"colornameis": "SAFFRON", "coloris": Colors.orange[700]},
+  // ];
 
   int index = 0;
   @override
@@ -69,7 +71,7 @@ class ColorPageState extends State<ColourPage> {
     var screeensize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 215, 242, 250),
+      backgroundColor: Colors.grey[400],
       appBar: AppBar(
         title: const Text("Color_Page"),
         centerTitle: true,
@@ -85,24 +87,23 @@ class ColorPageState extends State<ColourPage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
+                        // border: Border.all(color: Colors.black, width: 2),
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20)),
-                        color: color,
+                        color: _color,
                       ),
                       margin: const EdgeInsets.all(20),
                     ),
                   ],
                 ),
                 onTap: () {
-                  setState(() {
-                    index++;
-                  });
+                  speak(_colorname);
                 },
               )),
           Expanded(
-              flex: 27,
+              flex: 20,
               child: Container(
-                color: Colors.blue[50],
+                color: Colors.grey[400],
                 child: Column(
                   children: [
                     CarouselSlider(
@@ -110,18 +111,39 @@ class ColorPageState extends State<ColourPage> {
                         enlargeCenterPage: true,
                         enableInfiniteScroll: true,
                         viewportFraction: 0.35,
-                        height: screeensize.height * .1,
+                        height: screeensize.height * .15,
                       ),
                       items: card1.map((card1) {
                         return InkWell(
-                          child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: card1["coloris"],
-                              ),
-                              width: MediaQuery.of(context).size.width * 4,
-                              child: Center(
-                                child: Text(
+                          child: FittedBox(
+                            fit: BoxFit.fill,
+                            child: Column(
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * .09,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.black),
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: card1["coloris"],
+                                  ),
+                                  width:
+                                      MediaQuery.of(context).size.width * .26,
+                                  // child: Center(
+                                  //   child: Text(
+                                  //     card1['colornameis'],
+                                  //     style: TextStyle(
+                                  //         fontFamily: "StickNoBills",
+                                  //         fontWeight: FontWeight.bold,
+                                  //         color: Colors.white,
+                                  //         fontSize: MediaQuery.of(context)
+                                  //                 .size
+                                  //                 .width /
+                                  //             20),
+                                  //   ),
+                                  // ),
+                                ),
+                                Text(
                                   card1['colornameis'],
                                   style: TextStyle(
                                       fontFamily: "StickNoBills",
@@ -131,54 +153,58 @@ class ColorPageState extends State<ColourPage> {
                                           MediaQuery.of(context).size.width /
                                               20),
                                 ),
-                              )),
+                              ],
+                            ),
+                          ),
                           onTap: () {
                             speak(card1["colornameis"].toString());
                             log(card1["coloris"].toString());
                             setState(() {
-                              color = card1["coloris"];
+                              _color = card1["coloris"];
+                              _colorname = card1["colornameis"];
                             });
                           },
                         );
                       }).toList(),
                     ),
-                    CarouselSlider(
-                      options: CarouselOptions(
-                        enlargeCenterPage: true,
-                        enableInfiniteScroll: true,
-                        viewportFraction: 0.35,
-                        height: screeensize.height * .1,
-                      ),
-                      items: card2.map((card2) {
-                        return InkWell(
-                          child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: card2["coloris"],
-                              ),
-                              width: MediaQuery.of(context).size.width * 4,
-                              child: Center(
-                                child: Text(
-                                  card2['colornameis'],
-                                  style: TextStyle(
-                                      fontFamily: "StickNoBills",
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      fontSize:
-                                          MediaQuery.of(context).size.width /
-                                              25),
-                                ),
-                              )),
-                          onTap: () {
-                            speak(card2["colornameis"].toString());
-                            // log(card2["coloris"].toString());
-                            setState(() {
-                              color = card2["coloris"];
-                            });
-                          },
-                        );
-                      }).toList(),
-                    )
+                    //! 2nd carousel
+                    // CarouselSlider(
+                    //   options: CarouselOptions(
+                    //     enlargeCenterPage: true,
+                    //     enableInfiniteScroll: true,
+                    //     viewportFraction: 0.35,
+                    //     height: screeensize.height * .1,
+                    //   ),
+                    //   items: card2.map((card2) {
+                    //     return InkWell(
+                    //       child: Container(
+                    //           decoration: BoxDecoration(
+                    //             borderRadius: BorderRadius.circular(20),
+                    //             color: card2["coloris"],
+                    //           ),
+                    //           width: MediaQuery.of(context).size.width * 4,
+                    //           child: Center(
+                    //             child: Text(
+                    //               card2['colornameis'],
+                    //               style: TextStyle(
+                    //                   fontFamily: "StickNoBills",
+                    //                   fontWeight: FontWeight.bold,
+                    //                   color: Colors.black,
+                    //                   fontSize:
+                    //                       MediaQuery.of(context).size.width /
+                    //                           25),
+                    //             ),
+                    //           )),
+                    //       onTap: () {
+                    //         speak(card2["colornameis"].toString());
+                    //         setState(() {
+                    //           _color = card2["coloris"];
+                    //           _colorname = card2["colornameis"];
+                    //         });
+                    //       },
+                    //     );
+                    //   }).toList(),
+                    // )
                   ],
                 ),
               )),

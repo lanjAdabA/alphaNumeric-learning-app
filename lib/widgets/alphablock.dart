@@ -27,20 +27,35 @@ class _AplhaState extends State<AlphaBlock> {
     var screeensize = MediaQuery.of(context).size;
     return InkWell(
       child: SizedBox(
-        height: screeensize.width / 4.1,
+        height: screeensize.height / 9.6,
         width: screeensize.width / 4.4,
         child: Card(
+          shape: RoundedRectangleBorder(
+              side: const BorderSide(
+                color: Colors.black,
+              ),
+              borderRadius: (BorderRadius.circular(10))),
+          elevation: 5,
           margin: const EdgeInsets.all(1),
           color: Colors.blue[50],
           child: Container(
-            padding: const EdgeInsets.only(left: 5, right: 5),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+            child: Stack(
+              alignment: AlignmentDirectional.bottomCenter,
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  height: 58,
-                  width: 58,
-                  child: Image.asset(widget.img),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 58,
+                      width: 58,
+                      child: Image.asset(widget.img),
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    )
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,14 +65,14 @@ class _AplhaState extends State<AlphaBlock> {
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: Colors.grey[400]),
+                          color: Colors.blue[600]),
                     ),
                     Text(
                       widget.small,
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: Colors.grey[400]),
+                          color: Colors.green[400]),
                     )
                   ],
                 )

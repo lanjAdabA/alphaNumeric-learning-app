@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({Key? key}) : super(key: key);
@@ -78,7 +79,7 @@ class _ContactPageState extends State<ContactPage> {
                     InkWell(
                       child: const ListTile(
                         leading: Icon(
-                          Icons.whatsapp,
+                          FontAwesomeIcons.whatsapp,
                           size: 42,
                           color: Colors.green,
                         ),

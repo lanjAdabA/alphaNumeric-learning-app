@@ -32,7 +32,7 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
   ];
 
   List<Map<String, dynamic>> menudata = [
-    {"menuimg": 'assets/alphaMenu.png', "menudescription": "Alphabet MAtching"},
+    {"menuimg": 'assets/alphaMenu.png', "menudescription": "Alphabet Matching"},
     {"menuimg": 'assets/numMenu.png', "menudescription": "Number Matching"},
     {"menuimg": 'assets/colorMenu.png', "menudescription": "Color Matching"},
     {"menuimg": 'assets/countMenu.png', "menudescription": "Count and Match"},
@@ -43,6 +43,7 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
     double w = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Colors.grey[400],
       appBar: AppBar(
         title: const Text("Exercises_Menu"),
         centerTitle: true,
@@ -69,6 +70,7 @@ class _PuzzleMenuPageState extends State<PuzzleMenuPage> {
                     margin: EdgeInsets.only(bottom: w / 20),
                     height: w / 4,
                     decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
                       color: Colors.blue[50],
                       borderRadius: const BorderRadius.all(Radius.circular(20)),
                       boxShadow: [

@@ -24,30 +24,7 @@ class _MainDrawerState extends State<MainDrawer> {
   );
   @override
   void initState() {
-    rateMyApp.init().then((_) {
-//
-      // for (var condition in rateMyApp.conditions) {
-      //   if (condition is DebuggableCondition) {
-      //     print(condition.valuesAsString);
-      //   }
-      // }
-
-//
-
-      // if (rateMyApp.shouldOpenDialog) {
-      //   rateMyApp.showRateDialog(
-      //     context,
-      //     message:
-      //         "If you like this app, please take a little bit of your time to review it! \n It really helps us and it shouldn't take you more than a minute.",
-      //     title: "Rate this app",
-      //     rateButton: "RATE",
-      //     noButton: "NO THANKS",
-      //     laterButton: "MAYBE LATER",
-      //     onDismissed: () =>
-      //         rateMyApp.callEvent(RateMyAppEventType.laterButtonPressed),
-      //   );
-      // }
-    });
+    rateMyApp.init().then((_) {});
     super.initState();
   }
 
